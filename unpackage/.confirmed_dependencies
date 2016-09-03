@@ -14,7 +14,8 @@
 			"details.html",
 			"content.html",
 			"tab_home.html",
-			"js/lib/mui.min.js"
+			"js/lib/mui.min.js",
+			"tab_setting.html"
 		],
 		"refer": [
 			"examples/content.html",
@@ -26,7 +27,9 @@
 			"tab_contact.html",
 			"tab_setting.html",
 			"bar_menu.html",
-			"html/tab_chat.html"
+			"html/tab_chat.html",
+			"login.html",
+			"help.html"
 		]
 	},
 	"details.html": {
@@ -136,7 +139,12 @@
 		"resources": [
 			"js/mui.min.js",
 			"css/mui.min.css",
-			"tab_home.html"
+			"tab_home.html",
+			"images/cbd.jpg",
+			"images/muwu.jpg",
+			"images/logo.png",
+			"fonts/mui.ttf",
+			"images/shuijiao.jpg"
 		],
 		"refer": [
 			"tab_pengyouquan.html",
@@ -154,5 +162,22 @@
 			"js/lib/mui.min.js"
 		],
 		"refer": []
+	},
+	"login.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/app/login.js",
+			"fonts/mui.ttf"
+		],
+		"refer": []
+	},
+	"help.html": {
+		"resources": [
+			"js/app/help.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
 	}
 }
