@@ -263,7 +263,8 @@
 				"refer": [
 					"tab_pengyouquan.html",
 					"tab_contact.html",
-					"tab_setting.html"
+					"tab_setting.html",
+					"help.html"
 				],
 				"priority": 0
 			},

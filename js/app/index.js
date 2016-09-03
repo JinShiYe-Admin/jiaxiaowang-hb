@@ -1,14 +1,11 @@
 mui.init({
 	swipeBack: false,
-
 });
 //设置默认打开首页显示的子页序号；
 var Index = 0;
 //把子页的路径写在数组里面
 var subpages = ['tab_home.html', 'tab_chat.html', 'tab_pengyouquan.html', 'tab_contact.html'];
-
 //所有的plus-*方法写在mui.plusReady中或者后面。
-
 mui.plusReady(function() {
 	//获取当前页面所属的Webview窗口对象
 	main = plus.webview.currentWebview();
@@ -31,17 +28,14 @@ mui.plusReady(function() {
 	}
 
 	//当前激活选项
-	var activeTab = subpages[Index],
-		title = document.querySelector(".mui-title");
-	//选项卡点击事件
+	var activeTab = subpages[Index]
+		//选项卡点击事件
 	mui('.mui-bar-tab').on('tap', 'a', function(e) {
 		//获取目标子页的id
 		var targetTab = this.getAttribute('href');
 		if(targetTab == activeTab) {
 			return;
 		}
-		//更换标题
-		title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
 		//显示目标选项卡
 		plus.webview.show(targetTab);
 		//隐藏当前选项卡
@@ -51,7 +45,6 @@ mui.plusReady(function() {
 		console.trace(activeTab)
 		activeTab = targetTab;
 	});
-
 	//点击左上角图标，打开帮助；
 	document.getElementById('help').addEventListener('tap', function() {
 		console.log("help");
@@ -61,14 +54,4 @@ mui.plusReady(function() {
 			id: 'help'
 		});
 	});
-});
-
-
-//在android4.4中的swipe事件，需要preventDefault一下，否则触发不正常
-//故，在dragleft，dragright中preventDefault
-window.addEventListener('dragright', function(e) {
-	e.detail.gesture.preventDefault();
-});
-window.addEventListener('dragleft', function(e) {
-	e.detail.gesture.preventDefault();
 });
