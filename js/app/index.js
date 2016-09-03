@@ -15,7 +15,7 @@ mui.plusReady(function() {
 			subpages[i], //子页url
 			subpages[i], //子页id
 			{
-				top: '45px', //设置距离顶部的距离
+				top: '0px', //设置距离顶部的距离
 				bottom: '50px' //设置距离底部的距离
 			}
 		);
@@ -44,14 +44,5 @@ mui.plusReady(function() {
 		console.trace(targetTab)
 		console.trace(activeTab)
 		activeTab = targetTab;
-	});
-	//点击左上角图标，打开帮助；
-	document.getElementById('help').addEventListener('tap', function() {
-		console.log("help");
-		//打开登录页面
-		mui.openWindow({
-			url: 'help.html',
-			id: 'help'
-		});
 	});
 });
