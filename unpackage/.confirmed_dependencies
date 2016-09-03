@@ -30,7 +30,10 @@
 			"bar_menu.html",
 			"html/tab_chat.html",
 			"login.html",
-			"help.html"
+			"help.html",
+			"tab_class.html",
+			"tab_application.html",
+			"tab_me.html"
 		]
 	},
 	"details.html": {
@@ -108,7 +111,8 @@
 			"css/app.css",
 			"js/lib/jquery-3.1.0.js",
 			"js/app/tab_chat.js",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"images/shuijiao.jpg"
 		],
 		"refer": [
 			"tab_pengyouquan.html",
@@ -182,6 +186,11 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
+		]
+	},
+	"tab_class.html": {
+		"resources": [
+			"js/app/tab_class.js"
 		]
 	}
 }

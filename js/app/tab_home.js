@@ -1,9 +1,9 @@
 mui.init({
-	swipeBack: false,
+	swipeBack: false
 });
 
 mui.plusReady(function() {
-//点击左上角图标，打开帮助；
+	//点击左上角图标，打开帮助；
 	document.getElementById('help').addEventListener('tap', function() {
 		console.log("help");
 		//打开登录页面

@@ -4,7 +4,7 @@ mui.init({
 //设置默认打开首页显示的子页序号；
 var Index = 0;
 //把子页的路径写在数组里面
-var subpages = ['tab_home.html', 'tab_chat.html', 'tab_pengyouquan.html', 'tab_contact.html'];
+var subpages = ['tab_home.html', 'tab_class.html', 'tab_application.html', 'tab_me.html'];
 //所有的plus-*方法写在mui.plusReady中或者后面。
 mui.plusReady(function() {
 	//获取当前页面所属的Webview窗口对象
