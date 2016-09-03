@@ -204,11 +204,11 @@
 					"content.html",
 					"tab_home.html",
 					"js/lib/mui.min.js",
-					"tab_setting.html"
+					"tab_setting.html",
+					"tab_pengyouquan.html"
 				],
 				"refer": [
 					"tab_chat.html",
-					"tab_pengyouquan.html",
 					"tab_contact.html",
 					"bar_menu.html",
 					"html/tab_chat.html",

@@ -13,7 +13,25 @@
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a id="help" class="mui-icon mui-action-menu mui-icon-help mui-pull-left"></a>
-			<a id="openPopover" class="mui-icon mui-action-menu mui-icon-plusempty mui-pull-right"></a>
+			<a id="openPopover" href="#sheet1" class="mui-icon mui-action-menu mui-icon-plusempty mui-pull-right"></a>
+
+			<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+				<!-- 可选择菜单 -->
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#">菜单1</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#">菜单2</a>
+					</li>
+				</ul>
+				<!-- 取消菜单 -->
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#sheet1"><b>取消</b></a>
+					</li>
+				</ul>
+			</div>
 			<h1 class="mui-title">家校网</h1>
 		</header>
 		<nav class="mui-bar mui-bar-tab">
