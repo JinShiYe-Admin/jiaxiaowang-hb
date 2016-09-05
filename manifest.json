@@ -364,9 +364,15 @@
 			},
 			"tab_class.html": {
 				"resources": [
-					"js/app/tab_class.js"
+					"js/app/tab_class.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"html/class/myclass.html"
 				],
-				"refer": [],
+				"refer": [
+					"html/class/allclass.html"
+				],
 				"priority": 0
 			},
 			"html/login/login.html": {
@@ -413,6 +419,27 @@
 				"refer": [
 					"html/login/login.html"
 				],
+				"priority": 0
+			},
+			"tab_me.html": {
+				"resources": [
+					"images/yuantiao.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/class/myclass.html": {
+				"resources": [
+					"js/app/class/myclass.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/class/allclass.html": {
+				"resources": [
+					"js/app/class/allclass.js"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},
