@@ -376,12 +376,37 @@
 					"js/mui.enterfocus.js",
 					"css/style.css",
 					"css/mui.min.css",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"images/logo.png"
 				],
 				"refer": [
 					"html/login/main.html",
-					"html/login/reg.html"
+					"html/login/reg.html",
+					"html/login/forget_password.html"
 				],
+				"priority": 0
+			},
+			"html/login/forget_password.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"js/app.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/style.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/login/reg.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"js/app.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/style.css",
+					"css/font_size.css"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},
