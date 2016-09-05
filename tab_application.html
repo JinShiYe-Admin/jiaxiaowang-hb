@@ -10,6 +10,7 @@
 
 	<body>
 		<script src="js/mui.min.js"></script>
+		<script src="js/app/application/application.js"></script>
 		<header class="mui-bar mui-bar-nav">
 			<a id="openPopover" href="#sheet1" class="mui-icon mui-action-menu mui-icon-plusempty mui-pull-right"></a>
 			<h1 class="mui-title">应用</h1>
@@ -45,27 +46,8 @@
 		</div>
 
 		<script type="text/javascript">
-			mui.init()
-			mui.plusReady(
-				document.getElementById("xiaoBo").addEventListener('tap',function(){
-					  mui.openWindow({
-					    id:'xiaoBo',
-					    url:'html/application/xiaoBo.html',
-					   	show: {
-								aniShow: 'pop-in'
-							}
-					  });
-				})
-				document.getElementById("weiQun").addEventListener('tap',function(){
-					mui.openWindow({
-						id:'weiQun',
-						url:'html/application/weiQun.html',
-						show: {
-								aniShow: 'pop-in'
-							}
-					});
-				})
-			);
+			jumpTo('xiaoBo');
+			jumpTo('sport');
 		
 		</script>
 	</body>

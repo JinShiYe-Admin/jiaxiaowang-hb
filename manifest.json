@@ -446,15 +446,6 @@
 				],
 				"refer": [],
 				"priority": 0
-			},
-			"tab_application.html": {
-				"resources": [
-					"js/mui.min.js",
-					"fonts/mui.ttf",
-					"css/mui.min.css"
-				],
-				"refer": [],
-				"priority": 0
 			}
 		},
 		"idle": {
