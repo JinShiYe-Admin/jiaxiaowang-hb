@@ -193,7 +193,7 @@
 									//如果微信未安装，则为不启用状态
 									btn.setAttribute('class', 'oauth-btn' + (!isInstalled && service.id === 'weixin' ? (' disabled') : ''));
 									btn.authId = service.id;
-									btn.style.backgroundImage = 'url("images/' + service.id + '.png")'
+									btn.style.backgroundImage = 'url("../../images/' + service.id + '.png")'
 									oauthArea.appendChild(btn);
 								}
 							}

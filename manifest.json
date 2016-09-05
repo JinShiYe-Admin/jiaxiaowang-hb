@@ -377,7 +377,10 @@
 					"css/style.css",
 					"css/mui.min.css",
 					"fonts/mui.ttf",
-					"images/logo.png"
+					"images/logo.png",
+					"images/sinaweibo.png",
+					"images/weixin.png",
+					"images/qq.png"
 				],
 				"refer": [
 					"html/login/main.html",
