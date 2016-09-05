@@ -385,7 +385,8 @@
 				"refer": [
 					"html/login/main.html",
 					"html/login/reg.html",
-					"html/login/forget_password.html"
+					"html/login/forget_password.html",
+					"index.html"
 				],
 				"priority": 0
 			},
@@ -409,7 +410,9 @@
 					"css/style.css",
 					"css/font_size.css"
 				],
-				"refer": [],
+				"refer": [
+					"html/login/login.html"
+				],
 				"priority": 0
 			}
 		},

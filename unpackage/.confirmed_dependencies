@@ -211,7 +211,8 @@
 		"refer": [
 			"html/login/main.html",
 			"html/login/reg.html",
-			"html/login/forget_password.html"
+			"html/login/forget_password.html",
+			"index.html"
 		]
 	},
 	"html/login/forget_password.html": {
@@ -231,6 +232,9 @@
 			"css/mui.min.css",
 			"css/style.css",
 			"css/font_size.css"
+		],
+		"refer": [
+			"html/login/login.html"
 		]
 	}
 }
