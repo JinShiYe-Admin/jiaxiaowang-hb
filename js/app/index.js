@@ -4,7 +4,7 @@ mui.init({
 //设置默认打开首页显示的子页序号；
 var Index = 0;
 //把子页的路径写在数组里面
-var subpages = ['tab_home.html', 'tab_chat.html', 'tab_pengyouquan.html', 'tab_contact.html'];
+var subpages = ['tab_home.html', 'tab_class.html', 'tab_application.html', 'tab_me.html'];
 //所有的plus-*方法写在mui.plusReady中或者后面。
 mui.plusReady(function() {
 	//获取当前页面所属的Webview窗口对象
@@ -15,7 +15,7 @@ mui.plusReady(function() {
 			subpages[i], //子页url
 			subpages[i], //子页id
 			{
-				top: '45px', //设置距离顶部的距离
+				top: '0px', //设置距离顶部的距离
 				bottom: '50px' //设置距离底部的距离
 			}
 		);
@@ -44,14 +44,5 @@ mui.plusReady(function() {
 		console.trace(targetTab)
 		console.trace(activeTab)
 		activeTab = targetTab;
-	});
-	//点击左上角图标，打开帮助；
-	document.getElementById('help').addEventListener('tap', function() {
-		console.log("help");
-		//打开登录页面
-		mui.openWindow({
-			url: 'help.html',
-			id: 'help'
-		});
 	});
 });
