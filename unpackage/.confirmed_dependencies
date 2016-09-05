@@ -201,10 +201,12 @@
       "js/mui.min.js",
       "js/mui.enterfocus.js",
       "css/style.css",
-      "css/mui.min.css"
+      "css/mui.min.css",
+      "fonts/mui.ttf"
     ],
     "refer": [
-      "html/login/main.html"
+      "html/login/main.html",
+      "html/login/reg.html"
     ]
   }
 }
