@@ -437,7 +437,21 @@
 			},
 			"html/class/allclass.html": {
 				"resources": [
-					"js/app/class/allclass.js"
+					"js/app/class/allclass.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"images/shuijiao.jpg",
+					"images/qq.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"tab_application.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0

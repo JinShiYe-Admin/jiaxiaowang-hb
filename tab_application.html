@@ -17,28 +17,28 @@
 		<!--九宫格-->
 		<div class="mui-content">
 		        <ul class="mui-table-view mui-grid-view mui-grid-9">
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="xiaoBo" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-home"></span>
 		                    <div class="mui-media-body">校博</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="weiQun"   class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-email"></span>
 		                    <div class="mui-media-body">微群</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="touPiao"  class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-chatbubble"></span>
 		                    <div class="mui-media-body">投票</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="alburm"  class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-camera"></span>
 		                    <div class="mui-media-body">相册</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="fangXue"  class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-search"></span>
 		                    <div class="mui-media-body">放学</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="zhiQin" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-phone"></span>
 		                    <div class="mui-media-body">执勤</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="sport" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-gear"></span>
 		                    <div class="mui-media-body">体育</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="weiKe" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-info"></span>
 		                    <div class="mui-media-body">微课</div></a></li>
 		        </ul> 
@@ -46,6 +46,27 @@
 
 		<script type="text/javascript">
 			mui.init()
+			mui.plusReady(
+				document.getElementById("xiaoBo").addEventListener('tap',function(){
+					  mui.openWindow({
+					    id:'xiaoBo',
+					    url:'html/application/xiaoBo.html',
+					   	show: {
+								aniShow: 'pop-in'
+							}
+					  });
+				})
+				document.getElementById("weiQun").addEventListener('tap',function(){
+					mui.openWindow({
+						id:'weiQun',
+						url:'html/application/weiQun.html',
+						show: {
+								aniShow: 'pop-in'
+							}
+					});
+				})
+			);
+		
 		</script>
 	</body>
 
