@@ -1,196 +1,210 @@
 {
-	"index.html": {
-		"resources": [
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"/images/cbd.jpg",
-			"images/cbd.jpg",
-			"images/logo.png",
-			"images/muwu.jpg",
-			"images/shuijiao.jpg",
-			"js/app/index.js",
-			"examples/content.html",
-			"details.html",
-			"content.html",
-			"tab_home.html",
-			"js/lib/mui.min.js",
-			"tab_setting.html",
-			"tab_pengyouquan.html"
-		],
-		"refer": [
-			"examples/content.html",
-			"details.html",
-			"content.html",
-			"tab_home.html",
-			"tab_chat.html",
-			"tab_pengyouquan.html",
-			"tab_contact.html",
-			"tab_setting.html",
-			"bar_menu.html",
-			"html/tab_chat.html",
-			"login.html",
-			"help.html",
-			"tab_class.html",
-			"tab_application.html",
-			"tab_me.html"
-		]
-	},
-	"details.html": {
-		"resources": [
-			"images/cbd.jpg",
-			"images/muwu.jpg",
-			"images/logo.png",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"images/shuijiao.jpg"
-		],
-		"refer": []
-	},
-	"content.html": {
-		"resources": [
-			"images/cbd.jpg",
-			"images/muwu.jpg",
-			"images/logo.png",
-			"images/shuijiao.jpg",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": []
-	},
-	"examples/content.html": {
-		"resources": [
-			"examples/js/mui.min.js",
-			"examples/css/mui.min.css"
-		],
-		"refer": []
-	},
-	"examples/index.html": {
-		"resources": [
-			"examples/js/mui.min.js",
-			"examples/js/app/index.js",
-			"examples/css/mui.min.css"
-		],
-		"refer": []
-	},
-	"tab_home.html": {
-		"resources": [
-			"js/app/tab_home.js",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"content.html",
-			"images/cbd.jpg",
-			"images/muwu.jpg",
-			"images/logo.png",
-			"images/shuijiao.jpg",
-			"js/app/index.js",
-			"tab_chat.html",
-			"images/yuantiao.jpg",
-			"fonts/mui.ttf",
-			"js/jquery-3.1.0.js",
-			"css/mo.css"
-		],
-		"refer": [
-			"content.html",
-			"tab_pengyouquan.html",
-			"tab_chat.html",
-			"tab_contact.html",
-			"tab_setting.html",
-			"help.html"
-		]
-	},
-	"tab_chat.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"js/app/index.js",
-			"tab_home.html",
-			"tab_pengyouquan.html",
-			"css/app.css",
-			"js/lib/jquery-3.1.0.js",
-			"js/app/tab_chat.js",
-			"fonts/mui.ttf",
-			"images/shuijiao.jpg"
-		],
-		"refer": [
-			"tab_pengyouquan.html",
-			"tab_contact.html",
-			"tab_home.html",
-			"tab_setting.html"
-		]
-	},
-	"tab_pengyouquan.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"fonts/mui.ttf"
-		],
-		"refer": []
-	},
-	"tab_contact.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"tab_home.html",
-			"fonts/mui.ttf"
-		],
-		"refer": [
-			"tab_pengyouquan.html",
-			"tab_chat.html",
-			"tab_home.html",
-			"tab_setting.html"
-		]
-	},
-	"tab_setting.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"tab_home.html",
-			"images/cbd.jpg",
-			"images/muwu.jpg",
-			"images/logo.png",
-			"fonts/mui.ttf",
-			"images/shuijiao.jpg"
-		],
-		"refer": [
-			"tab_pengyouquan.html",
-			"tab_chat.html",
-			"tab_contact.html",
-			"tab_home.html"
-		]
-	},
-	"bar_menu.html": {
-		"resources": [
-			"images/logo.png",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"fonts/mui.ttf",
-			"js/lib/mui.min.js"
-		],
-		"refer": []
-	},
-	"login.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"js/app/login.js",
-			"fonts/mui.ttf"
-		],
-		"refer": []
-	},
-	"help.html": {
-		"resources": [
-			"js/app/help.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"tab_class.html": {
-		"resources": [
-			"js/app/tab_class.js"
-		]
-	}
+  "index.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "/images/cbd.jpg",
+      "images/cbd.jpg",
+      "images/logo.png",
+      "images/muwu.jpg",
+      "images/shuijiao.jpg",
+      "js/app/index.js",
+      "examples/content.html",
+      "details.html",
+      "content.html",
+      "tab_home.html",
+      "js/lib/mui.min.js",
+      "tab_setting.html",
+      "tab_pengyouquan.html"
+    ],
+    "refer": [
+      "examples/content.html",
+      "details.html",
+      "content.html",
+      "tab_home.html",
+      "tab_chat.html",
+      "tab_pengyouquan.html",
+      "tab_contact.html",
+      "tab_setting.html",
+      "bar_menu.html",
+      "html/tab_chat.html",
+      "login.html",
+      "help.html",
+      "tab_class.html",
+      "tab_application.html",
+      "tab_me.html"
+    ]
+  },
+  "details.html": {
+    "resources": [
+      "images/cbd.jpg",
+      "images/muwu.jpg",
+      "images/logo.png",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "images/shuijiao.jpg"
+    ],
+    "refer": []
+  },
+  "content.html": {
+    "resources": [
+      "images/cbd.jpg",
+      "images/muwu.jpg",
+      "images/logo.png",
+      "images/shuijiao.jpg",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "examples/content.html": {
+    "resources": [
+      "examples/js/mui.min.js",
+      "examples/css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "examples/index.html": {
+    "resources": [
+      "examples/js/mui.min.js",
+      "examples/js/app/index.js",
+      "examples/css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "tab_home.html": {
+    "resources": [
+      "js/app/tab_home.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "content.html",
+      "images/cbd.jpg",
+      "images/muwu.jpg",
+      "images/logo.png",
+      "images/shuijiao.jpg",
+      "js/app/index.js",
+      "tab_chat.html",
+      "images/yuantiao.jpg",
+      "fonts/mui.ttf",
+      "js/jquery-3.1.0.js",
+      "css/mo.css"
+    ],
+    "refer": [
+      "content.html",
+      "tab_pengyouquan.html",
+      "tab_chat.html",
+      "tab_contact.html",
+      "tab_setting.html",
+      "help.html"
+    ]
+  },
+  "tab_chat.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/app/index.js",
+      "tab_home.html",
+      "tab_pengyouquan.html",
+      "css/app.css",
+      "js/lib/jquery-3.1.0.js",
+      "js/app/tab_chat.js",
+      "fonts/mui.ttf",
+      "images/shuijiao.jpg"
+    ],
+    "refer": [
+      "tab_pengyouquan.html",
+      "tab_contact.html",
+      "tab_home.html",
+      "tab_setting.html"
+    ]
+  },
+  "tab_pengyouquan.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf"
+    ],
+    "refer": []
+  },
+  "tab_contact.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "tab_home.html",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "tab_pengyouquan.html",
+      "tab_chat.html",
+      "tab_home.html",
+      "tab_setting.html"
+    ]
+  },
+  "tab_setting.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "tab_home.html",
+      "images/cbd.jpg",
+      "images/muwu.jpg",
+      "images/logo.png",
+      "fonts/mui.ttf",
+      "images/shuijiao.jpg"
+    ],
+    "refer": [
+      "tab_pengyouquan.html",
+      "tab_chat.html",
+      "tab_contact.html",
+      "tab_home.html"
+    ]
+  },
+  "bar_menu.html": {
+    "resources": [
+      "images/logo.png",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/lib/mui.min.js"
+    ],
+    "refer": []
+  },
+  "login.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/app/login.js",
+      "fonts/mui.ttf"
+    ],
+    "refer": []
+  },
+  "help.html": {
+    "resources": [
+      "js/app/help.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "tab_class.html": {
+    "resources": [
+      "js/app/tab_class.js"
+    ],
+    "refer": []
+  },
+  "html/login/login.html": {
+    "resources": [
+      "js/app.js",
+      "js/mui.min.js",
+      "js/mui.enterfocus.js",
+      "css/style.css",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "html/login/main.html"
+    ]
+  }
 }
