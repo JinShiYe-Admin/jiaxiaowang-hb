@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/app/class/myclass.js"></script>
+		<style>
+			.mui-control-content {
+				background-color: white;
+			}
+
+			.mui-slider-indicator {
+				background-color: white;
+			}
+
+			.focus-text {
+				background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+				bottom: 0;
+				color: #fff;
+				display: block;
+				height: 30%;
+				line-height: 30px;
+				overflow: hidden;
+				position: absolute;
+				text-align: center;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content ">
+			<div id="slider" class="mui-slider  mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-positive">
+					<a class="mui-control-item" href="#item1mobile">
+						帖子
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						作业
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						相册
+					</a>
+					<a class="mui-control-item" href="#item4mobile">
+						成员
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3 mui-segmented-control-positive"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content ">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view" id="scroll1">
+									<!--<li class="mui-table-view-cell mui-media">
+										<a>
+											<img class="mui-media-object mui-pull-left" src="../../images/logo.png">
+											<div class="mui-media-body">
+												<span>
+													<div class="mui-ellipsis">
+														<font color="red">荐&nbsp;</font>
+														<font color="green">精&nbsp;</font>
+														<font color="orange">顶&nbsp;</font>
+														<font >一二三四五六七八九十一二三四五六七八九十</font>
+													</div>
+												</span>
+												<p><span>
+													<div class="mui-ellipsis">
+														<font>莫尚霖</font>
+														<font color="blue">V&nbsp;</font>
+														<font>09月06日&nbsp;阅100&nbsp;回100</font>
+													</div>
+												</span></p>
+											</div>
+										</a>
+									</li>-->
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content ">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										第二个选项卡子项-1
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content mui-active" style="background: transparent;">
+						<div  class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view" style="background: transparent;" id="scroll3">
+									<!--<li class="mui-card mui-table-view-cell ">
+										<a>
+											<div style="position: relative; width: 30%;" class="mui-media-body mui-pull-left">
+												<img src="../../images/shuijiao.jpg" />
+												<p class="focus-text">555张</p>
+											</div>
+											<div class="mui-media-body" style="padding-left: 20px;">
+												一年级上学期
+											</div>
+											<div class="mui-media-body" style="padding-left: 20px;">
+												<span style=" position:absolute;bottom:0px;text-align: left;">
+												<p>李宽
+													<font color="blue">V</font>
+												</p>
+												<p>09月05日&nbsp;100阅&nbsp;100回</p>
+												</span>
+											</div>
+										</a>
+									</li>-->
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					<div id="item4mobile" class="mui-slider-item mui-control-content ">
+						<div id="scroll4" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										第四个选项卡子项-1
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -191,9 +191,16 @@
 	},
 	"tab_class.html": {
 		"resources": [
-			"js/app/tab_class.js"
+			"js/app/tab_class.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"html/class/myclass.html"
 		],
-		"refer": []
+		"refer": [
+			"html/class/myclass.html",
+			"html/class/allclass.html"
+		]
 	},
 	"html/login/login.html": {
 		"resources": [
@@ -235,6 +242,174 @@
 		],
 		"refer": [
 			"html/login/login.html"
+		]
+	},
+	"tab_me.html": {
+		"resources": [
+			"images/yuantiao.jpg"
+		]
+	},
+	"html/class/myclass.html": {
+		"resources": [
+			"js/app/class/myclass.js",
+			"images/logo.png",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		]
+	},
+	"html/class/allclass.html": {
+		"resources": [
+			"js/app/class/allclass.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"fonts/mui.ttf",
+			"images/shuijiao.jpg",
+			"images/qq.png"
+		]
+	},
+	"tab_application.html": {
+		"resources": [
+			"js/app/application/application.js"
+		],
+		"refer": [
+			"html/application/sport.html",
+			"html/application/xiaoBo.html",
+			"html/application/weiQun.html",
+			"html/application/touPiao.html",
+			"html/application/weiKe.html",
+			"html/application/zhiQin.html",
+			"html/application/alburm.html"
+		]
+	},
+	"html/application/sport.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"html/application/weiQun.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"html/application/xiaoBo_sup.html",
+			"html/application/weiQun_sup.html"
+		],
+		"refer": [
+			"html/application/xiaoBo_sup.html",
+			"html/application/weiQun_sup.html"
+		]
+	},
+	"html/application/touPiao.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"html/application/weiQun_sup.html",
+			"css/image_control.css",
+			"html/application/touPiao_sup.html"
+		],
+		"refer": [
+			"html/application/weiQun_sup.html",
+			"html/application/touPiao_sup.html"
+		]
+	},
+	"html/application/zhiQin.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"html/application/fangXue.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"html/application/weiKe.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"html/application/xiaoBo.html": {
+		"resources": [
+			"images/cbd.jpg",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"html/application/xiaoBo_sup.html"
+		],
+		"refer": [
+			"html/application/xiaoBo_sup.html"
+		]
+	},
+	"html/application/xiaoBo_sup.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"images/cbd.jpg"
+		]
+	},
+	"html/application/weiQun_sup.html": {
+		"resources": [
+			"images/muwu.jpg",
+			"images/shuijiao.jpg",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"fonts/mui.ttf"
+		]
+	},
+	"html/application/touPiao_sup.html": {
+		"resources": [
+			"images/cbd.jpg",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/image_control.css"
+		]
+	},
+	"html/application/alburm.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"html/application/xiaoBo_sup.html",
+			"css/app.css",
+			"js/app/application/alburm.js",
+			"html/application/alburm_school.html"
+		],
+		"refer": [
+			"html/application/xiaoBo_sup.html",
+			"html/application/alburm_my.html",
+			"html/application/alburm_school.html",
+			"html/application/weiQun_sup.html"
+		]
+	},
+	"html/application/alburm_my.html": {
+		"resources": [
+			"html/application/xiaoBo_sup.html",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"html/application/xiaoBo_sup.html"
+		]
+	},
+	"html/application/alburm_school.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"html/application/xiaoBo_sup.html",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"html/application/xiaoBo_sup.html"
 		]
 	}
 }
