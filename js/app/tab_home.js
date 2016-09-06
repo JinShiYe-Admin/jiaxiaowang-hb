@@ -8,7 +8,7 @@ mui(".mui-table-view").on('tap','.mui-table-view-cell',function(){
   var id = this.getAttribute("id");
   switch (id)
 {
-case "my_job0":
+case "my_job":
 
 //把子页的路径写在数组里面
 var subpages = ['tab_home.html', 'tab_class.html', 'tab_application.html', 'tab_me.html'];
@@ -18,29 +18,31 @@ var subpages = ['tab_home.html', 'tab_class.html', 'tab_application.html', 'tab_
 	plus.webview.hide(subpages[0]);
 
   break;
-case "my_job1":
-
+case "campus_notice":
 	mui.openWindow({
-    id:id,
-    url:'campus_notice.html'
-});
+		id:'touPiao',
+		url:'html/remind/campusNotice.html',
+						show: {
+								aniShow: 'pop-in'
+							}
+		});
   break;
-case "my_job2":
+case "class_post":
 	mui.openWindow({
-    id:id,
-    url:'class_post.html'
+    id:"classPost",
+    url:'html/remind/classPost.html'
   });
   break;
-case "my_job3":
+case "xiaoBo":
 	mui.openWindow({
-    id:id,
-    url:'school_blog.html'
+    id:"xiaoBo",
+    url:'html/application/xiaoBo.html'
   });
   break;
-case "my_job4":
+case "sunshine_sports":
 	mui.openWindow({
-    id:id,
-    url:'sunshine_sports.html'
+    id:"sunSports",
+    url:'html/remind/sunSports.html'
   });
   break;
 
