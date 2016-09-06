@@ -299,7 +299,13 @@
 		"resources": [
 			"js/mui.min.js",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"html/application/weiQun_sup.html",
+			"css/image_control.css"
+		],
+		"refer": [
+			"html/application/weiQun_sup.html",
+			"html/application/touPiao_sup.html"
 		]
 	},
 	"html/application/zhiQin.html": {
@@ -350,6 +356,15 @@
 			"js/mui.min.js",
 			"css/mui.min.css",
 			"fonts/mui.ttf"
+		]
+	},
+	"html/application/touPiao_sup.html": {
+		"resources": [
+			"images/cbd.jpg",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/image_control.css"
 		]
 	}
 }
