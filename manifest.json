@@ -453,7 +453,10 @@
 					"html/application/sport.html",
 					"html/application/xiaoBo.html",
 					"html/application/weiQun.html",
-					"html/application/touPiao.html"
+					"html/application/touPiao.html",
+					"html/application/weiKe.html",
+					"html/application/zhiQin.html",
+					"html/application/alburm.html"
 				],
 				"priority": 0
 			},
@@ -483,11 +486,10 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"html/application/weiQun_sup.html",
-					"css/image_control.css"
-				],
-				"refer": [
+					"css/image_control.css",
 					"html/application/touPiao_sup.html"
 				],
+				"refer": [],
 				"priority": 0
 			},
 			"html/application/zhiQin.html": {
@@ -556,6 +558,15 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"css/image_control.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/application/alburm.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0
