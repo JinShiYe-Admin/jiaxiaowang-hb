@@ -269,7 +269,8 @@
 			"js/app/application/application.js"
 		],
 		"refer": [
-			"html/application/sport.html"
+			"html/application/sport.html",
+			"html/application/xiaoBo.html"
 		]
 	},
 	"html/application/sport.html": {
@@ -319,7 +320,19 @@
 			"images/cbd.jpg",
 			"js/mui.min.js",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"html/application/xiaoBo_sup.html"
+		],
+		"refer": [
+			"html/application/xiaoBo_sup.html"
+		]
+	},
+	"html/application/xiaoBo_sup.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"images/cbd.jpg"
 		]
 	}
 }
