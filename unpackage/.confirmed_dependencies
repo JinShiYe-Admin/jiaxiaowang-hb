@@ -278,5 +278,48 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css"
 		]
+	},
+	"html/application/weiQun.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"html/application/touPiao.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"html/application/zhiQin.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"html/application/fangXue.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"html/application/weiKe.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"html/application/xiaoBo.html": {
+		"resources": [
+			"images/cbd.jpg",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
 	}
 }
