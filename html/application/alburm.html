@@ -1,49 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
-		<title></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
+	
+		
+		<!--标准mui.css-->
 		<link rel="stylesheet" href="../../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/app.css"/>
+		<script type="text/javascript" src="../../js/app/application/alburm.js" ></script>
+		
 	</head>
-
 	<body>
-		<header class="mui-bar mui-bar-nav" style="text-align: center;">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		    <button id="schoolAlburm" type="button" class="mui-btn mui-btn-success" href="alburm_school_sup">全校相册</button>
-		    <button id="myAlburm" type="button" class="mui-btn" href="alburm_my_sup">我的相册</button>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<button id="alburm_school" type="button" class="mui-btn mui-btn-success">全校相册</button>
+			<button id="alburm_my" type="button" class="mui-btn">我的相册</button>
 		</header>
 		
-		<div class="mui-content"></div>
+
 	</body>
-	<script src="../../js/mui.min.js"></script>
-	<script type="text/javascript">
-//		//启用双击监听
-//		mui.init({
-//			gestureConfig:{
-//				doubletap:true
-//			},
-//			subpages:[{ 
-//				url:'xiaoBo_sup.html',
-//				id:'xiaoBo_sup',
-//				styles:{
-//					top: '45px',
-//					bottom: '0px', 
-//				}
-//			}] 
-//		});
-//		
-//		
-//		var contentWebview = null;
-//		document.querySelector('header').addEventListener('doubletap',function () {
-//			if(contentWebview==null){
-//				contentWebview = plus.webview.currentWebview().children()[0];
-//			}
-//			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
-//		});
-	</script>
 
 </html>

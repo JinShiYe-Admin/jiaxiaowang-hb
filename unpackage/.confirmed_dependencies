@@ -377,7 +377,9 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css",
-			"html/application/xiaoBo_sup.html"
+			"html/application/xiaoBo_sup.html",
+			"css/app.css",
+			"js/app/application/alburm.js"
 		],
 		"refer": [
 			"html/application/xiaoBo_sup.html"
