@@ -428,7 +428,8 @@
 			},
 			"html/class/myclass.html": {
 				"resources": [
-					"js/app/class/myclass.js"
+					"js/app/class/myclass.js",
+					"images/logo.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -566,7 +567,8 @@
 				"resources": [
 					"js/mui.min.js",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"html/application/xiaoBo_sup.html"
 				],
 				"refer": [],
 				"priority": 0
