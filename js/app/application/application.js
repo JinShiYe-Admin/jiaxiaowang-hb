@@ -1,9 +1,10 @@
 mui.init({
 	swipBack:false,
 });
-mui.plusReady(
+
 	var jumpTo =function(mId){
-		document.getElementById(mId).addEventListener('tap',function(){
+		mui.plusReady(
+			document.getElementById(mId).addEventListener('tap',function(){
 					mui.openWindow({
 						id:mId,
 						url:('html/application/'+mId+'.html'),
@@ -12,5 +13,6 @@ mui.plusReady(
 							}
 					});
 				})
+		)
+		
 	};
-)

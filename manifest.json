@@ -444,6 +444,24 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"tab_application.html": {
+				"resources": [
+					"js/app/application/application.js"
+				],
+				"refer": [
+					"html/application/sport.html"
+				],
+				"priority": 0
+			},
+			"html/application/sport.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
