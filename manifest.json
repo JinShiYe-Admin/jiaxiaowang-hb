@@ -429,7 +429,9 @@
 			"html/class/myclass.html": {
 				"resources": [
 					"js/app/class/myclass.js",
-					"images/logo.png"
+					"images/logo.png",
+					"js/mui.min.js",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -570,7 +572,29 @@
 					"css/mui.min.css",
 					"html/application/xiaoBo_sup.html",
 					"css/app.css",
-					"js/app/application/alburm.js"
+					"js/app/application/alburm.js",
+					"html/application/alburm_school.html"
+				],
+				"refer": [
+					"html/application/alburm_my.html"
+				],
+				"priority": 0
+			},
+			"html/application/alburm_my.html": {
+				"resources": [
+					"html/application/xiaoBo_sup.html",
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/application/alburm_school.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"html/application/xiaoBo_sup.html",
+					"js/mui.min.js",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0

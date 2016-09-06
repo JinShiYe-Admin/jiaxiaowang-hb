@@ -11,10 +11,10 @@
 	</head>
 
 	<body>
-		<header class="mui-bar mui-bar-nav">
+		<!--<header class="mui-bar mui-bar-nav">
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 		    <h1 class="mui-title">校博</h1>
-		</header>
+		</header>-->
 		
 		<div class="mui-content"></div>
 	</body>
@@ -29,19 +29,19 @@
 				url:'xiaoBo_sup.html',
 				id:'xiaoBo_sup',
 				styles:{
-					top: '45px',
+					top: '0px',
 					bottom: '0px', 
 				}
 			}] 
 		});
 	
-		var contentWebview = null;
-		document.querySelector('header').addEventListener('doubletap',function () {
-			if(contentWebview==null){
-				contentWebview = plus.webview.currentWebview().children()[0];
-			}
-			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
-		});
+//		var contentWebview = null;
+//		document.querySelector('header').addEventListener('doubletap',function () {
+//			if(contentWebview==null){
+//				contentWebview = plus.webview.currentWebview().children()[0];
+//			}
+//			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
+//		});
 	</script>
 
 </html>

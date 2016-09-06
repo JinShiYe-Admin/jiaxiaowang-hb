@@ -2,7 +2,7 @@ mui.init({
 	swipeBack: false,
 });
 
-var subpages = ['html/application/alburm_school.html', 'html/application/alburm_my.html'];
+var subpages = ['alburm_school.html', 'alburm_my.html'];
 var subpage_style = {
 	top: '45px',
 	bottom: '0px'
@@ -13,19 +13,9 @@ var aniShow = {};
 mui.plusReady(function() {
 	//顶部导航
 	var header = document.getElementById("header");
-	var btn_allclass = document.getElementById('alburm_school');
-	var btn_myclass = document.getElementById('alburm_my');
-	//创建右上角按钮
-	var righticon = document.createElement('a');
-	righticon.className = 'mui-icon mui-action-menu mui-icon-plusempty mui-pull-right';
-	righticon.id = 'picture-btn';
-	//移除右上角按钮
-	function remove(selector) {
-		var elem = header.querySelector(selector);
-		if(elem) {
-			header.removeChild(elem);
-		}
-	}
+	var btn_shool = document.getElementById('alburm_school');
+	var btn_my = document.getElementById('alburm_my');
+
 	//创建子页面，首个选项卡页面显示，其它均隐藏；
 	var self = plus.webview.currentWebview();
 	for(var i = 0; i < 2; i++) {
@@ -39,9 +29,8 @@ mui.plusReady(function() {
 		}
 		self.append(sub);
 	}
-	header.appendChild(righticon); //增加右上角按钮
-	addrighticonlistener(); //增加右上角按钮监听事件
-	btn_myclass.innerText = '一年级一班';
+
+//	btn_myclass.innerText = '';
 	var activeTab = subpages[0]; //当前激活选项
 	//增加顶部导航两个选项监听事件
 	mui('.mui-bar-nav').on('tap', 'button', function(e) {
@@ -65,47 +54,16 @@ mui.plusReady(function() {
 		plus.webview.hide(activeTab);
 		//更改当前活跃的选项卡
 		activeTab = targetTab;
-		if(activeTab == subpages[0]) { //我的班级
+		if(activeTab == subpages[0]) { 
 			header.appendChild(righticon);
-			btn_myclass.innerText = '一年级一班';
-			btn_allclass.className = 'mui-btn ';
-			btn_myclass.className = 'mui-btn mui-btn-success';
+			btn_my.className='mui-btn'
+			btn_shool.className = 'mui-btn mui-btn-success';
 		} else { //全校班级
 			remove('.mui-pull-right')
-			btn_myclass.innerText = '我的班级';
-			btn_allclass.className = 'mui-btn mui-btn-success';
-			btn_myclass.className = 'mui-btn';
+			
+			btn_my.className = 'mui-btn mui-btn-success';
+			btn_school.className = 'mui-btn';
 		}
 	});
 });
 
-function addrighticonlistener() {
-	//增加右上角按钮监听事件
-	document.getElementById("picture-btn").addEventListener('tap', function() {
-		var btnArray = [{
-			title: "班内发帖"
-		}, {
-			title: "上传照片"
-		}];
-		plus.nativeUI.actionSheet({
-			title: "选择发布内容",
-			cancel: "取消",
-			buttons: btnArray
-		}, function(e) {
-			var index = e.index;
-			var text = "";
-			switch(index) {
-				case 0:
-					text += "取消";
-					break;
-				case 1:
-					text += "班内发帖";
-					break;
-				case 2:
-					text += "上传照片";
-					break;
-			}
-			console.log("你刚点击了：" + text);
-		});
-	});
-}

@@ -29,19 +29,19 @@
 				url:'xiaoBo_sup.html',
 				id:'xiaoBo_sup',
 				styles:{
-					top: '45px',
+					top: '0px',
 					bottom: '0px', 
 				}
 			}] 
 		});
 	
 		var contentWebview = null;
-		document.querySelector('header').addEventListener('doubletap',function () {
-			if(contentWebview==null){
-				contentWebview = plus.webview.currentWebview().children()[0];
-			}
-			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
-		});
+//		document.querySelector('header').addEventListener('doubletap',function () {
+//			if(contentWebview==null){
+//				contentWebview = plus.webview.currentWebview().children()[0];
+//			}
+//			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
+//		});
 	</script>
 
 </html>
