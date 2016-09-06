@@ -10,7 +10,6 @@ mui(".mui-table-view").on('tap','.mui-table-view-cell',function(){
 {
 case "my_job0":
 	mui.openWindow({
-    id:id,
     url:'my_job.html'
   });
   break;
