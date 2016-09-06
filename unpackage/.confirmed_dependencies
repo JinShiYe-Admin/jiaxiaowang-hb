@@ -387,7 +387,8 @@
 		"refer": [
 			"html/application/xiaoBo_sup.html",
 			"html/application/alburm_my.html",
-			"html/application/alburm_school.html"
+			"html/application/alburm_school.html",
+			"html/application/weiQun_sup.html"
 		]
 	},
 	"html/application/alburm_my.html": {

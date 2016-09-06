@@ -12,8 +12,8 @@ var aniShow = {};
 
 mui.plusReady(function() {
 	//顶部导航
-	var header = document.getElementById("header");
-	var btn_shool = document.getElementById('alburm_school');
+//	var header = document.getElementById("header");
+	var btn_school = document.getElementById('alburm_school');
 	var btn_my = document.getElementById('alburm_my');
 
 	//创建子页面，首个选项卡页面显示，其它均隐藏；
@@ -55,12 +55,11 @@ mui.plusReady(function() {
 		//更改当前活跃的选项卡
 		activeTab = targetTab;
 		if(activeTab == subpages[0]) { 
-			header.appendChild(righticon);
-			btn_my.className='mui-btn'
-			btn_shool.className = 'mui-btn mui-btn-success';
+		
+			btn_my.className='mui-btn';
+			btn_school.className = 'mui-btn mui-btn-success';
 		} else { //全校班级
-			remove('.mui-pull-right')
-			
+		
 			btn_my.className = 'mui-btn mui-btn-success';
 			btn_school.className = 'mui-btn';
 		}

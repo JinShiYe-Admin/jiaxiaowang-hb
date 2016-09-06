@@ -576,7 +576,8 @@
 					"html/application/alburm_school.html"
 				],
 				"refer": [
-					"html/application/alburm_my.html"
+					"html/application/alburm_my.html",
+					"html/application/weiQun_sup.html"
 				],
 				"priority": 0
 			},
