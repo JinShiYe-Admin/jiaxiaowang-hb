@@ -433,9 +433,17 @@
 					"js/app/class/myclass.js",
 					"images/logo.png",
 					"js/mui.min.js",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"images/shuijiao.jpg",
+					"images/qq.png",
+					"html/class/firstlist.html",
+					"fonts/mui.ttf"
 				],
-				"refer": [],
+				"refer": [
+					"html/class/thirdlist.html",
+					"html/class/secondlist.html",
+					"html/class/fourthlist.html"
+				],
 				"priority": 0
 			},
 			"html/class/allclass.html": {
@@ -512,18 +520,18 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"html/application/xiaoBo_sup.html"
-				],
-				"refer": [
+					"html/application/xiaoBo_sup.html",
 					"html/application/fangXue_sup.html"
 				],
+				"refer": [],
 				"priority": 0
 			},
 			"html/application/weiKe.html": {
 				"resources": [
 					"js/mui.min.js",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"html/application/weiKe_sup.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -625,6 +633,37 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/application/weiKe_sup.html": {
+				"resources": [
+					"images/cbd.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/class/firstlist.html": {
+				"resources": [
+					"js/app/class/firstlist.js",
+					"images/logo.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/class/thirdlist.html": {
+				"resources": [
+					"images/shuijiao.jpg",
+					"js/app/class/thirdlist.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/class/fourthlist.html": {
+				"resources": [
+					"js/app/class/fourthlist.js",
+					"images/qq.png"
 				],
 				"refer": [],
 				"priority": 0
