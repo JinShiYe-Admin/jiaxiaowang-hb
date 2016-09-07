@@ -395,10 +395,12 @@
 		"resources": [
 			"html/application/xiaoBo_sup.html",
 			"js/mui.min.js",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"html/application/weiQun_sup.html"
 		],
 		"refer": [
-			"html/application/xiaoBo_sup.html"
+			"html/application/xiaoBo_sup.html",
+			"html/application/weiQun_sup.html"
 		]
 	},
 	"html/application/alburm_school.html": {
