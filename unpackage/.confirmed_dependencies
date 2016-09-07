@@ -433,7 +433,11 @@
 	},
 	"html/application/fangXue_sup.html": {
 		"resources": [
-			"images/qihoo.png"
+			"images/qihoo.png",
+			"images/muwu.jpg",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	}
 }
