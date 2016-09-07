@@ -98,7 +98,9 @@
 			"tab_chat.html",
 			"tab_contact.html",
 			"tab_setting.html",
-			"help.html"
+			"help.html",
+			"html/application/xiaoBo.html",
+			"html/remind/sunSports.html"
 		]
 	},
 	"tab_chat.html": {
@@ -278,7 +280,8 @@
 			"html/application/touPiao.html",
 			"html/application/weiKe.html",
 			"html/application/zhiQin.html",
-			"html/application/alburm.html"
+			"html/application/alburm.html",
+			"html/application/fangXue.html"
 		]
 	},
 	"html/application/sport.html": {
@@ -412,6 +415,15 @@
 		],
 		"refer": [
 			"html/application/xiaoBo_sup.html"
+		]
+	},
+	"html/remind/sunSports.html": {
+		"resources": [
+			"css/image_control.css",
+			"images/yuantiao.jpg",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	}
 }

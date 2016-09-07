@@ -265,7 +265,9 @@
 					"tab_pengyouquan.html",
 					"tab_contact.html",
 					"tab_setting.html",
-					"help.html"
+					"help.html",
+					"html/application/xiaoBo.html",
+					"html/remind/sunSports.html"
 				],
 				"priority": 0
 			},
@@ -459,7 +461,8 @@
 					"html/application/touPiao.html",
 					"html/application/weiKe.html",
 					"html/application/zhiQin.html",
-					"html/application/alburm.html"
+					"html/application/alburm.html",
+					"html/application/fangXue.html"
 				],
 				"priority": 0
 			},
@@ -596,6 +599,17 @@
 					"fonts/mui.ttf",
 					"html/application/xiaoBo_sup.html",
 					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/remind/sunSports.html": {
+				"resources": [
+					"css/image_control.css",
+					"images/yuantiao.jpg",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
 					"css/mui.min.css"
 				],
 				"refer": [],
