@@ -478,7 +478,9 @@
 				"resources": [
 					"js/mui.min.js",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"css/image_control.css",
+					"images/yuantiao.jpg"
 				],
 				"refer": [],
 				"priority": 0
@@ -663,7 +665,8 @@
 			"html/class/fourthlist.html": {
 				"resources": [
 					"js/app/class/fourthlist.js",
-					"images/qq.png"
+					"images/qq.png",
+					"images/logo.png"
 				],
 				"refer": [],
 				"priority": 0
