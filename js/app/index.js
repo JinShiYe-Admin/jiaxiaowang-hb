@@ -45,4 +45,15 @@ mui.plusReady(function() {
 		console.trace(activeTab)
 		activeTab = targetTab;
 	});
+				document.addEventListener('goemai', function() {
+				var tabclass = document.getElementById("tabclass");
+				//模拟首页点击
+				mui.trigger(tabclass, 'tap');
+				//切换选项卡高亮
+				var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-active");
+				if (tabclass !== current) {
+					current.classList.remove('mui-active');
+					tabclass.classList.add('mui-active');
+				}
+			});
 });
