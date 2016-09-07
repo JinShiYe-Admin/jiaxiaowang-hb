@@ -433,7 +433,9 @@
 					"js/app/class/myclass.js",
 					"images/logo.png",
 					"js/mui.min.js",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"images/shuijiao.jpg",
+					"images/qq.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -512,18 +514,18 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"html/application/xiaoBo_sup.html"
-				],
-				"refer": [
+					"html/application/xiaoBo_sup.html",
 					"html/application/fangXue_sup.html"
 				],
+				"refer": [],
 				"priority": 0
 			},
 			"html/application/weiKe.html": {
 				"resources": [
 					"js/mui.min.js",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"html/application/weiKe_sup.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -625,6 +627,13 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/application/weiKe_sup.html": {
+				"resources": [
+					"images/cbd.jpg"
 				],
 				"refer": [],
 				"priority": 0
