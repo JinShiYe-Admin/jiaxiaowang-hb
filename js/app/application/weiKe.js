@@ -19,8 +19,15 @@ mui.plusReady(
 			openNewPage("search")
 			
 		})
-		window.addEventListener("pageRefresh",function(e){
-			btn_grade.innerText=e.detail.id
+		window.addEventListener('pageRefresh',function(e){
+		
+		if(typeof (e.detail.data) !== 'undefined'){
+			btn_grade.innerText=e.detail.data
+		}
+		if(typeof (e.detail.subject) !== 'undefined'){
+			btn_subject.innerText=e.detail.subject
+		}
+		
 		})
 	}
 )

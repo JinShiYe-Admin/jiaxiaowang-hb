@@ -697,18 +697,24 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"js/app/application/weiKe_child.js"
+					"js/app/application/weiKe_child.js",
+					"js/app/application/weiKe_grade.js"
 				],
-				"refer": [],
+				"refer": [
+					"html/application/weiKe.html"
+				],
 				"priority": 0
 			},
 			"html/application/choose_subject.html": {
 				"resources": [
 					"js/mui.min.js",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/app/application/weiKe_suject.js"
 				],
-				"refer": [],
+				"refer": [
+					"html/application/weiKe.html"
+				],
 				"priority": 0
 			}
 		},
