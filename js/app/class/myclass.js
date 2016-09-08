@@ -91,7 +91,8 @@ mui.plusReady((function() {
 	var activeTab = subpages[0]; //当前激活选项
 	var targetTab;
 	//监听切换列表
-	document.getElementById('slider').addEventListener('slide', function(e) {
+	var mslider = document.getElementById('slider');
+	mslider.addEventListener('slide', function(e) {
 		if(e.detail.slideNumber === 0) {
 			targetTab = 'firstlist.html';
 		} else if(e.detail.slideNumber === 1) {
@@ -121,5 +122,13 @@ mui.plusReady((function() {
 		//更改当前活跃的选项卡
 		activeTab = targetTab;
 	});
-
+	var table = document.body.querySelector('.mui-control-item');
+	table.addEventListener('tap', function (){
+		console.log('tap');
+	});
 }));
+window.addEventListener("changeitem", function (e) {
+    var id = e.detail.id;
+    var gallery = mui('.mui-slider');
+	gallery.slider().gotoItem(id);
+});
