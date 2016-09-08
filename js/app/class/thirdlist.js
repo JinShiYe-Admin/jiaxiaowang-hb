@@ -1,3 +1,6 @@
+/**
+ * 班级页第三个列表
+ */
 mui.init({
 	pullRefresh: {
 		container: "#thirdlist", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等

@@ -1,3 +1,6 @@
+/**
+ * 我的班级
+ */
 mui.init({
 	swipeBack: false
 });
@@ -90,20 +93,15 @@ mui.plusReady((function() {
 	//监听切换列表
 	document.getElementById('slider').addEventListener('slide', function(e) {
 		if(e.detail.slideNumber === 0) {
-			console.log("0", "0");
 			targetTab = 'firstlist.html';
 		} else if(e.detail.slideNumber === 1) {
-			console.log("1", "1");
 			targetTab = 'secondlist.html';
 		} else if(e.detail.slideNumber === 2) {
-			console.log("2", "2");
 			targetTab = 'thirdlist.html';
 		} else if(e.detail.slideNumber === 3) {
-			console.log("3", "3");
 			targetTab = 'fourthlist.html';
 		}
 
-		console.log("targetTab", targetTab);
 		if(targetTab == activeTab) {
 			return;
 		}
@@ -118,7 +116,6 @@ mui.plusReady((function() {
 			mui.extend(aniShow, temp);
 			plus.webview.show(targetTab, "fade-in", 300);
 		}
-
 		//隐藏当前;
 		plus.webview.hide(activeTab);
 		//更改当前活跃的选项卡
