@@ -10,12 +10,12 @@ mui(".mui-table-view").on('tap','.mui-table-view-cell',function(){
 {
 case "my_job":
 
-//把子页的路径写在数组里面
-var subpages = ['tab_home.html', 'tab_class.html', 'tab_application.html', 'tab_me.html'];
-	//显示目标选项卡
-	plus.webview.show(subpages[1]);
-	//隐藏当前选项卡
-	plus.webview.hide(subpages[0]);
+////把子页的路径写在数组里面
+//var subpages = ['tab_home.html', 'tab_class.html', 'tab_application.html', 'tab_me.html'];
+//	//显示目标选项卡
+//	plus.webview.show(subpages[1]);
+//	//隐藏当前选项卡
+//	plus.webview.hide(subpages[0]);
 
   break;
 case "campus_notice":

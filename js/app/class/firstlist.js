@@ -35,7 +35,7 @@ mui.plusReady((function() {
 		li2.innerHTML = html12;
 		table.appendChild(li2);
 	}
-}));
+	}));
 
 //刷新数
 var num = 0;
@@ -61,7 +61,6 @@ function pulldownRefresh() {
 }
 //刷新数
 var more = 0;
-var count = 0;
 /**
  * 上拉加载具体业务实现
  */
@@ -78,5 +77,5 @@ function pullupRefresh() {
 			table.appendChild(li);
 		}
 	}, 500);
-	 this.endPullupToRefresh();
+	this.endPullupToRefresh();
 }
