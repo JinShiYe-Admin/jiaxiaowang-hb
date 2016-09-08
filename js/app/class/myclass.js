@@ -1,3 +1,6 @@
+/**
+ * 我的班级
+ */
 mui.init({
 	swipeBack: false
 });
