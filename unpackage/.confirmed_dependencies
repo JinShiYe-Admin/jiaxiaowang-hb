@@ -358,10 +358,14 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css",
-			"html/application/weiKe_sup.html"
+			"html/application/weiKe_sup.html",
+			"js/app/application/weiKe.js"
 		],
 		"refer": [
-			"html/application/weiKe_sup.html"
+			"html/application/weiKe_sup.html",
+			"html/application/choose_grade.html",
+			"html/application/choose_subject.html",
+			"html/application/search.html"
 		]
 	},
 	"html/application/xiaoBo.html": {
@@ -477,7 +481,9 @@
 	"html/class/thirdlist.html": {
 		"resources": [
 			"images/shuijiao.jpg",
-			"js/app/class/thirdlist.js"
+			"js/app/class/thirdlist.js",
+			"js/mui.min.js",
+			"css/mui.min.css"
 		]
 	},
 	"html/class/fourthlist.html": {
@@ -485,6 +491,28 @@
 			"js/app/class/fourthlist.js",
 			"images/qq.png",
 			"images/logo.png"
+		]
+	},
+	"html/application/search.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"html/application/choose_grade.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/app/application/weiKe_child.js"
+		]
+	},
+	"html/application/choose_subject.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	}
 }
