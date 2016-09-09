@@ -54,7 +54,7 @@ var num = 0;
  * 下拉刷新具体业务实现
  */
 function pulldownRefresh() {
-	setTimeout(function() {
+	//setTimeout(function() {
 		//下拉刷新
 		var table = document.body.querySelector('.mui-table-view');
 		table.innerHTML = '';
@@ -68,7 +68,7 @@ function pulldownRefresh() {
 			table.appendChild(li);
 		}
 		mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-	}, 500);
+	//}, 500);
 }
 //刷新数
 var more = 0;
@@ -76,7 +76,7 @@ var more = 0;
  * 上拉加载具体业务实现
  */
 function pullupRefresh() {
-	setTimeout(function() {
+	//setTimeout(function() {
 		mui('#pullrefresh').pullRefresh().endPullupToRefresh(); //参数为true代表没有更多数据了。
 		var table = document.body.querySelector('.mui-table-view');
 		for(var i = 0; i < 10; i++) {
@@ -87,6 +87,6 @@ function pullupRefresh() {
 			li.innerHTML = htmlmore;
 			table.appendChild(li);
 		}
-	}, 500);
+	//}, 500);
 	this.endPullupToRefresh();
 }
