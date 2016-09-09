@@ -10,42 +10,50 @@
 
 	<body>
 		<script src="js/mui.min.js"></script>
+		<script src="js/app/application/application.js"></script>
 		<header class="mui-bar mui-bar-nav">
-			<!--<a id="openPopover" href="#sheet1" class="mui-icon mui-action-menu mui-icon-plusempty mui-pull-right"></a>-->
+			<a id="openPopover" href="#sheet1" class="mui-icon mui-action-menu mui-icon-plusempty mui-pull-right"></a>
 			<h1 class="mui-title">应用</h1>
 		</header>
 		<!--九宫格-->
 		<div class="mui-content">
 		        <ul class="mui-table-view mui-grid-view mui-grid-9">
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="xiaoBo" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-home"></span>
 		                    <div class="mui-media-body">校博</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-		                    <span class="mui-icon mui-icon-weixin"></span>
+		            <li id="weiQun"   class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-email"></span>
 		                    <div class="mui-media-body">微群</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="touPiao"  class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-chatbubble"></span>
 		                    <div class="mui-media-body">投票</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="alburm"  class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-camera"></span>
 		                    <div class="mui-media-body">相册</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="fangXue"  class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-search"></span>
 		                    <div class="mui-media-body">放学</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="zhiQin" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-phone"></span>
 		                    <div class="mui-media-body">执勤</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="sport" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-gear"></span>
 		                    <div class="mui-media-body">体育</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li id="weiKe" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-info"></span>
 		                    <div class="mui-media-body">微课</div></a></li>
 		        </ul> 
 		</div>
 
 		<script type="text/javascript">
-			mui.init()
+			jumpTo('xiaoBo');
+			jumpTo('sport');
+			jumpTo('weiQun');
+			jumpTo('touPiao');
+			jumpTo('alburm');
+			jumpTo('fangXue');
+			jumpTo('zhiQin');
+			jumpTo('weiKe');
 		</script>
 	</body>
 
