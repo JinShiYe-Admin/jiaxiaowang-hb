@@ -20,6 +20,6 @@ function isEmail(email){
 	
 }
 //判断注册码正确与否
-function isRegisterNo(){
+function isRegisterNo(no){
 	
 }
