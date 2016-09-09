@@ -438,7 +438,8 @@
 					"images/qq.png",
 					"html/class/firstlist.html",
 					"fonts/mui.ttf",
-					"html/application/xiaoBo_sup.html"
+					"html/application/xiaoBo_sup.html",
+					"js/app/class/myclasssecond.js"
 				],
 				"refer": [
 					"html/class/thirdlist.html",
