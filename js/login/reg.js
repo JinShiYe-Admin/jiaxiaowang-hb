@@ -60,12 +60,12 @@ mui.plusReady(
 						}
 					//昵称重复
 					}else{
-						plus.nativeUI.toast('昵称已注册');
+						plus.nativeUI.toast('账号已注册');
 						return;
 					}
 				//昵称不符合规则	
 				}else{
-					plus.nativeUI.toast('昵称不符合规则');
+					plus.nativeUI.toast('账号不符合规则');
 					return;
 				}
 			//注册码不正确	
