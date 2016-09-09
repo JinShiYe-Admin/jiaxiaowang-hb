@@ -1,3 +1,6 @@
+/**
+ * 班级页第三个列表
+ */
 mui.init({
 	pullRefresh: {
 		container: "#thirdlist", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
@@ -25,6 +28,24 @@ mui.plusReady((function() {
 		li.innerHTML = html;
 		table.appendChild(li);
 	}
+	//通过标签名获取元素
+	var firstlist = document.getElementsByTagName('html')[0];
+	//增加向左滑动事件
+	firstlist.addEventListener('swipeleft', function() {
+		var main = plus.webview.getWebviewById('html/class/myclass.html');
+		//执行main中的changeitems事件
+		mui.fire(main, "changeitem", {
+			id: 3
+		})
+	});
+	//增加向右滑动事件
+	firstlist.addEventListener('swiperight', function() {
+		var main = plus.webview.getWebviewById('html/class/myclass.html');
+		//执行main中的changeitems事件
+		mui.fire(main, "changeitem", {
+			id: 1
+		})
+	});
 }));
 
 //刷新数
@@ -33,7 +54,7 @@ var num = 0;
  * 下拉刷新具体业务实现
  */
 function pulldownRefresh() {
-	setTimeout(function() {
+	//setTimeout(function() {
 		//下拉刷新
 		var table = document.body.querySelector('.mui-table-view');
 		table.innerHTML = '';
@@ -47,7 +68,7 @@ function pulldownRefresh() {
 			table.appendChild(li);
 		}
 		mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-	}, 500);
+	//}, 500);
 }
 //刷新数
 var more = 0;
@@ -55,7 +76,7 @@ var more = 0;
  * 上拉加载具体业务实现
  */
 function pullupRefresh() {
-	setTimeout(function() {
+	//setTimeout(function() {
 		mui('#pullrefresh').pullRefresh().endPullupToRefresh(); //参数为true代表没有更多数据了。
 		var table = document.body.querySelector('.mui-table-view');
 		for(var i = 0; i < 10; i++) {
@@ -66,6 +87,6 @@ function pullupRefresh() {
 			li.innerHTML = htmlmore;
 			table.appendChild(li);
 		}
-	}, 500);
+	//}, 500);
 	this.endPullupToRefresh();
 }
