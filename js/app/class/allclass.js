@@ -44,7 +44,7 @@ var num = 0;
  * 下拉刷新具体业务实现
  */
 function pulldownRefresh() {
-	setTimeout(function() { //延时
+	//setTimeout(function() { //延时
 		//在body中找到第一个mui-table-view类
 		var table = document.body.querySelector('.mui-table-view');
 		//清空table的html代码
@@ -65,5 +65,5 @@ function pulldownRefresh() {
 		}
 		//注意，加载完新数据后，必须执行如下代码，注意：若为ajax请求，则需将如下代码放置在处理完ajax响应数据之后
 		mui('#allclass').pullRefresh().endPulldownToRefresh();
-	}, 500);
+	//}, 500);
 }

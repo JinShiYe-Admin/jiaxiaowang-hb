@@ -33,6 +33,16 @@ mui.plusReady((function() {
 		//将li作为table的子节点添加到table中
 		table.appendChild(li);
 	}
+	//通过标签名获取元素
+	var firstlist = document.getElementsByTagName('html')[0];
+	//增加向右滑动事件
+	firstlist.addEventListener('swiperight', function() {
+		var main = plus.webview.getWebviewById('html/class/myclass.html');
+		//执行main中的changeitems事件
+		mui.fire(main, "changeitem", {
+			id: 2
+		})
+	});
 }));
 
 //刷新数
@@ -41,7 +51,7 @@ var num = 0;
  * 下拉刷新具体业务实现
  */
 function pulldownRefresh() {
-	setTimeout(function() {
+	//setTimeout(function() {
 		//在body中找到第一个mui-table-view类
 		var table = document.body.querySelector('.mui-table-view');
 		table.innerHTML = '';
@@ -59,7 +69,7 @@ function pulldownRefresh() {
 		}
 		//注意，加载完新数据后，必须执行如下代码，注意：若为ajax请求，则需将如下代码放置在处理完ajax响应数据之后
 		mui('#fourthlist').pullRefresh().endPulldownToRefresh(); //refresh completed
-	}, 500);
+	//}, 500);
 }
 //刷新数
 var more = 0;
@@ -67,7 +77,7 @@ var more = 0;
  * 上拉加载具体业务实现
  */
 function pullupRefresh() {
-	setTimeout(function() {
+	//setTimeout(function() {
 		//在body中找到第一个mui-table-view类
 		var table = document.body.querySelector('.mui-table-view');
 		for(var i = 0; i < 10; i++) {
@@ -82,7 +92,7 @@ function pullupRefresh() {
 			//将li作为table的子节点添加到table中
 			table.appendChild(li);
 		}
-	}, 500);
+	//}, 500);
 	//注意：
 	//1、加载完新数据后，必须执行如下代码，true表示没有更多数据了：
 	//2、若为ajax请求，则需将如下代码放置在处理完ajax响应数据之后
