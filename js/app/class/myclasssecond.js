@@ -6,9 +6,9 @@ mui.init({
 });
 
 mui.plusReady((function() {
-	//	mui('.mui-scroll-wrapper').scroll({
-	//		indicators: true //是否显示滚动条
-	//	});
+	mui('.mui-scroll-wrapper').scroll({
+		indicators: true //是否显示滚动条
+	});
 	//	//第一个列表
 	//	//有荐，精，顶图标
 	//	var html1 = '<a><img class="mui-media-object mui-pull-left" src="../../images/logo.png"><div class="mui-media-body"><span><div class="mui-ellipsis"><font color="red">荐&nbsp;</font><font color="green">&nbsp;精&nbsp;</font><font color="orange">&nbsp;顶&nbsp;</font><font>&nbsp;一二三四五六七八九十一二三四五六七八九十</font></div></span><p><span><div class="mui-ellipsis"><font>小熊猫</font><font color="blue">V&nbsp;</font><font>09月06日&nbsp;阅100&nbsp;回100</font></div></span></p></div></a>';
@@ -56,6 +56,7 @@ mui.plusReady((function() {
 	//	}
 	//
 	//	//生成第四个列表的数据
+	//
 	//	for(var i = 0; i < 10; i++) {
 	//		var li = document.createElement('li');
 	//		li.className = 'mui-card mui-table-view-cell ';
@@ -69,66 +70,5 @@ mui.plusReady((function() {
 	//		item42.appendChild(li);
 	//	}
 
-	var subpages = ['firstlist.html', 'secondlist.html', 'thirdlist.html', 'fourthlist.html'];
-	var subpage_style = {
-		top: '45px',
-		bottom: '0px'
-	};
-	var aniShow = {};
-	//创建子页面，首个选项卡页面显示，其它均隐藏；
-	var self = plus.webview.currentWebview();
-	for(var i = 0; i < 4; i++) {
-		var temp = {};
-		var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
-		if(i > 0) {
-			sub.hide();
-		} else {
-			temp[subpages[i]] = "true";
-			mui.extend(aniShow, temp);
-		}
-		self.append(sub);
-	}
-	var activeTab = subpages[0]; //当前激活选项
-	var targetTab;
-	//监听切换列表
-	var mslider = document.getElementById('slider');
-	mslider.addEventListener('slide', function(e) {
-		if(e.detail.slideNumber === 0) {
-			targetTab = 'firstlist.html';
-		} else if(e.detail.slideNumber === 1) {
-			targetTab = 'secondlist.html';
-		} else if(e.detail.slideNumber === 2) {
-			targetTab = 'thirdlist.html';
-		} else if(e.detail.slideNumber === 3) {
-			targetTab = 'fourthlist.html';
-		}
 
-		if(targetTab == activeTab) {
-			return;
-		}
-		//显示目标选项卡
-		//若为iOS平台或非首次显示，则直接显示
-		if(mui.os.ios || aniShow[targetTab]) {
-			plus.webview.show(targetTab);
-		} else {
-			//否则，使用fade-in动画，且保存变量
-			var temp = {};
-			temp[targetTab] = "true";
-			mui.extend(aniShow, temp);
-			plus.webview.show(targetTab, "fade-in", 300);
-		}
-		//隐藏当前;
-		plus.webview.hide(activeTab);
-		//更改当前活跃的选项卡
-		activeTab = targetTab;
-	});
-	var table = document.body.querySelector('.mui-control-item');
-	table.addEventListener('tap', function (){
-		console.log('tap');
-	});
 }));
-window.addEventListener("changeitem", function (e) {
-    var id = e.detail.id;
-    var gallery = mui('.mui-slider');
-	gallery.slider().gotoItem(id);
-});

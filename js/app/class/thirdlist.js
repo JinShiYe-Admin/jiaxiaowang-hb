@@ -1,3 +1,6 @@
+/**
+ * 班级页第三个列表
+ */
 mui.init({
 	pullRefresh: {
 		container: "#thirdlist", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
@@ -25,6 +28,24 @@ mui.plusReady((function() {
 		li.innerHTML = html;
 		table.appendChild(li);
 	}
+	//通过标签名获取元素
+	var firstlist = document.getElementsByTagName('html')[0];
+	//增加向左滑动事件
+	firstlist.addEventListener('swipeleft', function() {
+		var main = plus.webview.getWebviewById('html/class/myclass.html');
+		//执行main中的changeitems事件
+		mui.fire(main, "changeitem", {
+			id: 3
+		})
+	});
+	//增加向右滑动事件
+	firstlist.addEventListener('swiperight', function() {
+		var main = plus.webview.getWebviewById('html/class/myclass.html');
+		//执行main中的changeitems事件
+		mui.fire(main, "changeitem", {
+			id: 1
+		})
+	});
 }));
 
 //刷新数

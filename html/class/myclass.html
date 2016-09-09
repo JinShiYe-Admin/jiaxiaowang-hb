@@ -7,16 +7,8 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<script src="../../js/mui.min.js"></script>
-		<script type="text/javascript" src="../../js/app/class/myclass.js"></script>
+		<script type="text/javascript" src="../../js/app/class/myclasssecond.js"></script>
 		<style>
-			/*.mui-control-content {
-				background-color: white;
-			}
-
-			.mui-slider-indicator {
-				background-color: white;
-			}*/
-
 			.focus-text {
 				background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
 				bottom: 0;
@@ -67,13 +59,13 @@
 	</head>
 
 	<body>
-		<header id="header" class="mui-bar mui-bar-nav mui-pull">
-			<div id="slider" class="mui-slider">
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
 				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-positive">
 					<a class="mui-control-item mui-active" href="#item1mobile">
 						帖子
 					</a>
-					<a class="mui-control-item" href="#item2mobile" id="secondlist">
+					<a class="mui-control-item" href="#item2mobile">
 						作业
 					</a>
 					<a class="mui-control-item" href="#item3mobile">
@@ -84,9 +76,9 @@
 					</a>
 				</div>
 				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3 mui-segmented-control-positive"></div>
-				<div class="mui-slider-group ">
-					<div id="item1mobile" class="mui-slider-item mui-control-content  mui-active" href="html/class/firstlist.html">
-						<!--<div class="mui-scroll-wrapper">
+				<div class="mui-slider-group mui-fullscreen">
+					<div id="item1mobile" class="mui-slider-item mui-control-content  mui-active">
+						<div class="mui-scroll-wrapper">
 							<div class="mui-scroll">
 								<ul class="mui-table-view" id="scroll1">
 									<li class="mui-table-view-cell mui-media">
@@ -113,10 +105,10 @@
 									</li>
 								</ul>
 							</div>
-						</div>-->
+						</div>
 					</div>
-					<div id="item2mobile" class="mui-slider-item mui-control-content " href="html/class/secondlist.html">
-						<!--<div class="mui-scroll-wrapper">
+					<div id="item2mobile" class="mui-slider-item mui-control-content ">
+						<div class="mui-scroll-wrapper">
 							<div class="mui-scroll">
 								<ul class="mui-table-view" id="scroll2">
 									<li class="mui-table-view-cell">
@@ -125,13 +117,13 @@
 
 								</ul>
 							</div>
-						</div>-->
+						</div>
 					</div>
-					<div id="item3mobile" class="mui-slider-item mui-control-content"  href="html/class/thirdlist.html">
-						<!--<div class="mui-scroll-wrapper">
-								<div class="mui-scroll">
-									<ul class="mui-table-view" style="background: transparent;" id="scroll3" >
-										<li class="mui-card mui-table-view-cell ">
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view" style="background: transparent;" id="scroll3">
+									<li class="mui-card mui-table-view-cell ">
 										<a>
 											<div style="position: relative; width: 30%;" class="mui-media-body mui-pull-left">
 												<img src="../../images/shuijiao.jpg" />
@@ -151,11 +143,11 @@
 										</a>
 									</li>
 								</ul>
-								</div>
-							</div>-->
+							</div>
+						</div>
 					</div>
-					<div id="item4mobile" class="mui-slider-item mui-control-content" style="background: transparent;" href="html/class/fourthlist.html">
-						<!--<div class="mui-scroll-wrapper">
+					<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
 							<div class="mui-scroll">
 								<ul class="mui-table-view" id="scroll4">
 									<li class="mui-table-view-cell">
@@ -202,12 +194,11 @@
 									</li>
 								</ul>
 							</div>
-						</div>-->
+						</div>
 					</div>
 				</div>
 			</div>
-
-		</header>
+		</div>
 
 	</body>
 
