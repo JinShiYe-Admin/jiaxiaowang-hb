@@ -14,7 +14,7 @@ mui.plusReady(
 		
 		regButton.addEventListener('tap',function(){
 			var regInfo = {
-							account: emailBox.value,
+							account: nicknameBox.value,
 							password: passwordBox.value,
 							email: emailBox.value
 						};
@@ -97,7 +97,7 @@ function nicknameIsNotRepeat(nickname){
 }
 //判断昵称是否合法
 function nicknameIsLegal(nickname){
-	if(nickname.length>=2&&nickname.length<=10){
+	if(nickname.length>=5&&nickname.length<=10){
 		//中英文开头，中文、字母、数字、下划线组合
 		var nicknameRegular = /^[\u4e00-\u9fa5a-zA-Z]+[\u4e00-\u9fa5a-zA-Z0-9\-_]*$/
 		return nicknameRegular.test(nickname)
