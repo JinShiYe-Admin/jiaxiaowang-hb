@@ -498,7 +498,8 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css",
-			"js/app/application/weiKe_search.js"
+			"js/app/application/weiKe_search.js",
+			"images/cbd.jpg"
 		]
 	},
 	"html/application/choose_grade.html": {

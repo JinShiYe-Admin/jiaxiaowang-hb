@@ -7,10 +7,17 @@ mui.plusReady(
 		})
 	}
 )
+/**
+ * 加载搜索列表
+ */
 function addSearchList() {				
 		var table = document.body.querySelector('.mui-table-view');
+		//移除已有元素
+		while(table.hasChildNodes()){
+			table.removeChild(table.firstChild)
+		}
 		var cells = document.body.querySelectorAll('.mui-table-view-cell');
-		for (var i = cells.length, len = i + 3; i < len; i++) {
+		for (var i = 0, len = randomNumber(1,10); i < len; i++) {
 			var li = document.createElement('li');
 			li.className = 'mui-table-view-cell mui-media';
 			li.innerHTML = '<a href="javascript:;">\
@@ -24,4 +31,8 @@ function addSearchList() {
 				//新纪录插到最前面；
 				table.insertBefore(li, table.firstChild);
 		}	
+}
+//产生随机数
+function randomNumber(start, end){
+    return Math.floor(Math.random() * (end - start) + start);
 }
