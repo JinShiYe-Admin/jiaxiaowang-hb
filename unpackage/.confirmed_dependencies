@@ -240,7 +240,8 @@
 			"js/mui.min.js",
 			"css/mui.min.css",
 			"css/style.css",
-			"css/font_size.css"
+			"css/font_size.css",
+			"js/login/reg.js"
 		],
 		"refer": [
 			"html/login/login.html"
