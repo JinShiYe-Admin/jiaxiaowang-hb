@@ -39,11 +39,8 @@ mui.init({
 		longtap: true //开启长按监听
 	},
 	pullRefresh: {
-<<<<<<< HEAD
-		container: "#slider", //通过id找到下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
-=======
 		container: "#refreshContainer", //通过id找到下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
->>>>>>> 50064966cb8064d336760ae26bfa94f64dec65c5
+
 		//		up: {
 		//			contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
 		//			contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
