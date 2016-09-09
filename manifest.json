@@ -687,7 +687,8 @@
 				"resources": [
 					"js/mui.min.js",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/app/application/weiKe_search.js"
 				],
 				"refer": [],
 				"priority": 0
