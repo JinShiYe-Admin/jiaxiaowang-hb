@@ -16,8 +16,20 @@
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 		    <h1 class="mui-title">上传照片</h1>
 		</header>
-		<div class="mui-content mo-background-color">
-		<label style="font-size: 14px;">选择相册</label>
+				<div class="mui-content mo-background-color">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" id="category">
+						<a class="mui-navigate-right">
+							<div class="mui-input-row">
+
+								<label style="font-size: 14px;">选择相册</label>
+								<label style="font-size: 14px;" id="subcategory">我的相册</label>
+							</div>
+						</a>
+					</li>
+					</ul>
+				</div>
+
 
 		 <div id='image-list' class="row image-list"></div>
 
@@ -30,8 +42,34 @@
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/app/remind/feedback.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			mui.init();
 			mui('.mui-scroll-wrapper').scroll();
+			mui.init({
+	swipBack: false
+})
+mui.plusReady(
+	function() {
+		var subcategory = document.getElementById("subcategory");
+
+		document.getElementById("category").addEventListener('tap', function() {
+			mui.openWindow({
+				id: "addalbum",
+				url: 'addalbum.html'
+			});
+
+		})
+		window.addEventListener('pageflowrefresh', function(e) {
+			console.log(9);
+			if(typeof(e.detail.data) !== 'undefined') {
+				subcategory.innerText = e.detail.data
+			}
+			if(typeof(e.detail.subject) !== 'undefined') {
+				subcategory.innerText = e.detail.subject
+			}
+
+		})
+	}
+)
+
 		</script>
 
 </html>

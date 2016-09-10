@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="feedback">
+
 	<head>
 		<meta charset="utf-8">
 		<title></title>
@@ -13,40 +14,40 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		    <h1 class="mui-title">发表新帖</h1>
-		    			<button id="submit" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right">发送</button>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">发表新帖</h1>
+			<button id="submit" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right">发送</button>
 
 		</header>
 		<div class="mui-content mo-background-color">
-		    <div class="mui-input-row">
-		    	<p></p>
+			<div class="mui-input-row">
+				<p></p>
 				<input type="text" placeholder="标题">
 				<textarea id='question' class="mui-input-clear question" placeholder="正文"></textarea>
-		    </div>
-		    <p>上传图片</p>
-		 <div id='image-list' class="row image-list"></div>
+			</div>
+			<p>上传图片</p>
+			<div id='image-list' class="row image-list"></div>
 
-								<div class="mui-content">
+			<div class="mui-content">
 				<ul class="mui-table-view">
 
 					<li class="mui-table-view-cell">
 
-			    						<div class="mui-input-row">
-									<label style="font-size: 14px;">新帖发布到</label>
-									<label style="font-size: 14px;">一年级一班</label>
-								</div>
+						<div class="mui-input-row">
+							<label style="font-size: 14px;">新帖发布到</label>
+							<label style="font-size: 14px;">一年级一班</label>
+						</div>
 
 					</li>
-	
-					<li class="mui-table-view-cell">
-										<a class="mui-navigate-right">
 
-			    						<div class="mui-input-row">
-									<label style="font-size: 14px;">选择分类</label>
-									<label style="font-size: 14px;">未分类</label>
-								</div>
-								</a>
+					<li class="mui-table-view-cell" id="category">
+						<a class="mui-navigate-right">
+							<div class="mui-input-row">
+
+								<label style="font-size: 14px;">选择分类</label>
+								<label style="font-size: 14px;" id="subcategory">未分类</label>
+							</div>
+						</a>
 					</li>
 					<li class="mui-table-view-cell" style="font-size: 14px;">
 						仅本班成员可见
@@ -59,14 +60,13 @@
 				</ul>
 			</div>
 
-
-
 	</body>
-		<script src="../../js/mui.min.js"></script>
-		<script src="../../js/app/remind/feedback.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			mui.init();
-			mui('.mui-scroll-wrapper').scroll();
-		</script>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/app/remind/feedback.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/app/remind/newPost.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+	</script>
 
 </html>
