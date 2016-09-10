@@ -46,7 +46,7 @@
 		regInfo.account = regInfo.account || '';
 		regInfo.password = regInfo.password || '';
 		if (regInfo.account.length < 5) {
-			return callback('用户名最短需要 5 个字符');
+			return callback('账户最短需要 5 个字符');
 		}
 		if (regInfo.password.length < 6) {
 			return callback('密码最短需要 6 个字符');

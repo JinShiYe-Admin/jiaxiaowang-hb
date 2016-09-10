@@ -474,7 +474,8 @@
 					"html/application/weiKe.html",
 					"html/application/zhiQin.html",
 					"html/application/alburm.html",
-					"html/application/fangXue.html"
+					"html/application/fangXue.html",
+					"html/application/weiKe_content.html"
 				],
 				"priority": 0
 			},
@@ -720,6 +721,18 @@
 					"html/application/weiKe.html"
 				],
 				"priority": 0
+			},
+			"html/application/weiKe_content.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0,
+				"plus": {
+					"hardwareAccelerated": true
+				}
 			}
 		},
 		"idle": {
