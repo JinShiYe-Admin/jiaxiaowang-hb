@@ -80,7 +80,7 @@ mui.plusReady((function() {
 		//获取长按的item
 		var value = this.getAttribute("value");
 		console.log(value);
-		var ul4=document.getElementById("scroll4");
+		var ul4 = document.getElementById("scroll4");
 		var btnArray = [{
 			title: "科目"
 		}, {
@@ -112,7 +112,7 @@ mui.plusReady((function() {
 					var btnArray2 = ['否', '是'];
 					mui.confirm('确认删除？', '提示', btnArray2, function(e) {
 						if(e.index == 1) {
-							ul4.removeChild(document.getElementById('teacher'+value));
+							ul4.removeChild(document.getElementById('teacher' + value));
 							teachers.splice(value, 1) //删除
 							mui.toast('删除成功');
 						} else {
@@ -130,7 +130,7 @@ mui.plusReady((function() {
 		//获取data
 		var value = this.getAttribute("value");
 		console.log(value);
-		var ul42=document.getElementById("scroll42");
+		var ul42 = document.getElementById("scroll42");
 		var btnArray = [{
 			title: "职务"
 		}, {
@@ -156,7 +156,7 @@ mui.plusReady((function() {
 					var btnArray2 = ['否', '是'];
 					mui.confirm('确认删除？', '提示', btnArray2, function(e) {
 						if(e.index == 1) {
-							ul42.removeChild(document.getElementById('student'+value));
+							ul42.removeChild(document.getElementById('student' + value));
 							students.splice(value, 1) //删除
 							mui.toast('删除成功');
 						} else {
@@ -168,6 +168,13 @@ mui.plusReady((function() {
 			console.log("你刚点击了：" + text);
 		});
 	})
+
+	//点击成员列表头像
+	mui("#item4mobile").on('tap', '.oa-contact-avatar', function() {
+		mui.openWindow({
+			url: 'personalspace.html',
+		})
+	});
 }));
 //四个列表的下拉刷新次数
 var num1 = 0,
@@ -340,7 +347,7 @@ function showMember(teachers, students) {
 		//改变这个li元素的html
 		li.innerHTML = htmlteacher;
 		//设置id
-		li.id='teacher'+mTechers[i].ID;
+		li.id = 'teacher' + mTechers[i].ID;
 		//设置value
 		li.value = mTechers[i].ID;
 		//将li作为table的子节点添加到table中
@@ -358,7 +365,7 @@ function showMember(teachers, students) {
 		//改变这个li元素的html
 		li.innerHTML = htmlstudent;
 		//设置id
-		li.id='student'+mStudents[i].ID;
+		li.id = 'student' + mStudents[i].ID;
 		//设置value
 		li.value = mStudents[i].ID;
 		//将li作为table的子节点添加到table中

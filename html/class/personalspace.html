@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/app/class/personalspace.js"></script>
+		<style>
+		.abc {
+				position: absolute;
+				width: 100%;
+				height: 40px;
+				line-height: 24px;
+				font-size: 12px;
+				color: #fff;
+				filter: progid: DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#99000000', endColorstr='#99000000');
+				background-color: rgba(0, 0, 0, .6);
+				margin-top: -45px;
+				overflow: hidden;
+			}
+		}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">个人空间</h1>
+		</header>
+
+		<div class="mui-content">
+			<div style="width:100%;margin-bottom: 20px;">
+				<div style="position:absolute;width:100%;margin-bottom: 20px;">
+					<img id="personalbackgroundphoto" src="../../images/cbd.jpg " height="250px " width="100% " />
+					<img id="personalheadphoto" style="border-radius: 50%; width:80px;position: absolute;top: 160px;z-index: 1000; left: 10%;" src="../../images/logo.png" />
+					<div class="abc">
+						<font style="margin-left:40%;" id="name">姓名 (昵称)</font>
+					</div>
+				</div>
+			</div>
+			<div style="margin-top:250px;">
+				<div>
+					<ul class="mui-table-view mui-grid-view mui-grid-9" style="background: white;">
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+							<span>等级</span>
+							<div class="mui-media-body" id="level">LV1</div>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+							<span>金花</span>
+							<div class="mui-media-body" id="goldenflower">213</div>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+							<span>鲜花</span>
+							<div class="mui-media-body" id="flower">0</div>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<ul class="mui-table-view" id="scroll2">
+						<li class="mui-table-view-cell">
+							<p id="class">班级： 一年级一班 五年级一班 </p>
+							<p id="subject">科目：语文</p>
+						</li>
+					</ul>
+				</div>
+				<br />
+				<div>
+					<ul class="mui-table-view" style="background: transparent;">
+						<li class="mui-table-view-cell mui-media"style="background: white;">
+							<a href="javascript:;">
+								<div class="mui-media-object">
+									<font class="mui-badge mui-badge-green" id="type">班级</font>
+									<font id="date">09月08日</font>
+								</div>
+								<div style="border-top: #AAAAAA 1px dashed; height: 1px;margin-bottom: 4px;"></div>
+								<div class="mui-media-body mui-ellipsis-2">
+									<font id="content">我发布了一个班级帖子“感恩的心~~写在2016年教师节前”，详情请点击</font>
+								</div>
+							</a>
+						</li>
+						<br />
+						<li class="mui-table-view-cell mui-media"style="background: white;">
+							<a href="javascript:;">
+								<div class="mui-media-object">
+									<font class="mui-badge mui-badge-blue">相册</font>
+									<font>09月08日</font>
+								</div>
+								<div style="border-top: #AAAAAA 1px dashed; height: 1px;margin-bottom: 4px;"></div>
+								<div class="mui-media-body mui-ellipsis-2">
+									<font>我上传了6张新照片到【我的相册】，去查看详情</font>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
