@@ -59,33 +59,34 @@
 	</head>
 
 	<body>
-		<div class="mui-content">
-			<div id="slider" class="mui-slider  ">
-				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-positive">
-					<a class="mui-control-item mui-active" href="#item1mobile">
-						帖子
-					</a>
-					<a class="mui-control-item" href="#item2mobile">
-						作业
-					</a>
-					<a class="mui-control-item" href="#item3mobile">
-						相册
-					</a>
-					<a class="mui-control-item" href="#item4mobile">
-						成员
-					</a>
-				</div>
-				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3 mui-segmented-control-positive"></div>
-				<div class="mui-slider-group" id="content">
-					<div id="item1mobile" class="mui-slider-item mui-control-content  mui-active">
-						<div class="mui-scroll-wrapper">
-							<div class="mui-scroll">
+		<!--下拉刷新容器-->
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view "style="background: transparent;">
+					<div id="slider" class="mui-slider  ">
+						<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-positive">
+							<a class="mui-control-item mui-active" href="#item1mobile">
+								帖子
+							</a>
+							<a class="mui-control-item" href="#item2mobile">
+								作业
+							</a>
+							<a class="mui-control-item" href="#item3mobile">
+								相册
+							</a>
+							<a class="mui-control-item" href="#item4mobile">
+								成员
+							</a>
+						</div>
+						<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3 mui-segmented-control-positive"></div>
+						<div class="mui-slider-group" id="content">
+							<div id="item1mobile" class="mui-slider-item mui-control-content  mui-active">
 								<ul class="mui-table-view" id="scroll1">
 									<li class="mui-table-view-cell mui-media">
-										<a>
-											<img class="mui-media-object mui-pull-left" src="../../images/logo.png">
-											<div class="mui-media-body">
-												<span>
+										<img class="mui-media-object mui-pull-left" src="../../images/logo.png">
+										<div class="mui-media-body">
+											<span>
 													<div class="mui-ellipsis">
 														<font color="red">荐&nbsp;</font>
 														<font color="green">精&nbsp;</font>
@@ -93,34 +94,25 @@
 														<font >一二三四五六七八九十一二三四五六七八九十</font>
 													</div>
 												</span>
-												<p><span>
+											<p><span>
 													<div class="mui-ellipsis">
 														<font>小熊猫</font>
 														<font color="blue">V&nbsp;</font>
 														<font>09月06日&nbsp;阅100&nbsp;回100</font>
 													</div>
 												</span></p>
-											</div>
-										</a>
+										</div>
 									</li>
 								</ul>
 							</div>
-						</div>
-					</div>
-					<div id="item2mobile" class="mui-slider-item mui-control-content ">
-						<div class="mui-scroll-wrapper">
-							<div class="mui-scroll">
+							<div id="item2mobile" class="mui-slider-item mui-control-content ">
 								<ul class="mui-table-view" id="scroll2">
 									<li class="mui-table-view-cell">
 										第二个选项卡子项-1
 									</li>
 								</ul>
 							</div>
-						</div>
-					</div>
-					<div id="item3mobile" class="mui-slider-item mui-control-content">
-						<div class="mui-scroll-wrapper">
-							<div class="mui-scroll">
+							<div id="item3mobile" class="mui-slider-item mui-control-content">
 								<ul class="mui-table-view" style="background: transparent;" id="scroll3">
 									<li class="mui-card mui-table-view-cell ">
 										<a>
@@ -143,11 +135,7 @@
 									</li>
 								</ul>
 							</div>
-						</div>
-					</div>
-					<div id="item4mobile" class="mui-slider-item mui-control-content">
-						<div class="mui-scroll-wrapper">
-							<div class="mui-scroll">
+							<div id="item4mobile" class="mui-slider-item mui-control-content">
 								<ul class="mui-table-view" id="scroll4">
 									<li class="mui-table-view-cell">
 										<a>
@@ -201,11 +189,9 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</ul>
 			</div>
-
 		</div>
-
 	</body>
 
 </html>
