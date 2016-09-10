@@ -80,6 +80,7 @@ mui.plusReady((function() {
 		//获取长按的item
 		var value = this.getAttribute("value");
 		console.log(value);
+		var ul4=document.getElementById("scroll4");
 		var btnArray = [{
 			title: "科目"
 		}, {
@@ -111,6 +112,7 @@ mui.plusReady((function() {
 					var btnArray2 = ['否', '是'];
 					mui.confirm('确认删除？', '提示', btnArray2, function(e) {
 						if(e.index == 1) {
+							ul4.removeChild(document.getElementById('teacher'+value));
 							teachers.splice(value, 1) //删除
 							mui.toast('删除成功');
 						} else {
@@ -128,6 +130,7 @@ mui.plusReady((function() {
 		//获取data
 		var value = this.getAttribute("value");
 		console.log(value);
+		var ul42=document.getElementById("scroll42");
 		var btnArray = [{
 			title: "职务"
 		}, {
@@ -153,6 +156,7 @@ mui.plusReady((function() {
 					var btnArray2 = ['否', '是'];
 					mui.confirm('确认删除？', '提示', btnArray2, function(e) {
 						if(e.index == 1) {
+							ul42.removeChild(document.getElementById('student'+value));
 							students.splice(value, 1) //删除
 							mui.toast('删除成功');
 						} else {
@@ -335,8 +339,10 @@ function showMember(teachers, students) {
 		var htmlteacher = '<a><div class="oa-contact-cell mui-table"><div class="oa-contact-avatar mui-table-cell"><img src="../../images/logo.png"></div><div class="oa-contact-content" style="padding-left: 20px;"><div><span> <font size="4">' + mTechers[i].Name + '</font><font color="orange">V</font><font>[' + mTechers[i].Subject + ']</font><font color="blue">' + mTechers[i].Type + '</font>' + '<font color="red">新&nbsp;' + num_teacher + '</font>' + '</span></div><p class="oa-contact-email mui-h6">' + mTechers[i].NickName + '</p></div><div class="mui-table-cell" style="width: 50px;"><img src="../../images/qq.png" /></div></div></a>';
 		//改变这个li元素的html
 		li.innerHTML = htmlteacher;
+		//设置id
+		li.id='teacher'+mTechers[i].ID;
 		//设置value
-		li.value = i;
+		li.value = mTechers[i].ID;
 		//将li作为table的子节点添加到table中
 		member_teacher.appendChild(li);
 	}
@@ -351,8 +357,10 @@ function showMember(teachers, students) {
 		var htmlstudent = '<a><div class="oa-contact-cell mui-table"><div class="oa-contact-avatar mui-table-cell"><img src="../../images/logo.png"></div><div class="oa-contact-content" style="padding-left: 20px;"><div><span> <font size="4">' + mStudents[i].Name + '</font><font color="blue">V</font><font color="green">' + mStudents[i].Type + '</font>' + '<font color="red">新&nbsp;' + num_student + '</font>' + '</span></div><p class="oa-contact-email mui-h6">' + mStudents[i].NickName + '</p></div><div class="mui-table-cell" style="width: 50px;"><img src="../../images/qq.png" /></div></div></a>';
 		//改变这个li元素的html
 		li.innerHTML = htmlstudent;
+		//设置id
+		li.id='student'+mStudents[i].ID;
 		//设置value
-		li.value = i;
+		li.value = mStudents[i].ID;
 		//将li作为table的子节点添加到table中
 		member_student.appendChild(li);
 	}
