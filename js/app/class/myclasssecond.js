@@ -11,11 +11,11 @@ function Member(id, name, nickname, subject, type) {
 }
 
 var teachers = new Array();
-teachers.push(new Member(0, '郑成枝', '住进时光里', '语文', '教导主任'));
-teachers.push(new Member(1, '杨福林', '十年温如初', '数学', '班主任'));
-teachers.push(new Member(2, '贾小龙', '今非昔比', '英语', '老师'));
-teachers.push(new Member(3, '康根', '花香洇染', '文综', '老师'));
-teachers.push(new Member(4, '康永清', '阳光下的少年', '理综', '老师'));
+teachers.push(new Member(0, '郑成枝', '住进时光里', '[语文]', '教导主任'));
+teachers.push(new Member(1, '杨福林', '十年温如初', '[数学]', '班主任'));
+teachers.push(new Member(2, '贾小龙', '今非昔比', '[英语]', '老师'));
+teachers.push(new Member(3, '康根', '花香洇染', '[文综]', '老师'));
+teachers.push(new Member(4, '康永清', '阳光下的少年', '[理综]', '老师'));
 
 var students = new Array();
 students.push(new Member(0, '马祥', '日久见人心', '', '班长'));
@@ -169,6 +169,12 @@ mui.plusReady((function() {
 		});
 	})
 
+	//帖子
+	mui("#item1mobile").on('tap', '.mui-table-view-cell', function() {
+		mui.openWindow({
+			url: 'article.html',
+		})
+	});
 	//点击成员列表头像
 	mui("#item4mobile").on('tap', '.oa-contact-avatar', function() {
 		mui.openWindow({
@@ -343,7 +349,7 @@ function showMember(teachers, students) {
 		var li = document.createElement('li');
 		//改变这个li元素的class属性
 		li.className = 'mui-table-view-cell';
-		var htmlteacher = '<a><div class="oa-contact-cell mui-table"><div class="oa-contact-avatar mui-table-cell"><img src="../../images/logo.png"></div><div class="oa-contact-content" style="padding-left: 20px;"><div><span> <font size="4">' + mTechers[i].Name + '</font><font color="orange">V</font><font>[' + mTechers[i].Subject + ']</font><font color="blue">' + mTechers[i].Type + '</font>' + '<font color="red">新&nbsp;' + num_teacher + '</font>' + '</span></div><p class="oa-contact-email mui-h6">' + mTechers[i].NickName + '</p></div><div class="mui-table-cell" style="width: 50px;"><img src="../../images/qq.png" /></div></div></a>';
+		var htmlteacher = '<a><div class="oa-contact-cell mui-table"><div class="oa-contact-avatar mui-table-cell"><img src="../../images/logo.png"></div><div class="oa-contact-content" style="padding-left: 20px;"><div><span> <font size="4">' + mTechers[i].Name + '</font><font color="orange">V</font><font id="' + 'teacher_subject' + i + '">' + mTechers[i].Subject + '</font><font color="blue" id="' + 'teacher_type' + i + '">' + mTechers[i].Type + '</font>' + '<font color="red">新&nbsp;' + num_teacher + '</font>' + '</span></div><p class="oa-contact-email mui-h6">' + mTechers[i].NickName + '</p></div><div class="mui-table-cell" style="width: 50px;"><img src="../../images/qq.png" /></div></div></a>';
 		//改变这个li元素的html
 		li.innerHTML = htmlteacher;
 		//设置id
@@ -361,7 +367,7 @@ function showMember(teachers, students) {
 		var li = document.createElement('li');
 		//改变这个li元素的class属性
 		li.className = 'mui-table-view-cell';
-		var htmlstudent = '<a><div class="oa-contact-cell mui-table"><div class="oa-contact-avatar mui-table-cell"><img src="../../images/logo.png"></div><div class="oa-contact-content" style="padding-left: 20px;"><div><span> <font size="4">' + mStudents[i].Name + '</font><font color="blue">V</font><font color="green">' + mStudents[i].Type + '</font>' + '<font color="red">新&nbsp;' + num_student + '</font>' + '</span></div><p class="oa-contact-email mui-h6">' + mStudents[i].NickName + '</p></div><div class="mui-table-cell" style="width: 50px;"><img src="../../images/qq.png" /></div></div></a>';
+		var htmlstudent = '<a><div class="oa-contact-cell mui-table"><div class="oa-contact-avatar mui-table-cell"><img src="../../images/logo.png"></div><div class="oa-contact-content" style="padding-left: 20px;"><div><span> <font size="4">' + mStudents[i].Name + '</font><font color="blue">V</font><font color="green" id="' + 'student_type' + i + '">' + mStudents[i].Type + '</font>' + '<font color="red">新&nbsp;' + num_student + '</font>' + '</span></div><p class="oa-contact-email mui-h6">' + mStudents[i].NickName + '</p></div><div class="mui-table-cell" style="width: 50px;"><img src="../../images/qq.png" /></div></div></a>';
 		//改变这个li元素的html
 		li.innerHTML = htmlstudent;
 		//设置id
@@ -404,27 +410,30 @@ function changeTeacherSubject(value) {
 				text += "";
 				break;
 			case 1:
-				text += "语文";
+				text += "[语文]";
 				break;
 			case 2:
-				text += "数学";
+				text += "[数学]";
 				break;
 			case 3:
-				text += "英语";
+				text += "[英语]";
 				break;
 			case 4:
-				text += "文综";
+				text += "[文综]";
 				break;
 			case 5:
-				text += "理综";
+				text += "[理综]";
 				break;
 			case 6:
 				text += "";
 				break;
 		}
 		console.log("你刚点击了：" + text);
-		teachers[changeValue].Subject = text;
-		mui.toast('修改成功');
+		if(index > 0) {
+			document.getElementById('teacher_subject' + value).innerText = text;
+			teachers[changeValue].Subject = text;
+			mui.toast('修改成功');
+		}
 	});
 }
 /**
@@ -467,8 +476,11 @@ function changeTeacherType(value) {
 				break;
 		}
 		console.log("你刚点击了：" + text);
-		teachers[changeValue].Type = text;
-		mui.toast('修改成功');
+		if(index > 0) {
+			document.getElementById('teacher_type' + value).innerText = text;
+			teachers[changeValue].Type = text;
+			mui.toast('修改成功');
+		}
 	});
 }
 
@@ -542,7 +554,10 @@ function changeStudentType(value) {
 				break;
 		}
 		console.log("你刚点击了：" + text);
-		students[changeValue].Type = text;
-		mui.toast('修改成功');
+		if(index > 0) {
+			document.getElementById('student_type' + value).innerText = text;
+			students[changeValue].Type = text;
+			mui.toast('修改成功');
+		}
 	});
 }
