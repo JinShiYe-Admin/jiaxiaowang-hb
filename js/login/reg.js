@@ -12,7 +12,6 @@ mui.plusReady(
 		var emailBox = document.getElementById('email');
 		var nicknameBox=document.getElementById('nickmame');
 		var identityBox=document.getElementById('identity');
-		
 		regButton.addEventListener('tap',function(){
 			var regInfo = {
 							account: nicknameBox.value,
