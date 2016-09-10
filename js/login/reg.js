@@ -10,14 +10,17 @@ mui.plusReady(
 		var passwordBox = document.getElementById('password');
 		var passwordConfirmBox = document.getElementById('password_confirm');
 		var emailBox = document.getElementById('email');
-		var nicknameBox=document.getElementById('nickmame')
+		var nicknameBox=document.getElementById('nickmame');
+		var identityBox=document.getElementById('identity');
 		
 		regButton.addEventListener('tap',function(){
 			var regInfo = {
 							account: nicknameBox.value,
 							password: passwordBox.value,
-							email: emailBox.value
+							email: emailBox.value,
+							identity:identityBox.value
 						};
+//			console.log(identityBox.value);
 			//注册码正确
 			if(isRegisterNo(regNoBox.value)){
 				//昵称符合规则
