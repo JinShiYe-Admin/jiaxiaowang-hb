@@ -6,10 +6,23 @@ mui.plusReady(function() {
 mui(".mui-table-view").on('tap','.mui-table-view-cell',function(){
   //获取id
   var id = this.getAttribute("id");
+  console.log("1");
   switch (id)
 {
+//case "up1":
+//	mui.openWindow({
+//  id:"newPost",
+//  url:'html/remind/newPost.html'
+//});
+//break;
+//case "up2":
+//	mui.openWindow({
+//  id:"newPost",
+//  url:'html/remind/upImage.html'
+//});
+//break;
 case "my_job":
-
+console.log("2");
 ////把子页的路径写在数组里面
 //var subpages = ['tab_home.html', 'tab_class.html', 'tab_application.html', 'tab_me.html'];
 //	//显示目标选项卡
