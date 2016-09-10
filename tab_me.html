@@ -6,29 +6,30 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="../../css/image_control.css" />
+		<!--<link rel="stylesheet" href="../../css/image_control.css" />
 		<style>
 			.head-img {
 				width: 60px;
 				height: 60px;
 			}
-		</style>
+		</style>-->
 	</head>
 
 	<body>
 		<script src="js/mui.min.js"></script>
-		
+		<script src="js/app/mine/table_me_click.js" type="text/javascript" charset="utf-8"></script>
+
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-menu mui-icon mui-icon-camera mui-pull-right"></a>
 			<h1 class="mui-title">我</h1>
 		</header>
-		
+
 		<div class="mui-content">
 			<br />
 			<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right" href="#">
-						<img class="mui-media-object mui-pull-left circular-square" id="head-img" src="images/yuantiao.jpg"/>
+				<li class="mui-table-view-cell mui-media" id="personalSpace">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left circular-square" src="images/yuantiao.jpg" />
 						<div class="mui-media-body">
 							莫北北
 							<p class="mui-ellipsis">
@@ -38,13 +39,13 @@
 					</a>
 				</li>
 			</ul>
-			
+
 			<br />
-			
+
 			<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right" href="#">
-						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg"/>
+				<li class="mui-table-view-cell mui-media" id="friendSynamics">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg" />
 						<div class="mui-media-object">
 							好友动态
 						</div>
@@ -52,7 +53,7 @@
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg"/>
+						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg" />
 						<div class="mui-media-object">
 							查找好友
 						</div>
@@ -60,7 +61,7 @@
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg"/>
+						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg" />
 						<div class="mui-media-object">
 							我的相册
 						</div>
@@ -68,20 +69,20 @@
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg"/>
+						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg" />
 						<div class="mui-media-object">
 							系统通知
 						</div>
 					</a>
 				</li>
 			</ul>
-			
+
 			<br />
-			
+
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg"/>
+						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg" />
 						<div class="mui-media-object">
 							提醒设置
 						</div>
@@ -89,7 +90,7 @@
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg"/>
+						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg" />
 						<div class="mui-media-object">
 							个人设置
 						</div>
@@ -97,20 +98,20 @@
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg"/>
+						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg" />
 						<div class="mui-media-object">
 							意见反馈
 						</div>
 					</a>
 				</li>
 			</ul>
-			
+
 			<br />
-			
+
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-media">
 					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg"/>
+						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg" />
 						<div class="mui-media-object">
 							清理缓存
 						</div>
@@ -118,21 +119,23 @@
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg"/>
+						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg" />
 						<div class="mui-media-object">
 							退出登录
 						</div>
 					</a>
 				</li>
 			</ul>
-			
+
 			<br />
-			
+
 		</div>
-		
+
 		<script type="text/javascript">
-			mui.init()
+			clickCell('personalSpace');
+			clickCell('friendSynamics');
 		</script>
+
 	</body>
 
 </html>
