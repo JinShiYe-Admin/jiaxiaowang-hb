@@ -729,7 +729,10 @@
 					"css/mui.min.css"
 				],
 				"refer": [],
-				"priority": 0
+				"priority": 0,
+				"plus": {
+					"hardwareAccelerated": true
+				}
 			}
 		},
 		"idle": {

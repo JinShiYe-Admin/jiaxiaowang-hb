@@ -22,6 +22,27 @@
 		    	<p>设备不支持</p>
 		    </video>
 		</div>
+		<script>
+		mui.plusReady(
+			
+			function(){
+				console.log(plus.os.name);
+				if((plus.os.name)=="Android"){
+					var Intent = plus.android.importClass("android.content.Intent");
+					var Uri = plus.android.importClass("android.net.Uri");
+					var main = plus.android.runtimeMainActivity();
+					var intent=new Intent(Intent.ACTION_VIEW);
+					var uri=Uri.parse("http://58.56.123.189:8506/ReSource/Video/sch/2016/5/2016050710461171559.MP4" );
+					intent.setDataAndType(uri,"video/*");
+					main.startActivity(intent);
+				}
+			
+			}
+			
+		)
+			
+
+		</script>
 		
 	</body>
 
