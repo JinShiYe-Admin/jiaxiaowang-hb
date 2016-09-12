@@ -73,12 +73,16 @@ mui.plusReady((function() {
 	mslider.addEventListener('slide', function(e) {
 		if(e.detail.slideNumber === 0) { //帖子列表
 			index = 0;
+			changeIndex(0);
 		} else if(e.detail.slideNumber === 1) { //作业列表
 			index = 1;
+			changeIndex(1);
 		} else if(e.detail.slideNumber === 2) { //相册列表
 			index = 2;
+			changeIndex(2);
 		} else if(e.detail.slideNumber === 3) { //成员列表
 			index = 3;
+			changeIndex(3);
 		}
 
 	});
@@ -180,7 +184,7 @@ mui.plusReady((function() {
 	//帖子
 	mui("#item1mobile").on('tap', '.mui-table-view-cell', function() {
 		mui.openWindow({
-			url: 'pullrefresh_with_tab.html',
+			url: 'article.html',
 		})
 	});
 	//点击成员列表头像
@@ -190,6 +194,19 @@ mui.plusReady((function() {
 		})
 	});
 }));
+
+function changeIndex(num) {
+	var main = plus.webview.getWebviewById('html/class/myclasshead.html');
+	mui.fire(main, "changeitem", {
+		id: num
+	})
+}
+
+window.addEventListener("changeitem", function(e) {
+	var id = e.detail.id;
+	var gallery = mui('.mui-slider');
+	gallery.slider().gotoItem(id);
+});
 //四个列表的下拉刷新次数
 var num1 = 0,
 	num2 = 0,
