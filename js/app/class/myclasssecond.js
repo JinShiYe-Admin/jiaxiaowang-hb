@@ -34,18 +34,26 @@ students.push(new Member(12, '刘海欢', '时光凉透初时模样', '', ''));
 students.push(new Member(13, '康桃花', '这年头、寂寞', '', ''));
 students.push(new Member(14, '戴双宝', '乱的很有节奏', '', ''));
 
+//声明帖子对象
+function Article(id, title, author, recommend, handpick, top) {
+	this.ID = id; //id
+	this.Title = title; //标题
+	this.Author = author; //作者
+	this.Recommend = recommend; //推荐
+	this.Handpick = handpick; //精选
+	this.Top = top; //置顶
+}
 mui.init({
 	gestureConfig: {
 		longtap: true //开启长按监听
 	},
 	pullRefresh: {
 		container: "#refreshContainer", //通过id找到下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
-
-		//		up: {
-		//			contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
-		//			contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
-		//			callback: pullupRefresh
-		//		},
+		up: {
+			contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+			contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+			callback: pullupRefresh
+		},
 		down: {
 			contentdown: "下拉可以刷新", //可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
 			contentover: "释放立即刷新", //可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
@@ -190,61 +198,64 @@ var num1 = 0,
  * 下拉刷新具体业务实现
  */
 function pulldownRefresh() {
-	switch(index) {
-		case 0:
-			break;
-		case 1:
-			break;
-		case 2:
-			break;
-		case 3:
-			showMember(teachers, students);
-			break;
-		default:
-			break;
-	}
-	//	var table = changeindex(); //获取id
-	//	table.innerHTML = '';
-	//	for(var i = 0; i < 5; i++) {
-	//		//创建一个li元素
-	//		var li = document.createElement('li');
-	//		switch(index) {
-	//			case 0:
-	//				//改变这个li元素的class属性
-	//				li.className = 'mui-table-view-cell mui-media';
-	//				num1 = num1 + 1;
-	//				var htmlRefresh = '<a><img class="mui-media-object mui-pull-left" src="../../images/logo.png"><div class="mui-media-body"><span><div class="mui-ellipsis"><font color="red">荐&nbsp;</font><font color="green">&nbsp;精&nbsp;</font><font color="orange">&nbsp;顶&nbsp;</font>' + '<font color="red">新&nbsp;' + num1 + '</font>' + '<font>&nbsp;一二三四五六七八九十一二三四五六七八九十</font></div></span><p><span><div class="mui-ellipsis"><font>小熊猫</font><font color="blue">V&nbsp;</font><font>09月06日&nbsp;阅100&nbsp;回100</font></div></span></p></div></a>';
-	//				break;
-	//			case 1:
-	//				//改变这个li元素的class属性
-	//				li.className = 'mui-table-view-cell';
-	//				num2 = num2 + 1;
-	//				var htmlRefresh = '第二个选项卡子项-' + '<font color="red">新&nbsp;' + num2 + '</font>';
-	//				break;
-	//			case 2:
-	//				//改变这个li元素的class属性
-	//				li.className = 'mui-card mui-table-view-cell';
-	//				num3 = num3 + 1;
-	//				var htmlRefresh = '<a><div style="position: relative; width: 30%;" class="mui-media-body mui-pull-left"><img src="../../images/shuijiao.jpg" /><p class="focus-text">555张</p></div><div class="mui-media-body" style="padding-left: 20px;">一年级上学期' + '<font color="red">新&nbsp;' + num3 + '</font>' + '</div><div class="mui-media-body" style="padding-left: 20px;"><span style=" position:absolute;bottom:0px;text-align: left;"><p>李宽<font color="blue">V</font></p><p>09月05日&nbsp;100阅&nbsp;100回</p></span></div></a>';
-	//				break;
-	//			case 3:
-	//				//改变这个li元素的class属性
-	//				li.className = 'mui-table-view-cell';
-	//				num4 = num4 + 1;
-	//				var htmlRefresh = '<a><div class="oa-contact-cell mui-table"><div class="oa-contact-avatar mui-table-cell"><img src="../../images/logo.png"></div><div class="oa-contact-content" style="padding-left: 20px;"><div><span> <font size="4">' + teachers[i].Name + '</font><font color="orange">V</font><font>[' + teachers[i].Subject + ']</font><font color="blue">' + teachers[i].Type + '</font>' + '<font color="red">新&nbsp;' + num4 + '</font>' + '</span></div><p class="oa-contact-email mui-h6">' + teachers[i].NickName + '</p></div><div class="mui-table-cell" style="width: 50px;"><img src="../../images/qq.png" /></div></div></a>';
-	//				break;
-	//			default:
-	//				break;
-	//
-	//		}
-	//		//改变这个li元素的html
-	//		li.innerHTML = htmlRefresh;
-	//		//将li作为table的子节点添加到table中
-	//		table.appendChild(li);
+	//	switch(index) {
+	//		case 0:
+	//			break;
+	//		case 1:
+	//			break;
+	//		case 2:
+	//			break;
+	//		case 3:
+	//			showMember(teachers, students);
+	//			break;
+	//		default:
+	//			break;
 	//	}
+	if(index === 3) {
+		showMember(teachers, students);
+	} else {
+		var table = changeindex(); //获取id
+		table.innerHTML = '';
+		for(var i = 0; i < 5; i++) {
+			//创建一个li元素
+			var li = document.createElement('li');
+			switch(index) {
+				case 0:
+					//改变这个li元素的class属性
+					li.className = 'mui-table-view-cell mui-media';
+					num1 = num1 + 1;
+					var htmlRefresh = '<a><img class="mui-media-object mui-pull-left" src="../../images/logo.png"><div class="mui-media-body"><span><div class="mui-ellipsis"><font color="red">荐&nbsp;</font><font color="green">&nbsp;精&nbsp;</font><font color="orange">&nbsp;顶&nbsp;</font>' + '<font color="red">新&nbsp;' + num1 + '</font>' + '<font>&nbsp;一二三四五六七八九十一二三四五六七八九十</font></div></span><p><span><div class="mui-ellipsis"><font>小熊猫</font><font color="blue">V&nbsp;</font><font>09月06日&nbsp;阅100&nbsp;回100</font></div></span></p></div></a>';
+					break;
+				case 1:
+					//改变这个li元素的class属性
+					li.className = 'mui-table-view-cell';
+					num2 = num2 + 1;
+					var htmlRefresh = '第二个选项卡子项-' + '<font color="red">新&nbsp;' + num2 + '</font>';
+					break;
+				case 2:
+					//改变这个li元素的class属性
+					li.className = 'mui-card mui-table-view-cell';
+					num3 = num3 + 1;
+					var htmlRefresh = '<a><div style="position: relative; width: 30%;" class="mui-media-body mui-pull-left"><img src="../../images/shuijiao.jpg" /><p class="focus-text">555张</p></div><div class="mui-media-body" style="padding-left: 20px;">一年级上学期' + '<font color="red">新&nbsp;' + num3 + '</font>' + '</div><div class="mui-media-body" style="padding-left: 20px;"><span style=" position:absolute;bottom:0px;text-align: left;"><p>李宽<font color="blue">V</font></p><p>09月05日&nbsp;100阅&nbsp;100回</p></span></div></a>';
+					break;
+					//			case 3:
+					//				//改变这个li元素的class属性
+					//				li.className = 'mui-table-view-cell';
+					//				num4 = num4 + 1;
+					//				var htmlRefresh = '<a><div class="oa-contact-cell mui-table"><div class="oa-contact-avatar mui-table-cell"><img src="../../images/logo.png"></div><div class="oa-contact-content" style="padding-left: 20px;"><div><span> <font size="4">' + teachers[i].Name + '</font><font color="orange">V</font><font>[' + teachers[i].Subject + ']</font><font color="blue">' + teachers[i].Type + '</font>' + '<font color="red">新&nbsp;' + num4 + '</font>' + '</span></div><p class="oa-contact-email mui-h6">' + teachers[i].NickName + '</p></div><div class="mui-table-cell" style="width: 50px;"><img src="../../images/qq.png" /></div></div></a>';
+					//				break;
+				default:
+					break;
+
+			}
+			//改变这个li元素的html
+			li.innerHTML = htmlRefresh;
+			//将li作为table的子节点添加到table中
+			table.appendChild(li);
+		}
+	}
 	//注意，加载完新数据后，必须执行如下代码，注意：若为ajax请求，则需将如下代码放置在处理完ajax响应数据之后
 	mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
-
 }
 //四个列表的上拉次数
 var more1 = 0,
@@ -255,45 +266,48 @@ var more1 = 0,
  * 上拉加载具体业务实现
  */
 function pullupRefresh() {
+	if(index === 3) {
 
-	var table = changeindex();
-	for(var i = 0; i < 5; i++) {
-		//创建一个li元素
-		var li = document.createElement('li');
-		switch(index) {
-			case 0:
-				//改变这个li元素的class属性
-				li.className = 'mui-table-view-cell mui-media';
-				more1 = more1 + 1;
-				var htmlmore = '<a><img class="mui-media-object mui-pull-left" src="../../images/logo.png"><div class="mui-media-body"><span><div class="mui-ellipsis"><font color="red">荐&nbsp;</font><font color="green">&nbsp;精&nbsp;</font><font color="orange">&nbsp;顶&nbsp;</font>' + '<font color="red">更多&nbsp;' + more1 + '</font>' + '<font>&nbsp;一二三四五六七八九十一二三四五六七八九十</font></div></span><p><span><div class="mui-ellipsis"><font>小熊猫</font><font color="blue">V&nbsp;</font><font>09月06日&nbsp;阅100&nbsp;回100</font></div></span></p></div></a>';
-				break;
-			case 1:
-				//改变这个li元素的class属性
-				li.className = 'mui-table-view-cell';
-				more2 = more2 + 1;
-				var htmlmore = '第二个选项卡子项-' + '<font color="red">更多&nbsp;' + more2 + '</font>';
-				break;
-			case 2:
-				//改变这个li元素的class属性
-				li.className = 'mui-card mui-table-view-cell';
-				more3 = more3 + 1;
-				var htmlmore = '<a><div style="position: relative; width: 30%;" class="mui-media-body mui-pull-left"><img src="../../images/shuijiao.jpg" /><p class="focus-text">555张</p></div><div class="mui-media-body" style="padding-left: 20px;">一年级上学期' + '<font color="red">更多&nbsp;' + more3 + '</font>' + '</div><div class="mui-media-body" style="padding-left: 20px;"><span style=" position:absolute;bottom:0px;text-align: left;"><p>李宽<font color="blue">V</font></p><p>09月05日&nbsp;100阅&nbsp;100回</p></span></div></a>';
-				break;
-			case 3:
-				//改变这个li元素的class属性
-				li.className = 'mui-table-view-cell';
-				more4 = more4 + 1;
-				var htmlmore = '<a><div class="oa-contact-cell mui-table"><div class="oa-contact-avatar mui-table-cell"><img src="../../images/logo.png"></div><div class="oa-contact-content" style="padding-left: 20px;"><div><span> <font size="4">庞欢</font><font color="orange">V</font><font>[语文]</font>' + '<font color="red">更多&nbsp;' + more4 + '</font>' + '</span></div><p class="oa-contact-email mui-h6">夏天的西瓜</p></div><div class="mui-table-cell" style="width: 50px;"><img src="../../images/qq.png" /></div></div></a>';
-				break;
-			default:
-				break;
+	} else {
+
+		var table = changeindex();
+		for(var i = 0; i < 5; i++) {
+			//创建一个li元素
+			var li = document.createElement('li');
+			switch(index) {
+				case 0:
+					//改变这个li元素的class属性
+					li.className = 'mui-table-view-cell mui-media';
+					more1 = more1 + 1;
+					var htmlmore = '<a><img style="border-radius: 50%;" class="mui-media-object mui-pull-left" src="../../images/logo.png"><div class="mui-media-body"><span><div class="mui-ellipsis"><font color="red">荐&nbsp;</font><font color="green">&nbsp;精&nbsp;</font><font color="orange">&nbsp;顶&nbsp;</font>' + '<font color="red">更多&nbsp;' + more1 + '</font>' + '<font>&nbsp;一二三四五六七八九十一二三四五六七八九十</font></div></span><p><span><div class="mui-ellipsis"><font>小熊猫</font><font color="blue">V&nbsp;</font><font>09月06日&nbsp;阅100&nbsp;回100</font></div></span></p></div></a>';
+					break;
+				case 1:
+					//改变这个li元素的class属性
+					li.className = 'mui-table-view-cell';
+					more2 = more2 + 1;
+					var htmlmore = '第二个选项卡子项-' + '<font color="red">更多&nbsp;' + more2 + '</font>';
+					break;
+				case 2:
+					//改变这个li元素的class属性
+					li.className = 'mui-card mui-table-view-cell';
+					more3 = more3 + 1;
+					var htmlmore = '<a><div style="position: relative; width: 30%;" class="mui-media-body mui-pull-left"><img src="../../images/shuijiao.jpg" /><p class="focus-text">555张</p></div><div class="mui-media-body" style="padding-left: 20px;">一年级上学期' + '<font color="red">更多&nbsp;' + more3 + '</font>' + '</div><div class="mui-media-body" style="padding-left: 20px;"><span style=" position:absolute;bottom:0px;text-align: left;"><p>李宽<font color="blue">V</font></p><p>09月05日&nbsp;100阅&nbsp;100回</p></span></div></a>';
+					break;
+					//			case 3:
+					//				//改变这个li元素的class属性
+					//				li.className = 'mui-table-view-cell';
+					//				more4 = more4 + 1;
+					//				var htmlmore = '<a><div class="oa-contact-cell mui-table"><div class="oa-contact-avatar mui-table-cell"><img src="../../images/logo.png"></div><div class="oa-contact-content" style="padding-left: 20px;"><div><span> <font size="4">庞欢</font><font color="orange">V</font><font>[语文]</font>' + '<font color="red">更多&nbsp;' + more4 + '</font>' + '</span></div><p class="oa-contact-email mui-h6">夏天的西瓜</p></div><div class="mui-table-cell" style="width: 50px;"><img src="../../images/qq.png" /></div></div></a>';
+					//				break;
+				default:
+					break;
+			}
+			//改变这个li元素的html
+			li.innerHTML = htmlmore;
+			//将li作为table的子节点添加到table中
+			table.appendChild(li);
 		}
-		//改变这个li元素的html
-		li.innerHTML = htmlmore;
-		//将li作为table的子节点添加到table中
-		table.appendChild(li);
 	}
-
 	//注意：
 	//1、加载完新数据后，必须执行如下代码，true表示没有更多数据了：
 	//2、若为ajax请求，则需将如下代码放置在处理完ajax响应数据之后
