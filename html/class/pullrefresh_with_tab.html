@@ -1,0 +1,423 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<script src="../../js/mui.min.js"></script>
+
+		<script src="../../js/app/class/mui.pullToRefresh.js"></script>
+		<script src="../../js/app/class/mui.pullToRefresh.material.js"></script>
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+
+			.mui-bar~.mui-content .mui-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+
+			.mui-pull-top-tips {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -25px;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				z-index: 1;
+			}
+
+			.mui-bar~.mui-pull-top-tips {
+				top: 24px;
+			}
+
+			.mui-pull-top-wrapper {
+				width: 42px;
+				height: 42px;
+				display: block;
+				text-align: center;
+				background-color: #efeff4;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+				box-shadow: 0 4px 10px #bbb;
+				overflow: hidden;
+			}
+
+			.mui-pull-top-tips.mui-transitioning {
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+
+			.mui-pull-top-tips .mui-pull-loading {
+				/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+				margin: 0;
+			}
+
+			.mui-pull-top-wrapper .mui-icon,
+			.mui-pull-top-wrapper .mui-spinner {
+				margin-top: 7px;
+			}
+
+			.mui-pull-top-wrapper .mui-icon.mui-reverse {
+				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			}
+
+			.mui-pull-bottom-tips {
+				text-align: center;
+				background-color: #efeff4;
+				font-size: 15px;
+				line-height: 40px;
+				color: #777;
+			}
+
+			.mui-pull-top-canvas {
+				overflow: hidden;
+				background-color: #fafafa;
+				border-radius: 40px;
+				box-shadow: 0 4px 10px #bbb;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+			}
+
+			.mui-pull-top-canvas canvas {
+				width: 40px;
+			}
+
+			.mui-slider-indicator.mui-segmented-control {
+				background-color: #efeff4;
+			}
+
+			.focus-text {
+				position: absolute;
+				width: 100%;
+				height: 20px;
+				line-height: 24px;
+				font-size: 12px;
+				color: #fff;
+				filter: progid: DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#99000000', endColorstr='#99000000');
+				background-color: rgba(0, 0, 0, .6);
+				margin-top: -25px;
+				overflow: hidden;
+			}
+
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+
+			.oa-contact-avatar {
+				width: 55px;
+			}
+
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+
+			.oa-contact-content {
+				width: 50%;
+				padding-top: 3%;
+			}
+
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+
+			.oa-contact-name,
+			oa-contact-position {
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll mui-pull" style="bottom: 0px;">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							帖子
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							作业
+						</a>
+						<a class="mui-control-item" href="#item3mobile">
+							相册
+						</a>
+						<a class="mui-control-item" href="#item4mobile">
+							成员
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view" id="scroll1">
+									<li class="mui-table-view-cell mui-media">
+										<img style="border-radius: 50%;" class="mui-media-object mui-pull-left" src="../../images/logo.png">
+										<div class="mui-media-body">
+											<span>
+													<div class="mui-ellipsis">
+														<font color="red">荐&nbsp;</font>
+														<font color="green">精&nbsp;</font>
+														<font color="orange">顶&nbsp;</font>
+														<font >一二三四五六七八九十一二三四五六七八九十</font>
+													</div>
+												</span>
+											<p><span>
+													<div class="mui-ellipsis">
+														<font>小熊猫</font>
+														<font color="blue">V&nbsp;</font>
+														<font>09月06日&nbsp;阅100&nbsp;回100</font>
+													</div>
+												</span></p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view" id="scroll2">
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-1
+									</li>
+									<li class="mui-table-view-cell">
+										第2个选项卡子项-2
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view" style="background: transparent;" id="scroll3">
+									<li class="mui-card mui-table-view-cell ">
+										<a>
+											<div style="position: relative; width: 30%;" class="mui-media-body mui-pull-left">
+												<img src="../../images/shuijiao.jpg" />
+												<p class="focus-text mui-text-center">555张</p>
+											</div>
+											<div class="mui-media-body" style="padding-left: 20px;">
+												一年级上学期
+											</div>
+											<div class="mui-media-body" style="padding-left: 20px;">
+												<span style=" position:absolute;bottom:0px;text-align: left;">
+												<p>李宽
+													<font color="blue">V</font>
+												</p>
+												<p>09月05日&nbsp;100阅&nbsp;100回</p>
+												</span>
+											</div>
+										</a>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view" id="scroll4">
+									<li class="mui-table-view-cell">
+										<a>
+											<div class="oa-contact-cell mui-table">
+												<div class="oa-contact-avatar mui-table-cell">
+													<img src="../../images/logo.png">
+												</div>
+												<div class="oa-contact-content" style="padding-left: 20px;">
+													<div>
+														<span> <font size="4">庞欢</font><font color="orange">V</font><font>[语文]</font><font color="blue">老师</font></span>
+													</div>
+													<p class="oa-contact-email mui-h6">
+														夏天的西瓜
+													</p>
+												</div>
+												<div class="mui-table-cell" style="width: 50px;">
+													<img src="../../images/qq.png" />
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<ul class="mui-table-view" style="margin-top: 10px;" id="scroll42">
+									<li class="mui-table-view-cell">
+										<a>
+											<div class="oa-contact-cell mui-table">
+												<div class="oa-contact-avatar mui-table-cell">
+													<img src="../../images/logo.png">
+												</div>
+												<div class="oa-contact-content" style="padding-left: 20px;">
+													<div>
+														<span> <font size="4">佘翼林</font><font color="blue">V</font><font color="green">班长</font></span>
+													</div>
+													<p class="oa-contact-email mui-h6">
+														舍得
+													</p>
+												</div>
+												<div class="mui-table-cell" style="width: 50px;">
+													<img src="../../images/qq.png" />
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<p style="margin-top: 20px;">
+											<span class="mui-pull" id="numberOfMembers">1位教师&nbsp;1位学生</span></p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			mui.init();
+			(function($) {
+				//阻尼系数
+				var deceleration = mui.os.ios ? 0.003 : 0.0009;
+				$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration: deceleration
+				});
+				$.ready(function() {
+					//循环初始化所有下拉刷新，上拉加载。
+					$.each(document.querySelectorAll('.mui-slider-group .mui-scroll'), function(index, pullRefreshEl) {
+						$(pullRefreshEl).pullToRefresh({
+							down: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.mui-table-view');
+										//ul.insertBefore(createFragment(ul, index, 10, true), ul.firstChild);
+										createFragment(ul, index, 10, true);
+										self.endPullDownToRefresh();
+									}, 1000);
+								}
+							},
+							up: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.mui-table-view');
+										ul.appendChild(createFragment(ul, index, 5));
+										self.endPullUpToRefresh();
+									}, 1000);
+								}
+							}
+						});
+					});
+					/**
+					 * 根据当前显示的列表返回该列表的id
+					 */
+					function changeindex(index) {
+						var indexId;
+						switch(index) {
+							case 0:
+								indexId = document.getElementById("scroll1");
+								break;
+							case 1:
+								indexId = document.getElementById("scroll2");
+								break;
+							case 2:
+								indexId = document.getElementById("scroll3");
+								break;
+							case 3:
+								indexId = document.getElementById("scroll4");
+								break;
+							default:
+								break;
+
+						}
+						return indexId;
+					}
+					var num1 = 0,
+						num2 = 0,
+						num3 = 0;
+					var createFragment = function(ul, index, count, reverse) {
+						if(reverse === true) {
+							var table = changeindex(index); //获取id
+							table.innerHTML = '';
+
+							for(var i = 0; i < 5; i++) {
+								//创建一个li元素
+								var li = document.createElement('li');
+								switch(index) {
+									case 0:
+										//改变这个li元素的class属性
+										li.className = 'mui-table-view-cell mui-media';
+										num1 = num1 + 1;
+										var htmlRefresh = '<a><img style="border-radius: 50%;"  class="mui-media-object mui-pull-left" src="../../images/logo.png"><div class="mui-media-body"><span><div class="mui-ellipsis"><font color="red">荐&nbsp;</font><font color="green">&nbsp;精&nbsp;</font><font color="orange">&nbsp;顶&nbsp;</font>' + '<font color="red">新&nbsp;' + num1 + '</font>' + '<font>&nbsp;一二三四五六七八九十一二三四五六七八九十</font></div></span><p><span><div class="mui-ellipsis"><font>小熊猫</font><font color="blue">V&nbsp;</font><font>09月06日&nbsp;阅100&nbsp;回100</font></div></span></p></div></a>';
+										break;
+									case 1:
+										//改变这个li元素的class属性
+										li.className = 'mui-table-view-cell';
+										num2 = num2 + 1;
+										var htmlRefresh = '第二个选项卡子项-' + '<font color="red">新&nbsp;' + num2 + '</font>';
+										break;
+									case 2:
+										//改变这个li元素的class属性
+										li.className = 'mui-card mui-table-view-cell';
+										num3 = num3 + 1;
+										var htmlRefresh = '<a><div style="position: relative; width: 30%;" class="mui-media-body mui-pull-left"><img src="../../images/shuijiao.jpg" /><p class="focus-text">555张</p></div><div class="mui-media-body" style="padding-left: 20px;">一年级上学期' + '<font color="red">新&nbsp;' + num3 + '</font>' + '</div><div class="mui-media-body" style="padding-left: 20px;"><span style=" position:absolute;bottom:0px;text-align: left;"><p>李宽<font color="blue">V</font></p><p>09月05日&nbsp;100阅&nbsp;100回</p></span></div></a>';
+										break;
+										//									case 3:
+										//										//改变这个li元素的class属性
+										//										li.className = 'mui-table-view-cell';
+										//										num4 = num4 + 1;
+										//										var htmlRefresh = '<a><div class="oa-contact-cell mui-table"><div class="oa-contact-avatar mui-table-cell"><img src="../../images/logo.png"></div><div class="oa-contact-content" style="padding-left: 20px;"><div><span> <font size="4">' + teachers[i].Name + '</font><font color="orange">V</font><font>[' + teachers[i].Subject + ']</font><font color="blue">' + teachers[i].Type + '</font>' + '<font color="red">新&nbsp;' + num4 + '</font>' + '</span></div><p class="oa-contact-email mui-h6">' + teachers[i].NickName + '</p></div><div class="mui-table-cell" style="width: 50px;"><img src="../../images/qq.png" /></div></div></a>';
+										//										break;
+									default:
+										break;
+
+								}
+								//改变这个li元素的html
+								li.innerHTML = htmlRefresh;
+								//将li作为table的子节点添加到table中
+								table.appendChild(li);
+								//								var fragment = document.createDocumentFragment();
+								//								fragment.appendChild(li);
+							}
+							return table;
+						} else {
+							var length = ul.querySelectorAll('li').length;
+							var fragment = document.createDocumentFragment();
+							var li;
+							for(var i = 0; i < count; i++) {
+								li = document.createElement('li');
+								li.className = 'mui-table-view-cell';
+								li.innerHTML = '第' + (index + 1) + '个选项卡子项-' + (length + (reverse ? (count - i) : (i + 1)));
+								fragment.appendChild(li);
+							}
+							return fragment;
+						}
+					};
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>

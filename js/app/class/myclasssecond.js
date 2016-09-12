@@ -180,7 +180,7 @@ mui.plusReady((function() {
 	//帖子
 	mui("#item1mobile").on('tap', '.mui-table-view-cell', function() {
 		mui.openWindow({
-			url: 'article.html',
+			url: 'pullrefresh_with_tab.html',
 		})
 	});
 	//点击成员列表头像
