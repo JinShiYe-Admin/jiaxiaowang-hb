@@ -224,7 +224,7 @@ function pulldownRefresh() {
 					//改变这个li元素的class属性
 					li.className = 'mui-table-view-cell mui-media';
 					num1 = num1 + 1;
-					var htmlRefresh = '<a><img class="mui-media-object mui-pull-left" src="../../images/logo.png"><div class="mui-media-body"><span><div class="mui-ellipsis"><font color="red">荐&nbsp;</font><font color="green">&nbsp;精&nbsp;</font><font color="orange">&nbsp;顶&nbsp;</font>' + '<font color="red">新&nbsp;' + num1 + '</font>' + '<font>&nbsp;一二三四五六七八九十一二三四五六七八九十</font></div></span><p><span><div class="mui-ellipsis"><font>小熊猫</font><font color="blue">V&nbsp;</font><font>09月06日&nbsp;阅100&nbsp;回100</font></div></span></p></div></a>';
+					var htmlRefresh = '<a><img style="border-radius: 50%;"  class="mui-media-object mui-pull-left" src="../../images/logo.png"><div class="mui-media-body"><span><div class="mui-ellipsis"><font color="red">荐&nbsp;</font><font color="green">&nbsp;精&nbsp;</font><font color="orange">&nbsp;顶&nbsp;</font>' + '<font color="red">新&nbsp;' + num1 + '</font>' + '<font>&nbsp;一二三四五六七八九十一二三四五六七八九十</font></div></span><p><span><div class="mui-ellipsis"><font>小熊猫</font><font color="blue">V&nbsp;</font><font>09月06日&nbsp;阅100&nbsp;回100</font></div></span></p></div></a>';
 					break;
 				case 1:
 					//改变这个li元素的class属性
