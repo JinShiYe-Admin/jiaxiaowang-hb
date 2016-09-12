@@ -203,7 +203,8 @@
 					"tab_home.html",
 					"js/lib/mui.min.js",
 					"tab_setting.html",
-					"tab_pengyouquan.html"
+					"tab_pengyouquan.html",
+					"tab_class.html"
 				],
 				"refer": [
 					"tab_chat.html",
@@ -212,7 +213,6 @@
 					"html/tab_chat.html",
 					"login.html",
 					"help.html",
-					"tab_class.html",
 					"tab_application.html",
 					"tab_me.html"
 				],
@@ -424,7 +424,11 @@
 			},
 			"tab_me.html": {
 				"resources": [
-					"images/yuantiao.jpg"
+					"images/yuantiao.jpg",
+					"js/app/mine/table_me_click.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -446,7 +450,8 @@
 					"html/class/thirdlist.html",
 					"html/class/secondlist.html",
 					"html/class/fourthlist.html",
-					"html/application/xiaoBo.html"
+					"html/application/xiaoBo.html",
+					"html/class/article.html"
 				],
 				"priority": 0
 			},
@@ -464,7 +469,10 @@
 			},
 			"tab_application.html": {
 				"resources": [
-					"js/app/application/application.js"
+					"js/app/application/application.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
 				],
 				"refer": [
 					"html/application/sport.html",
@@ -651,7 +659,10 @@
 			},
 			"html/application/weiKe_sup.html": {
 				"resources": [
-					"images/cbd.jpg"
+					"images/cbd.jpg",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -733,6 +744,13 @@
 				"plus": {
 					"hardwareAccelerated": true
 				}
+			},
+			"html/class/article.html": {
+				"resources": [
+					"js/app/class/article.js"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
