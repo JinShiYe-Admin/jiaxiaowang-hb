@@ -2,7 +2,7 @@ mui.init({
 	swipeBack: false,
 });
 
-var subpages = ['html/class/myclass.html', 'html/class/allclass.html'];
+var subpages = ['html/class/myclasshead.html', 'html/class/allclass.html'];
 var subpage_style = {
 	top: '45px',
 	bottom: '0px'

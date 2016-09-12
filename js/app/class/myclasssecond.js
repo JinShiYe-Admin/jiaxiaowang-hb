@@ -73,12 +73,16 @@ mui.plusReady((function() {
 	mslider.addEventListener('slide', function(e) {
 		if(e.detail.slideNumber === 0) { //帖子列表
 			index = 0;
+			changeIndex(0);
 		} else if(e.detail.slideNumber === 1) { //作业列表
 			index = 1;
+			changeIndex(1);
 		} else if(e.detail.slideNumber === 2) { //相册列表
 			index = 2;
+			changeIndex(2);
 		} else if(e.detail.slideNumber === 3) { //成员列表
 			index = 3;
+			changeIndex(3);
 		}
 
 	});
@@ -190,6 +194,24 @@ mui.plusReady((function() {
 		})
 	});
 }));
+/**
+ * 当底部的slide切换时将切换的后的列表值传到父页面的‘changeitem’方法
+ * @param {Object} num ；切换后的列表项
+ */
+function changeIndex(num) {
+	var main = plus.webview.getWebviewById('html/class/myclasshead.html');
+	mui.fire(main, "changeitem", {
+		id: num
+	})
+}
+/**
+ * 切换列表的方法
+ */
+window.addEventListener("changeitem", function(e) {
+	var id = e.detail.id;
+	var gallery = mui('.mui-slider');
+	gallery.slider().gotoItem(id);
+});
 //四个列表的下拉刷新次数
 var num1 = 0,
 	num2 = 0,
