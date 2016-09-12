@@ -198,11 +198,13 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css",
-			"html/class/myclass.html"
+			"html/class/myclass.html",
+			"html/class/myclasshead.html"
 		],
 		"refer": [
 			"html/class/myclass.html",
-			"html/class/allclass.html"
+			"html/class/allclass.html",
+			"html/class/myclasshead.html"
 		]
 	},
 	"html/login/login.html": {
@@ -376,7 +378,8 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"html/application/weiKe_sup.html",
-			"js/app/application/weiKe.js"
+			"js/app/application/weiKe.js",
+			"css/weiKe.css"
 		],
 		"refer": [
 			"html/application/weiKe_sup.html",
@@ -566,6 +569,15 @@
 	"html/class/article.html": {
 		"resources": [
 			"js/app/class/article.js"
+		]
+	},
+	"html/class/myclasshead.html": {
+		"resources": [
+			"html/class/myclass.html",
+			"js/app/class/myclasshead.js"
+		],
+		"refer": [
+			"html/class/myclass.html"
 		]
 	}
 }
