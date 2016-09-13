@@ -1,9 +1,9 @@
 /**
- * 已毕业的班级
+ * 作者：莫尚霖
+ * 时间：2016-9-13
+ * 描述：显示已毕业班级
  */
-mui.init({
-	swipeBack: false,
-});
+mui.init();
 mui.plusReady(function() {
 	//通过id找到元素
 	var table = document.getElementById("allclass");

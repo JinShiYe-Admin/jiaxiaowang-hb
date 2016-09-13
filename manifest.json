@@ -369,10 +369,11 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"html/class/myclass.html",
-					"html/class/myclasshead.html"
+					"html/class/myclasshead.html",
+					"html/class/allclass.html"
 				],
 				"refer": [
-					"html/class/allclass.html"
+					"html/remind/newPost.html"
 				],
 				"priority": 0
 			},
@@ -465,7 +466,9 @@
 					"images/shuijiao.jpg",
 					"images/qq.png"
 				],
-				"refer": [],
+				"refer": [
+					"html/class/finishedschool.html"
+				],
 				"priority": 0
 			},
 			"tab_application.html": {
@@ -774,6 +777,26 @@
 					"css/mui.min.css",
 					"images/shuijiao.jpg",
 					"images/qq.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/class/finishedschool.html": {
+				"resources": [
+					"js/app/class/finishedschool.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"images/qq.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/remind/newPost.html": {
+				"resources": [
+					"css/feedback.css",
+					"js/app/remind/newPost.js",
+					"libs/easymob-webim-sdk/jquery-1.11.1.js"
 				],
 				"refer": [],
 				"priority": 0

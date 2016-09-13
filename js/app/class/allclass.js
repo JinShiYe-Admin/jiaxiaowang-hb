@@ -1,8 +1,10 @@
 /**
- * 全校班级
+ * 作者：莫尚霖
+ * 时间：2016-9-13
+ * 描述：显示全校班级，能够下拉刷新，点击底部已毕业班级打开已毕业班级页
  */
 mui.init({
-	//下拉刷新、上拉加载
+	//下拉刷新
 	pullRefresh: {
 		container: "#allclass", //通过id找到下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
 		down: {
@@ -31,7 +33,7 @@ mui.plusReady(function() {
 	}
 	//通过id找到元素并且添加点击事件
 	document.getElementById("finishedschool").addEventListener('tap', function(e) {
-		//创建一个新页面
+		//打开已毕业班级页
 		mui.openWindow({
 			url: 'finishedschool.html',
 			id: 'finishedschool'
@@ -44,7 +46,7 @@ var num = 0;
  * 下拉刷新具体业务实现
  */
 function pulldownRefresh() {
-	//setTimeout(function() { //延时
+	//setTimeout(function() { //延时，现在暂时不使用延时，因为在安卓上有BUG，响应时间非常久
 		//在body中找到第一个mui-table-view类
 		var table = document.body.querySelector('.mui-table-view');
 		//清空table的html代码
