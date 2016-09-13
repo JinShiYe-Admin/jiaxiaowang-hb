@@ -13,85 +13,80 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		    <h1 class="mui-title">选择相册</h1>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">选择相册</h1>
 		</header>
-		<div class="mui-content" >
-							<button type="button" class="mui-btn" id="btn" >
+		<div class="mui-content">
+			<button type="button" class="mui-btn" id="btn">
 					添加相册
 				</button>
-		    <ul id="list" class="mui-table-view mui-table-view-radio">
-<!--
+			<ul id="list" class="mui-table-view mui-table-view-radio">
+				<!--
 			    <li id="one" class="mui-table-view-cell " >
 			        <a class="mui-navigate-right">+新建相册</a>
 			    </li>-->
-			    <li id="two" class="mui-table-view-cell mui-selected" >
-			        <a class="mui-navigate-right">我的相册</a>
-			    </li>
+				<li id="two" class="mui-table-view-cell mui-selected">
+					<a class="mui-navigate-right">我的相册</a>
+				</li>
 
 			</ul>
 		</div>
-		
+
 	</body>
 	<script type="text/javascript">
-	//初始化预加载详情页面
-mui.init({
-  preloadPages:[{
-    id:'addalbum',
-    url:'addalbum.html'           
-  }
-  ]
-});
-mui.plusReady(
-	
-	function(){
-		var supPage=plus.webview.currentWebview().opener();
-		var list = document.querySelector('#list');
-		var btn = document.querySelector('#btn');
-				btn.addEventListener('tap',function(e){
-				showPrompt();
-			});
+		//初始化预加载详情页面
+		mui.init({
+			preloadPages: [{
+				id: 'addalbum',
+				url: 'addalbum.html'
+			}]
+		});
+		mui.plusReady(
 
-		list.addEventListener('selected',function(e){
+			function() {
+				var supPage = plus.webview.currentWebview().opener();
+				var list = document.querySelector('#list');
+				var btn = document.querySelector('#btn');
+				btn.addEventListener('tap', function(e) {
+					showPrompt();
+				});
 
+				list.addEventListener('selected', function(e) {
 
-			mui.fire(supPage,'pageflowrefresh',{
-				data:e.detail.el.innerText
-			} ); 
-			mui.back()
-		})
+					mui.fire(supPage, 'pageflowrefresh', {
+						data: e.detail.el.innerText
+					});
+					mui.back()
+				})
 
-	}
-	
-)
+			}
 
-function showPrompt(){
-	var bts=["确认","取消"];
-	plus.nativeUI.prompt("请输入新相册名称",function(e){
-		var i=e.index;
+		)
+
+		function showPrompt() {
+			var bts = ["确认", "取消"];
+			plus.nativeUI.prompt("请输入新相册名称", function(e) {
+				var i = e.index;
 				var one = document.getElementById("one");
-									var table = document.body.querySelector('.mui-table-view');
-					var cells = document.body.querySelectorAll('.mui-table-view-cell');
-											console.log(123);
+				var table = document.body.querySelector('.mui-table-view');
+				var cells = document.body.querySelectorAll('.mui-table-view-cell');
+				console.log(123);
 
-					for (var i = cells.length, len = i + 1; i < len; i++) {
-																	console.log(123);
+				for(var i = cells.length, len = i + 1; i < len; i++) {
+					console.log(123);
 
-						var li = document.createElement('li');
-						li.className = 'mui-table-view-cell mui-media';
-						
-					li.innerHTML = '<a class="mui-navigate-right">'+e.value+'</a>'
+					var li = document.createElement('li');
+					li.className = 'mui-table-view-cell mui-media';
 
-						//下拉刷新，新纪录插到最前面；
-						table.insertBefore(li, table.firstChild);
-					}
+					li.innerHTML = '<a class="mui-navigate-right">' + e.value + '</a>'
 
+					//下拉刷新，新纪录插到最前面；
+					table.insertBefore(li, table.firstChild);
+				}
 
-	},"新建相册","姓名",bts);
-	
-}	
+			}, "新建相册", "姓名", bts);
 
+		}
 	</script>
-
 
 </html>
