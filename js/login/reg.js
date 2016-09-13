@@ -1,3 +1,7 @@
+/**
+ * @author an
+ * @description 注册界面逻辑代码
+ */
 mui.init()
 
 mui.plusReady(

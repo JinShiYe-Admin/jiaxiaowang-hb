@@ -1,18 +1,23 @@
+/**
+ * 相册主界面 逻辑代码
+ */
 mui.init({
 	swipeBack: false,
 });
-
+//要加载页面
 var subpages = ['alburm_school.html', 'alburm_my.html'];
+//加载子页面样式
 var subpage_style = {
 	top: '45px',
 	bottom: '0px'
 };
-
+//动画
 var aniShow = {};
 
 mui.plusReady(function() {
 	//顶部导航
 //	var header = document.getElementById("header");
+	//空间
 	var btn_school = document.getElementById('alburm_school');
 	var btn_my = document.getElementById('alburm_my');
 
@@ -30,7 +35,7 @@ mui.plusReady(function() {
 		self.append(sub);
 	}
 
-//	btn_myclass.innerText = '';
+
 	var activeTab = subpages[0]; //当前激活选项
 	//增加顶部导航两个选项监听事件
 	mui('.mui-bar-nav').on('tap', 'button', function(e) {

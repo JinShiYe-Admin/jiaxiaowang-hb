@@ -1,3 +1,7 @@
+<!--
+	*@author an
+	*@describe 学校相册父页面
+-->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -20,11 +24,15 @@
 	</body>
 	<script src="../../js/mui.min.js"></script>
 	<script type="text/javascript">
-		//启用双击监听
+	/**
+	 * 启动双击，加载子页面
+	 */
 		mui.init({
+			//启用双击监听
 			gestureConfig:{
 				doubletap:true
 			},
+			//加载子页面
 			subpages:[{ 
 				url:'xiaoBo_sup.html',
 				id:'xiaoBo_sup',
@@ -34,14 +42,16 @@
 				}
 			}] 
 		});
-	
-//		var contentWebview = null;
-//		document.querySelector('header').addEventListener('doubletap',function () {
-//			if(contentWebview==null){
-//				contentWebview = plus.webview.currentWebview().children()[0];
-//			}
-//			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
-//		});
+		/**
+		 * 标题栏双击事件，刷新界面 回复到初始位置
+		 */
+		var contentWebview = null;
+		document.querySelector('header').addEventListener('doubletap',function () {
+			if(contentWebview==null){
+				contentWebview = plus.webview.currentWebview().children()[0];
+			}
+			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
+		});
 	</script>
 
 </html>

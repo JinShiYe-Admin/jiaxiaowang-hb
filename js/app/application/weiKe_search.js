@@ -1,6 +1,12 @@
+/**
+ * @author an
+ * @description 搜索界面实现逻辑
+ */
 mui.plusReady(
 	function(){
+		//搜索按钮
 		var btn_search=document.getElementById('weiKe_search');
+		//搜索按钮加载监听
 		btn_search.addEventListener('tap',function(){
 			addSearchList();
 			
@@ -10,7 +16,8 @@ mui.plusReady(
 /**
  * 加载搜索列表
  */
-function addSearchList() {				
+function addSearchList() {	
+		//获取加载对象
 		var table = document.body.querySelector('.mui-table-view');
 		//移除已有元素
 		while(table.hasChildNodes()){

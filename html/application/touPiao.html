@@ -1,3 +1,7 @@
+<!--
+	*@author an
+	*@describe 投票父界面
+-->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,8 +25,12 @@
 	</body>
 	<script src="../../js/mui.min.js"></script>
 	<script type="text/javascript">
-		//启用双击监听
+		/**
+		 *启动双击监听 
+		 *加载子页面
+		 */
 		mui.init({
+			//启用双击监听
 			gestureConfig:{
 				doubletap:true
 			},
@@ -35,7 +43,10 @@
 				}
 			}] 
 		});
-	
+		/**
+		 *标题栏双击事件
+		 *刷新界面回到初始位置
+		 */
 		var contentWebview = null;
 		document.querySelector('header').addEventListener('doubletap',function () {
 			if(contentWebview==null){
