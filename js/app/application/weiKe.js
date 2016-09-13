@@ -1,8 +1,15 @@
+/**
+ *@author an
+ *@description 微课界面实现逻辑
+ */
 mui.init({
 	swipBack:false
 })
 mui.plusReady(
 	function(){
+		/**
+		 * 各个按钮
+		 */
 		var btn_grade=document.getElementById("grade");
 		var btn_subject=document.getElementById("suject");
 		var btn_search=document.getElementById("search");

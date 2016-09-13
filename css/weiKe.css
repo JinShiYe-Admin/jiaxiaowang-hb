@@ -1,3 +1,4 @@
+/*下拉刷新显示位置样式*/
 .mui-bar-nav ~ .mui-content .mui-pull-top-pocket{
             top: 90px !important;
         }

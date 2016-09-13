@@ -1,3 +1,7 @@
+<!--
+	*@author an
+	*@describe 搜索界面
+-->
 <!doctype html>
 <html>
 
@@ -10,7 +14,9 @@
 		<script type="text/javascript">
 			mui.init()
 		</script>
-		<script src="../../js/app/application/weiKe_search.js"></script>
+		<script src="../../js/app/application/weiKe_search.js">
+			//搜索界面的逻辑实现
+		</script>
 	</head>
 
 	<body>
@@ -19,9 +25,11 @@
 		    <h1 class="mui-title">搜索</h1>
 		</header>
 		<div class="mui-content">
+			<!--搜索内容输入框-->
 		    <div class="mui-input-row">
 		        <input type="text" placeholder="请输入微课名称">
 		    </div>
+		    <!--搜索按钮-->
 		  <button id="weiKe_search" type="button" class="mui-btn mui-btn-blue" style="width: 100%;"><span class="mui-icon mui-icon-search"></span>搜索</button>
 		    <ul class="mui-table-view">
 		    </ul>

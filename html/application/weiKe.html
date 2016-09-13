@@ -1,3 +1,7 @@
+<!--
+	*@author an
+	*@describe 微课父界面
+-->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,8 +11,10 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<script src="../../js/mui.min.js"></script>
+		<!--微課界面實現邏輯-->
 		<script src="../../js/app/application/weiKe.js"></script>
 		<link rel="stylesheet" href="../../css/mui.min.css">
+		<!--控制界面显示起始位置-->
 		<link rel="stylesheet" href="../../css/weiKe.css" />
 	</head>
 
@@ -26,10 +32,12 @@
 	</body>
 	
 	<script type="text/javascript">
-			
-		//启用双击监听
+		/**
+		 *启动双击监听
+		 *加载子页面
+		 */
 		mui.init({
-		
+			//启用双击监听
 			gestureConfig:{
 				doubletap:true
 			},
@@ -42,7 +50,10 @@
 				}
 			}] 
 		});
-	
+		/**
+		 * 标题栏双击事件
+		 * 刷新界面回到初始位置
+		 */
 		var contentWebview = null;
 		document.querySelector('header').addEventListener('doubletap',function () {
 			if(contentWebview==null){

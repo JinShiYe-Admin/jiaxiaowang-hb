@@ -1,3 +1,7 @@
+<!--
+	*@author an
+	*@describe 年级放学状态子界面
+-->
 <!DOCTYPE html>
 <html>
 
@@ -19,7 +23,7 @@
 				 	<h3>一年级一班</h3>
 				 	<p>未放学</p>
 				 </div>
-	
+				<!--分割线-->
 				<p align="center">----------&#160;&#160;以下是全校放学状态&#160;&#160; ----------</p>
 				<!--数据列表-->
 				 <ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -29,6 +33,9 @@
 		</div> 
 		<script src="../../js/mui.min.js"></script>
 		<script>
+			/**
+			 * 加载方法
+			 */
 			mui.init({
 				pullRefresh: {
 					container: '#pullrefresh',
@@ -83,6 +90,7 @@
 					}
 				}, 1500);
 			}
+			//刷新超时设置
 			if (mui.os.plus) {
 				mui.plusReady(function() {
 					setTimeout(function() {

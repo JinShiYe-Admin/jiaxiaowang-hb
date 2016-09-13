@@ -1,3 +1,7 @@
+<!--
+	*@author an
+	*@describe 校博子界面
+-->
 <!DOCTYPE html>
 <html>
 
@@ -23,6 +27,9 @@
 		</div> 
 		<script src="../../js/mui.min.js"></script>
 		<script>
+		/**
+		 * 加载刷新事件
+		 */
 			mui.init({
 				pullRefresh: {
 					container: '#pullrefresh',
@@ -84,6 +91,9 @@
 					}
 				}, 1500);
 			}
+			/*&*
+			 * 设置刷新超时时间
+			 */
 			if (mui.os.plus) {
 				mui.plusReady(function() {
 					setTimeout(function() {
