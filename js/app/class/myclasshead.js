@@ -29,14 +29,19 @@ mui.plusReady((function() {
 	});
 
 }));
-
+/**
+ * 当头部slide切换时将切换的后的列表值传到子页面的‘changeitem’方法
+ * @param {Object} num ；切换后的列表项
+ */
 function changeIndex(num) {
 	var main = plus.webview.getWebviewById('myclass.html');
 	mui.fire(main, "changeitem", {
 		id: num
 	})
 }
-
+/**
+ * 切换列表的方法
+ */
 window.addEventListener("changeitem", function(e) {
 	var id = e.detail.id;
 	var gallery = mui('.mui-slider');
