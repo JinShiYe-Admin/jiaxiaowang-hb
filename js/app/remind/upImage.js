@@ -1,32 +1,5 @@
 (function() {
-	mui.init({
-		swipBack: false
-	})
-	mui.plusReady(
-		function() {
-
-			var subcategory = document.getElementById("subcategory");
-			//点击未分类
-			document.getElementById("category").addEventListener('tap', function() {
-					mui.openWindow({
-						id: "category",
-						url: 'category.html'
-					});
-
-				})
-				//选择分类后刷新数据
-			window.addEventListener('pageflowrefresh', function(e) {
-				console.log(9);
-				if(typeof(e.detail.data) !== 'undefined') {
-					subcategory.innerText = e.detail.data
-				}
-				if(typeof(e.detail.subject) !== 'undefined') {
-					subcategory.innerText = e.detail.subject
-				}
-
-			})
-		}
-	)
+	
 	var index = 1;
 	var size = null;
 	var imageIndexIdNum = 0;
@@ -218,24 +191,14 @@
 	};
 	newPost.newPlaceholder();
 	newPost.submitBtn.addEventListener('tap', function(event) {
-		if(newPost.title.value == '') {
-			return mui.toast('标题不能为空');
-		}
-		if(newPost.content.value == '') {
-			return mui.toast('正文不能为空');
-		}
-
-		if(newPost.subcategory.innerHTML == '未分类') {
-			return mui.toast('请选择分类');
-		}
 
 		//判断网络连接
 		if(plus.networkinfo.getCurrentType() == plus.networkinfo.CONNECTION_NONE) {
 			return mui.toast("连接网络失败，请稍后再试");
 		}
 		newPost.send(mui.extend({}, newPost.deviceInfo, {
-			contact: newPost.title.value,
-			content: newPost.content.value,
+			content: "hao",
+			content: "hao",
 			images: newPost.files,
 		}))
 	}, false)

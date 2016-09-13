@@ -1,13 +1,12 @@
+<!--添加相册界面-->
 <!doctype html>
 <html>
-
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<script src="../../js/mui.min.js"></script>
-		<!--<script src="../../js/app/application/category.js">-->
 		</script>
 	</head>
 
@@ -21,10 +20,6 @@
 					添加相册
 				</button>
 			<ul id="list" class="mui-table-view mui-table-view-radio">
-				<!--
-			    <li id="one" class="mui-table-view-cell " >
-			        <a class="mui-navigate-right">+新建相册</a>
-			    </li>-->
 				<li id="two" class="mui-table-view-cell mui-selected">
 					<a class="mui-navigate-right">我的相册</a>
 				</li>
@@ -70,11 +65,7 @@
 				var one = document.getElementById("one");
 				var table = document.body.querySelector('.mui-table-view');
 				var cells = document.body.querySelectorAll('.mui-table-view-cell');
-				console.log(123);
-
 				for(var i = cells.length, len = i + 1; i < len; i++) {
-					console.log(123);
-
 					var li = document.createElement('li');
 					li.className = 'mui-table-view-cell mui-media';
 
