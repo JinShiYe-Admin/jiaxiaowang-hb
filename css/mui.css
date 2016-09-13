@@ -1,6 +1,6 @@
 /*!
  * =====================================================
- * Mui v3.2.0 (http://dev.dcloud.net.cn/mui)
+ * Mui v3.3.0 (http://dev.dcloud.net.cn/mui)
  * =====================================================
  */
 
@@ -3022,7 +3022,6 @@ select:focus
 
 .mui-input-row .mui-btn
 {
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
     line-height: 1.1;
 
     float: right;
