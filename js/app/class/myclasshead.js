@@ -1,6 +1,6 @@
 mui.init({
 	subpages: [{
-		url: 'myclassbody.html',
+		url: 'myclass.html',
 		styles: {
 			top: '43px',
 			bottom: '0px',

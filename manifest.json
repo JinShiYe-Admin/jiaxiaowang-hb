@@ -760,7 +760,20 @@
 					"js/app/class/myclasshead.js",
 					"js/mui.min.js",
 					"css/mui.min.css",
-					"css/weiKe.css"
+					"css/weiKe.css",
+					"html/class/myclassbody.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/class/myclassbody.html": {
+				"resources": [
+					"js/app/class/myclasssecond.js",
+					"images/logo.png",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"images/shuijiao.jpg",
+					"images/qq.png"
 				],
 				"refer": [],
 				"priority": 0
