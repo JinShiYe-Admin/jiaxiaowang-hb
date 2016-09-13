@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<title></title>
@@ -12,32 +13,32 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		    <h1 class="mui-title">班贴精选</h1>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">班贴精选</h1>
 		</header>
-		
+
 		<div class="mui-content"></div>
 	</body>
 	<script src="../../js/mui.min.js"></script>
 	<script type="text/javascript">
 		//启用双击监听
 		mui.init({
-			gestureConfig:{
-				doubletap:true
+			gestureConfig: {
+				doubletap: true
 			},
-			subpages:[{ 
-				url:'classPost_sup.html',
-				id:'classPost_sup',
-				styles:{
+			subpages: [{
+				url: 'classPost_sup.html',
+				id: 'classPost_sup',
+				styles: {
 					top: '45px',
-					bottom: '0px', 
+					bottom: '0px',
 				}
-			}] 
+			}]
 		});
-	
+
 		var contentWebview = null;
-		document.querySelector('header').addEventListener('doubletap',function () {
-			if(contentWebview==null){
+		document.querySelector('header').addEventListener('doubletap', function() {
+			if(contentWebview == null) {
 				contentWebview = plus.webview.currentWebview().children()[0];
 			}
 			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");

@@ -100,12 +100,28 @@ function addrighticonlistener() {
 					break;
 				case 1:
 					text += "班内发帖";
+					newPost(); /*班内发帖*/
 					break;
 				case 2:
 					text += "上传照片";
+					upImage();/*上传照片*/
 					break;
 			}
 			console.log("你刚点击了：" + text);
 		});
 	});
+}
+                //拍照 
+        function newPost() { 
+	mui.openWindow({
+    id:"newPost",
+    url:'html/remind/newPost.html'
+});
+
+        } 
+                function upImage() { 
+	mui.openWindow({
+    id:"upImage",
+    url:'html/remind/upImage.html'
+});
 }

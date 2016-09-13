@@ -5,9 +5,8 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-				<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="css/mo.css" />
-
 
 	</head>
 
@@ -16,123 +15,61 @@
 		<script type="text/javascript" src="js/app/tab_home.js"></script>
 		<header class="mui-bar mui-bar-nav">
 			<a id="help" class="mui-icon mui-action-menu mui-icon-help mui-pull-left"></a>
-			<a id="openPopover" class="mui-icon mui-action-menu mui-icon-plusempty mui-pull-right" ></a>
+			<a id="openPopover" class="mui-icon mui-action-menu mui-icon-plusempty mui-pull-right"></a>
 			<h1 class="mui-title">家校网</h1>
 		</header>
 
 		<div class="mui-content ">
 
-			
-
-
 			<ul class="mui-table-view">
 				<li id="my_job" class="mui-table-view-cell mui-media">
-					
-						<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
-						<div class="mui-media-body">
-							我的作业
-							<p class='mui-ellipsis'>今日暂无</p>
-						</div>
-					
+
+					<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
+					<div class="mui-media-body">
+						我的作业
+						<p class='mui-ellipsis'>今日暂无</p>
+					</div>
+
 				</li>
 				<li id="campus_notice" class="mui-table-view-cell mui-media">
-					
-						<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
-						<div class="mui-media-body">
-							校园公告
-							<p class='mui-ellipsis'>济南胜利教育集团招聘合同制人员笔试成绩查询</p>
-						</div>
-					
+
+					<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
+					<div class="mui-media-body">
+						校园公告
+						<p class='mui-ellipsis'>济南胜利教育集团招聘合同制人员笔试成绩查询</p>
+					</div>
+
 				</li>
 				<li id="class_post" class="mui-table-view-cell mui-media">
-					
-						<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
-						<div class="mui-media-body">
-							班帖精选
-							<p class='mui-ellipsis'>我上学了</p>
-						</div>
-					
+
+					<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
+					<div class="mui-media-body">
+						班帖精选
+						<p class='mui-ellipsis'>我上学了</p>
+					</div>
+
 				</li>
 				<li id="xiaoBo" class="mui-table-view-cell mui-media">
-					
-						<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
-						<div class="mui-media-body">
-							校博
-							<p class='mui-ellipsis'>我校进行安全教育培训</p>
-						</div>
-					
+
+					<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
+					<div class="mui-media-body">
+						校博
+						<p class='mui-ellipsis'>我校进行安全教育培训</p>
+					</div>
+
 				</li>
 				<li id="sunshine_sports" class="mui-table-view-cell mui-media">
-					
-						<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
-						<div class="mui-media-body">
-							阳光体育
-							<p class='mui-ellipsis'></p>
-						</div>
-					
+
+					<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
+					<div class="mui-media-body">
+						阳光体育
+						<p class='mui-ellipsis'></p>
+					</div>
+
 				</li>
 			</ul>
 		</div>
 
 	</body>
-	<script src="../js/mui.min.js"></script>
-	<script>
-		mui.init({
-			swipeBack:false //启用右滑关闭功能
-		});
-		document.getElementById("my_job").addEventListener('tap',function () {
-			//获得主页面的webview
-			var main = plus.webview.currentWebview().parent();
-			//触发主页面的gohome事件
-			mui.fire(main,'goemai');
-			
-		});
-		/*点击头像触发*/ 
-        document.getElementById('openPopover').addEventListener('tap', function() { 
-            if (mui.os.plus) { 
-                var a = [{ 
-                    title: "班内发帖" 
-                }, { 
-                    title: "上传照片" 
-                }]; 
-                plus.nativeUI.actionSheet({ 
-                    title: "选择发布内容", 
-                    cancel: "取消", 
-                    buttons: a 
-                }, function(b) { /*actionSheet 按钮点击事件*/ 
-                    switch (b.index) { 
-                        case 0: 
-                            break; 
-                        case 1: 
-                            newPost(); /*拍照*/ 
-                            break; 
-                        case 2: 
-                            upImage();/*打开相册*/ 
-                            break; 
-                        default: 
-                            break; 
-                    } 
-                }) 
-            } 
-        }, false); 
-                //拍照 
-        function newPost() { 
-	mui.openWindow({
-    id:"newPost",
-    url:'html/remind/newPost.html'
-});
-
-        } 
-                function upImage() { 
-	mui.openWindow({
-    id:"upImage",
-    url:'html/remind/upImage.html'
-});
-}
-
-
-
-	</script>
-
 
 </html>
