@@ -251,6 +251,21 @@
 		}))
 	}, false)
 	newPost.send = function(content) {
+//Upload plus.uploader.createUpload( url, options, completedCB );
+//
+//说明：请求上传管理创建新的上传任务，创建成功则返回Upload对象，用于管理上传任务。
+//
+//参数：
+//
+//url: ( String ) 必选 要上传文件的目标地址。上传服务器的url地址，仅支持http或https协议。 允许创建多个相同url地址的上传任务。
+//
+//options: ( UploadOptions ) 可选 上传任务的参数。可通过此参数设置定义上传任务属性，如请求类型、上传优先级等。
+//
+//completedCB: ( UploadCompletedCallback ) 可选 上传任务完成回调函数。当上传任务提交完成时触发，成功或失败都会触发。
+//
+//返回值：Upload : Upload对象
+
+
 		newPost.uploader = plus.uploader.createUpload(url, {
 			method: 'POST'
 		},
