@@ -31,6 +31,7 @@
 	var size = null;
 	var imageIndexIdNum = 0;
 	var starIndex = 0;
+	
 	var newPost = {
 		subcategory: document.getElementById('subcategory'),
 		title: document.getElementById('title'),
@@ -39,9 +40,9 @@
 		submitBtn: document.getElementById('submit')
 	};
 	var url = 'https://service.dcloud.net.cn/feedback';
-	newPost.files = [];
-	newPost.uploader = null;
-	newPost.deviceInfo = null;
+	newPost.files = [];//要上传的图片文件
+	newPost.uploader = null;//  Uploader模块管理网络上传任务，用于从本地上传各种文件到服务器
+	newPost.deviceInfo = null;//要上传的设备详情
 	mui.plusReady(function() {
 		//设备信息，无需修改
 		newPost.deviceInfo = {
@@ -72,10 +73,12 @@
 		starIndex = 0;
 
 	};
+	//class属性为file的所有元素转化成数组
 	newPost.getFileInputArray = function() {
 		return [].slice.call(newPost.imageList.querySelectorAll('.file'));
 	};
 	newPost.addFile = function(path) {
+		//向数组末尾添加添加一个元素
 		newPost.files.push({
 			name: "images" + index,
 			path: path
@@ -131,11 +134,12 @@
 						case 0:
 							break;
 						case 1:
+						//拍照回调函数
 							plus.camera.getCamera().captureImage(function(e) {
 								console.log("event:" + e);
 								var name = e.substr(e.lastIndexOf('/') + 1);
 								console.log("name:" + name);
-
+                             //压缩图片
 								plus.zip.compressImage({
 									src: e,
 									dst: '_doc/' + name,
@@ -148,6 +152,11 @@
 										return mui.toast('文件超大,请重新选择~');
 									}
 									if(!self.parentNode.classList.contains('space')) { //已有图片
+									//替换图片
+									//arrayObject.splice(index,howmany,item1,.....,itemX)
+									//index	必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。
+									//howmany	必需。要删除的项目数量。如果设置为 0，则不会删除项目。
+									//item1, ..., itemX	可选。向数组添加的新项目。
 										newPost.files.splice(index - 1, 1, {
 											name: "images" + index,
 											path: e
@@ -233,6 +242,8 @@
 		if(plus.networkinfo.getCurrentType() == plus.networkinfo.CONNECTION_NONE) {
 			return mui.toast("连接网络失败，请稍后再试");
 		}
+		//http请求函数 参数是要上传的数据
+		//mui.extend（） 合并对象
 		newPost.send(mui.extend({}, newPost.deviceInfo, {
 			contact: newPost.title.value,
 			content: newPost.content.value,
@@ -242,7 +253,9 @@
 	newPost.send = function(content) {
 		newPost.uploader = plus.uploader.createUpload(url, {
 			method: 'POST'
-		}, function(upload, status) {
+		},
+		//成功或失败的回调
+		function(upload, status) {
 			//			plus.nativeUI.closeWaiting()
 			console.log("upload cb:" + upload.responseText);
 			if(status == 200) {
