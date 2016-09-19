@@ -267,7 +267,8 @@
 					"tab_setting.html",
 					"help.html",
 					"html/application/xiaoBo.html",
-					"html/remind/sunSports.html"
+					"html/remind/sunSports.html",
+					"html/remind/classPost.html"
 				],
 				"priority": 0
 			},
@@ -372,7 +373,8 @@
 					"html/class/myclasshead.html"
 				],
 				"refer": [
-					"html/class/allclass.html"
+					"html/class/allclass.html",
+					"html/remind/upImage.html"
 				],
 				"priority": 0
 			},
@@ -431,7 +433,10 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css"
 				],
-				"refer": [],
+				"refer": [
+					"html/mine/friendSynamics.html",
+					"html/mine/personalSpace.html"
+				],
 				"priority": 0
 			},
 			"html/class/myclass.html": {
@@ -760,9 +765,79 @@
 					"js/app/class/myclasshead.js",
 					"js/mui.min.js",
 					"css/mui.min.css",
-					"css/weiKe.css"
+					"css/weiKe.css",
+					"html/class/myclassbody.html"
 				],
 				"refer": [],
+				"priority": 0
+			},
+			"html/class/myclassbody.html": {
+				"resources": [
+					"js/app/class/myclasssecond.js",
+					"images/logo.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/mine/friendSynamics.html": {
+				"resources": [
+					"images/logo.png",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/mine/personalSpace.html": {
+				"resources": [
+					"images/cbd.jpg",
+					"images/muwu.jpg",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/remind/classPost.html": {
+				"resources": [
+					"html/remind/classPost_sup.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/remind/classPost_sup.html": {
+				"resources": [
+					"images/cbd.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/remind/upImage.html": {
+				"resources": [
+					"css/feedback.css",
+					"js/app/remind/newPost.js"
+				],
+				"refer": [
+					"html/remind/addalbum.html",
+					"html/remind/category.html"
+				],
+				"priority": 0
+			},
+			"html/remind/newPost.html": {
+				"resources": [
+					"js/app/remind/webSQL.js",
+					"libs/easymob-webim-sdk/jquery-1.11.1.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/remind/category.html": {
+				"resources": [],
+				"refer": [
+					"html/remind/newPost.html"
+				],
 				"priority": 0
 			}
 		},

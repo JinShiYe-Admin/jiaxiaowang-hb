@@ -22,7 +22,7 @@
 	function getElementLeft(element) {　　　　
 		var actualLeft = element.offsetLeft;　　　　
 		var current = element.offsetParent;　　　　
-		while (current !== null) {　　　　　　
+		while(current !== null) {　　　　　　
 			actualLeft += current.offsetLeft;　　　　　　
 			current = current.offsetParent;　　　　
 		}　　　　
@@ -32,7 +32,7 @@
 	function getElementTop(element) {　　　　
 		var actualTop = element.offsetTop;　　　　
 		var current = element.offsetParent;　　　　
-		while (current !== null) {　　　　　　
+		while(current !== null) {　　　　　　
 			actualTop += current.offsetTop;　　　　　　
 			current = current.offsetParent;　　　　
 		}　　　　
@@ -52,12 +52,12 @@
 		 * */
 		init: function(holder, options) {
 			var self = this;
-			if (!holder) {
+			if(!holder) {
 				throw "构造 Locker 时缺少容器元素";
 			}
 			self.holder = holder;
 			//避免重复初始化开始
-			if (self.holder.__locker_inited) return;
+			if(self.holder.__locker_inited) return;
 			self.holder.__locker_inited = true;
 			//避免重复初始化结束
 			//
@@ -75,8 +75,8 @@
 				canvas.detachEvent('on' + name, handler, capture);
 			};
 			//
-			if (self.options.width) self.holder.style.width = self.options.width + 'px';
-			if (self.options.height) self.holder.style.height = self.options.height + 'px';
+			if(self.options.width) self.holder.style.width = self.options.width + 'px';
+			if(self.options.height) self.holder.style.height = self.options.height + 'px';
 			self.CW = self.options.width || self.holder.offsetWidth || self.CW;
 			self.CH = self.options.height || self.holder.offsetHeight || self.CH;
 			//处理 “宽、高” 等数值, 全部扩大 times 倍
@@ -107,8 +107,8 @@
 		caculateNinePointLotion: function(diffX, diffY) {
 			var self = this;
 			var Re = [];
-			for (var row = 0; row < 3; row++) {
-				for (var col = 0; col < 3; col++) {
+			for(var row = 0; row < 3; row++) {
+				for(var col = 0; col < 3; col++) {
 					var Point = {
 						X: (self.OffsetX + col * diffX + (col * 2 + 1) * self.R),
 						Y: (self.OffsetY + row * diffY + (row * 2 + 1) * self.R)
@@ -125,9 +125,9 @@
 		draw: function(cxt, _PointLocationArr, _LinePointArr, touchPoint) {
 			var self = this;
 			var R = self.R;
-			if (_LinePointArr.length > 0) {
+			if(_LinePointArr.length > 0) {
 				cxt.beginPath();
-				for (var i = 0; i < _LinePointArr.length; i++) {
+				for(var i = 0; i < _LinePointArr.length; i++) {
 					var pointIndex = _LinePointArr[i];
 					cxt.lineTo(_PointLocationArr[pointIndex].X, _PointLocationArr[pointIndex].Y);
 				}
@@ -135,7 +135,7 @@
 				cxt.strokeStyle = self.options.lineColor || "#999"; //连结线颜色
 				cxt.stroke();
 				cxt.closePath();
-				if (touchPoint != null) {
+				if(touchPoint != null) {
 					var lastPointIndex = _LinePointArr[_LinePointArr.length - 1];
 					var lastPoint = _PointLocationArr[lastPointIndex];
 					cxt.beginPath();
@@ -145,7 +145,7 @@
 					cxt.closePath();
 				}
 			}
-			for (var i = 0; i < _PointLocationArr.length; i++) {
+			for(var i = 0; i < _PointLocationArr.length; i++) {
 				var Point = _PointLocationArr[i];
 				cxt.fillStyle = self.options.ringColor || "#888"; //圆圈边框颜色
 				cxt.beginPath();
@@ -157,7 +157,7 @@
 				cxt.arc(Point.X, Point.Y, R - (2 * times), 0, Math.PI * times, true);
 				cxt.closePath();
 				cxt.fill();
-				if (_LinePointArr.indexOf(i) >= 0) {
+				if(_LinePointArr.indexOf(i) >= 0) {
 					cxt.fillStyle = self.options.pointColor || "#777"; //圆圈中心点颜色
 					cxt.beginPath();
 					cxt.arc(Point.X, Point.Y, R - (16 * times), 0, Math.PI * times, true);
@@ -169,13 +169,13 @@
 
 		isPointSelect: function(touches, linePoint) {
 			var self = this;
-			for (var i = 0; i < self.pointLocationArr.length; i++) {
+			for(var i = 0; i < self.pointLocationArr.length; i++) {
 				var currentPoint = self.pointLocationArr[i];
 				var xdiff = Math.abs(currentPoint.X - touches.elementX);
 				var ydiff = Math.abs(currentPoint.Y - touches.elementY);
 				var dir = Math.pow((xdiff * xdiff + ydiff * ydiff), 0.5);
-				if (dir < self.R) {
-					if (linePoint.indexOf(i) < 0) {
+				if(dir < self.R) {
+					if(linePoint.indexOf(i) < 0) {
 						linePoint.push(i);
 					}
 					break;
@@ -198,7 +198,7 @@
 			canvas.on(startEventName, self._startHandler, false);
 			//move
 			self._moveHanlder = function(e) {
-				if (!isDown) return;
+				if(!isDown) return;
 				e.preventDefault();
 				e.point = event.changedTouches ? event.changedTouches[0] : event;
 				e.point.elementX = (e.point.pageX - getElementLeft(holder)) * times;
@@ -249,7 +249,7 @@
 		clear: function() {
 			var self = this;
 			//self.pointLocationArr = [];
-			if (self.cxt) {
+			if(self.cxt) {
 				self.cxt.clearRect(0, 0, self.CW, self.CH);
 				self.draw(self.cxt, self.pointLocationArr, [], {
 					X: 0,
@@ -276,7 +276,7 @@
 	$.fn.locker = function(options) {
 		//遍历选择的元素
 		this.each(function(i, element) {
-			if (options) {
+			if(options) {
 				new Locker(element, options);
 			} else {
 				var optionsText = element.getAttribute('data-locker-options');
@@ -296,7 +296,7 @@
 	//自动处理 class='mui-locker' 的 dom
 	try {
 		$('.' + lockerClassName).locker();
-	} catch (ex) {}
+	} catch(ex) {}
 	$.ready(function() {
 		$('.' + lockerClassName).locker();
 	});
