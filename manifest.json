@@ -373,7 +373,9 @@
 					"html/class/allclass.html"
 				],
 				"refer": [
-					"html/remind/newPost.html"
+					"html/remind/newPost.html",
+					"html/db/websql.html",
+					"html/db/mydb.html"
 				],
 				"priority": 0
 			},
@@ -797,6 +799,27 @@
 					"css/feedback.css",
 					"js/app/remind/newPost.js",
 					"libs/easymob-webim-sdk/jquery-1.11.1.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/db/websql.html": {
+				"resources": [
+					"js/db/websql.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/db/mydb.html": {
+				"resources": [
+					"js/db/websql.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/db/mydb.js",
+					"js/mui.min.js"
 				],
 				"refer": [],
 				"priority": 0

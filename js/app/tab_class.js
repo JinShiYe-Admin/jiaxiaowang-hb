@@ -91,6 +91,13 @@ mui.plusReady(function() {
 			btn_myclass.className = 'mui-btn';
 		}
 	});
+
+	//进入对数据库操作
+	document.getElementById('mydb').addEventListener('tap',function () {
+	        mui.openWindow({
+	        	url:'html/db/mydb.html'
+	        })
+	})
 });
 
 /**
