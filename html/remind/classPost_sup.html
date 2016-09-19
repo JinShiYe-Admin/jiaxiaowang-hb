@@ -8,6 +8,73 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<link rel="stylesheet" href="../../css/mui.min.css">
+		<script type="text/javascript">
+			var len = 0;
+			var tag = 0;
+			var datalist = {};
+			var getdata = function() {
+				var url = 'http://58.56.66.215:8085/WorkPlanMobileInterface/GetWorkPlanInfoByUnitIDUserIDDate';
+				uploader = plus.uploader.createUpload(url, {
+						method: 'POST'
+					},
+					//成功或失败的回调
+					function(upload, status) {
+						console.log("upload cb:" + upload.responseText);
+						if(status == 200) {
+							datalist = JSON.parse(upload.responseText);
+							if(datalist.ResultCode == 0) {
+								if(tag == 0) {
+									mui('#pullrefresh').pullRefresh().pullupLoading();
+									tag = 1;
+
+								} else {
+									if(datalist.Data.length > len) {
+
+										setTimeout(function() {
+											var table = document.body.querySelector('.mui-table-view');
+											var cells = document.body.querySelectorAll('.mui-table-view-cell');
+											for(var i = cells.length, len = i + datalist.Data.length - len; i < len; i++) {
+												var li = document.createElement('li');
+												li.className = 'mui-table-view-cell mui-media';
+
+												li.innerHTML = '<a href="javascript:;" style="height:100px;">\
+								            <img class=" mui-pull-left" src="../../images/cbd.jpg" style="height: 70px;width: 70px;">\
+								            <div class="mui-media-body" style="padding: 0px,0px;">' +
+													'地点:' + arr[i].sWorkPlace + '\
+								                <p>' +
+													'开始时间:' + arr[i].dSdate + '</p>\
+								                <p>' +
+													'结束时间:' + arr[i].dEdate + '</p>\
+								            </div> \
+								        </a> \
+								        <p>' + '工作内容:' + arr[i].sSubject + '</p>';
+												//下拉刷新，新纪录插到最前面；
+												table.insertBefore(li, table.firstChild);
+											}
+										}, 1500);
+
+									}
+									mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+
+								}
+
+							}
+						} else {
+							console.log("upload fail");
+						}
+
+					});
+
+				uploader.addData('UnitID', '990');
+				uploader.addData('UserID', '701');
+				uploader.addData('WorkPlanDate', '2016-9-13');
+				
+
+				//
+				//开始上传任务
+				uploader.start();
+			}
+		</script>
 	</head>
 
 	<body>
@@ -35,30 +102,13 @@
 					}
 				}
 			});
+
 			/**
 			 * 下拉刷新具体业务实现
 			 */
 			function pulldownRefresh() {
-				setTimeout(function() {
-					var table = document.body.querySelector('.mui-table-view');
-					var cells = document.body.querySelectorAll('.mui-table-view-cell');
-					for(var i = cells.length, len = i + 3; i < len; i++) {
-						var li = document.createElement('li');
-						li.className = 'mui-table-view-cell mui-media';
-
-						li.innerHTML = '<a href="javascript:;" style="height:100px;">\
-								            <img class=" mui-pull-left" src="../../images/cbd.jpg" style="height: 70px;width: 70px;">\
-								            <div class="mui-media-body" style="padding: 0px;">\
-								                荷露园故事之梦想成真\
-								                <p class="mui-ellipsis-2">老师经常会问和露园每天都萨菲隆你理解爱问佛我刚我刚</p>\
-								            </div> \
-								        </a> \
-								        <p>宋亦词  二年级二班 09月05日 阅读267 回2</p>';
-						//下拉刷新，新纪录插到最前面；
-						table.insertBefore(li, table.firstChild);
-					}
-					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-				}, 1500);
+				tag = 1;
+				getdata();
 			}
 			var count = 0;
 			/**
@@ -69,31 +119,37 @@
 					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
 					var table = document.body.querySelector('.mui-table-view');
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
-					for(var i = cells.length, len = i + 20; i < len; i++) {
+					var arr = datalist.Data;
+
+					console.log(arr.length);
+					for(var i = cells.length, len = i + 4; i < len; i++) {
 						var li = document.createElement('li');
 						li.className = 'mui-table-view-cell';
 						li.innerHTML = '<a href="javascript:;" style="height:100px;">\
 								            <img class=" mui-pull-left" src="../../images/cbd.jpg" style="height: 70px;width: 70px;">\
-								            <div class="mui-media-body" style="padding: 0px 5px;">\
-								                荷露园故事之梦想成真\
-								                <p class="mui-ellipsis-2">老师经常会问和露园每天都萨菲隆你理解爱问佛我刚我刚</p>\
+								            <div class="mui-media-body" style="padding: 0px,0px;">' +
+							'地点:' + arr[i].sWorkPlace + '\
+								                <p>' +
+							'开始时间:' + arr[i].dSdate + '</p>\
+								                <p>' +
+							'结束时间:' + arr[i].dEdate + '</p>\
 								            </div> \
 								        </a> \
-								        <p class="mui-ellipsis">宋亦词  二年级二班 09月05日 阅读267 回1</p>';
+								        <p>' + '工作内容:' + arr[i].sSubject + '</p>';
 						table.appendChild(li);
 					}
 				}, 1500);
 			}
 			if(mui.os.plus) {
 				mui.plusReady(function() {
-					setTimeout(function() {
-						mui('#pullrefresh').pullRefresh().pullupLoading();
-					}, 1000);
+					getdata();
 
 				});
 			} else {
 				mui.ready(function() {
-					mui('#pullrefresh').pullRefresh().pullupLoading();
+
+					getdata();
+
 				});
 			}
 		</script>
