@@ -39,7 +39,7 @@
 		imageList: document.getElementById('image-list'),
 		submitBtn: document.getElementById('submit')
 	};
-	var url = 'https://service.dcloud.net.cn/feedback';
+	var url = 'http://58.56.66.215:8085/WorkPlanMobileInterface/GetWorkPlanInfoByUnitIDUserIDDate';
 	newPost.files = [];//要上传的图片文件
 	newPost.uploader = null;//  Uploader模块管理网络上传任务，用于从本地上传各种文件到服务器
 	newPost.deviceInfo = null;//要上传的设备详情
@@ -227,16 +227,16 @@
 	};
 	newPost.newPlaceholder();
 	newPost.submitBtn.addEventListener('tap', function(event) {
-		if(newPost.title.value == '') {
-			return mui.toast('标题不能为空');
-		}
-		if(newPost.content.value == '') {
-			return mui.toast('正文不能为空');
-		}
-
-		if(newPost.subcategory.innerHTML == '未分类') {
-			return mui.toast('请选择分类');
-		}
+//		if(newPost.title.value == '') {
+//			return mui.toast('标题不能为空');
+//		}
+//		if(newPost.content.value == '') {
+//			return mui.toast('正文不能为空');
+//		}
+//
+//		if(newPost.subcategory.innerHTML == '未分类') {
+//			return mui.toast('请选择分类');
+//		}
 
 		//判断网络连接
 		if(plus.networkinfo.getCurrentType() == plus.networkinfo.CONNECTION_NONE) {
@@ -245,9 +245,7 @@
 		//http请求函数 参数是要上传的数据
 		//mui.extend（） 合并对象
 		newPost.send(mui.extend({}, newPost.deviceInfo, {
-			contact: newPost.title.value,
-			content: newPost.content.value,
-			images: newPost.files,
+UnitID:'990',UserID:'701',WorkPlanDate:'2016-9-13',
 		}))
 	}, false)
 	newPost.send = function(content) {
@@ -276,9 +274,13 @@
 			if(status == 200) {
 				var data = JSON.parse(upload.responseText);
 				//上传成功，重置表单
-				if(data.ret === 0 && data.desc === 'Success') {
+				console.log(data.ResultCode)
+				if(data.ResultCode == 0) {
 					mui.toast('上传成功~')
 					console.log("upload success");
+					var arr = data.Data; 
+					console.log(arr[0].sWorkPlace);
+
 					//					newPost.clearForm();
 				}
 			} else {
