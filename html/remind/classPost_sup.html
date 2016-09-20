@@ -9,10 +9,14 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<link rel="stylesheet" href="../../css/mui.min.css">
 		<script type="text/javascript">
-			var len = 0;
-			var tag = 0;
-			var datalist = {};
+			var tag = 0; //0：加载更多 1：下拉刷新
+			var datalist = {}; //数据源
+			//从服务员获取数据方法
 			var getdata = function() {
+				//判断网络连接
+				if(plus.networkinfo.getCurrentType() == plus.networkinfo.CONNECTION_NONE) {
+					return mui.toast("连接网络失败，请稍后再试");
+				}
 				var url = 'http://58.56.66.215:8085/WorkPlanMobileInterface/GetWorkPlanInfoByUnitIDUserIDDate';
 				uploader = plus.uploader.createUpload(url, {
 						method: 'POST'
@@ -22,53 +26,78 @@
 						console.log("upload cb:" + upload.responseText);
 						if(status == 200) {
 							datalist = JSON.parse(upload.responseText);
+							//请求成功
 							if(datalist.ResultCode == 0) {
-								if(tag == 0) {
+								if(tag == 0) { //第一次加载数据
 									mui('#pullrefresh').pullRefresh().pullupLoading();
 									tag = 1;
 
-								} else {
-									if(datalist.Data.length > len) {
+								} else { //下拉刷新
+									var table = document.body.querySelector('.mui-table-view');
+									var cells = document.body.querySelectorAll('.mui-table-view-cell');
+									//移除cell
+									for(var i = cells.length - 1; i >= 0; i--) {
 
-										setTimeout(function() {
-											var table = document.body.querySelector('.mui-table-view');
-											var cells = document.body.querySelectorAll('.mui-table-view-cell');
-											for(var i = cells.length, len = i + datalist.Data.length - len; i < len; i++) {
-												var li = document.createElement('li');
-												li.className = 'mui-table-view-cell mui-media';
+										table.removeChild(table.childNodes[i]);
+										var table = document.body.querySelector('.mui-table-view');
+										var cells = document.body.querySelectorAll('.mui-table-view-cell');
+										console.log('删除后列表长度' + cells.length + '-----i=' + i);
+									}
+									table.removeChild(table.childNodes[0]);
+									var arr = datalist.Data;
+									//更新数据
+									setTimeout(function() {
+										for(var i = 0; i < 4; i++) {
+											var li = document.createElement('li');
+											li.className = 'mui-table-view-cell mui-media';
 
-												li.innerHTML = '<a href="javascript:;" style="height:100px;">\
+											li.innerHTML = '<a href="javascript:;" style="height:100px;">\
 								            <img class=" mui-pull-left" src="../../images/cbd.jpg" style="height: 70px;width: 70px;">\
 								            <div class="mui-media-body" style="padding: 0px,0px;">' +
-													'地点:' + arr[i].sWorkPlace + '\
+												'地点:' + arr[i].sWorkPlace + '\
 								                <p>' +
-													'开始时间:' + arr[i].dSdate + '</p>\
+												'开始时间:' + arr[i].dSdate + '</p>\
 								                <p>' +
-													'结束时间:' + arr[i].dEdate + '</p>\
+												'结束时间:' + arr[i].dEdate + '</p>\
 								            </div> \
 								        </a> \
 								        <p>' + '工作内容:' + arr[i].sSubject + '</p>';
-												//下拉刷新，新纪录插到最前面；
-												table.insertBefore(li, table.firstChild);
-											}
-										}, 1500);
-
-									}
-									mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+											table.appendChild(li);
+										}
+										mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+									}, 1500);
 
 								}
 
 							}
+							//请求失败
 						} else {
 							console.log("upload fail");
 						}
 
 					});
-
-				uploader.addData('UnitID', '990');
-				uploader.addData('UserID', '701');
-				uploader.addData('WorkPlanDate', '2016-9-13');
-				
+				//要上传的数据
+				var updata = {
+						UnitID: '990',
+						UserID: '701',
+						WorkPlanDate: '2016-9-13'
+					}
+					//添加上传数据
+					//		mui.each( obj , handler )
+					//obj
+					//Type: Array||JSONObj
+					//需遍历的对象或数组；若为对象，仅遍历对象根节点下的key
+					//handler
+					//Type: Function( Integer||String index,Anything element)
+					//为每个元素执行的回调函数；其中，index表示当前元素的下标或key，element表示当前匹配元素
+					//mui(selector).each( handler )
+					//handler
+					//Type: Function( Integer index,Element element)
+					//为每个匹配元素执行的回调函数；其中，index表示当前元素在匹配元素中的位置（下标，从0开始），element表示当前匹配元素，可用this关键字代替
+				mui.each(updata, function(index, element) {
+					console.log("addData:" + index + "," + element);
+					uploader.addData(index, element)
+				});
 
 				//
 				//开始上传任务
@@ -119,6 +148,7 @@
 					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
 					var table = document.body.querySelector('.mui-table-view');
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+
 					var arr = datalist.Data;
 
 					console.log(arr.length);
