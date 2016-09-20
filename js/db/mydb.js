@@ -65,36 +65,13 @@ function DBManage(tableName, SQL, data) {
 				var len = results.rows.length;
 				for(var i = 0; i < len; i++) {
 					console.log("-------- 我是分割线 -------");
-					console.log("ID =" + results.rows.item(i).ID);
-					console.log("NAME = " + results.rows.item(i).NAME);
-					console.log("NICKNAME = " + results.rows.item(i).NICKNAME);
-					console.log("SUBJECT = " + results.rows.item(i).SUBJECT);
-					console.log("TYPE = " + results.rows.item(i).TYPE);
+					console.log("数据 " + i);
+					console.log(JSON.stringify(results.rows.item(i)));
 				}
 			},
 			function(ctx, error) {
 				//语句操作失败
 				console.log('DBManage：' + tableName + '操作失败:' + error.message);
 			});
-	});
-}
-
-/**
- * 查詢所有的表
- * @param {Object} getAllTableSQL 查詢所有的表的sql语句
- */
-function getAllTable(getAllTableSQL) {
-	DB.transaction(function(ctx, results) {
-		ctx.executeSql(getAllTableSQL, [], function(ctx, results) {
-			console.log('查询所有的表成功:' + results.rows.length);
-			var length = results.rows.length;
-			for(var i = 0; i < length; i++) {
-				console.log("-------- 我是分割线 -------");
-				console.log("数据 " + i);
-				console.log("tableName = " + results.rows.item(i).name);
-			}
-		}, function(ctx, error) {
-			console.log('查询所有的表失败: ' + error.message);
-		});
 	});
 }
