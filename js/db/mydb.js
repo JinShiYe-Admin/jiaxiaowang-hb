@@ -62,16 +62,20 @@ function DBManage(tableName, SQL, data) {
 				// 其中，results的rows属性中保存了查询到的每一条记录，rows.length属性可以获取记录的条数
 				// 可使用rows[index]或rows[item]来单独取到某条记录
 				console.log('DBManage：' + tableName + ' 操作成功！ results长度：' + results.rows.length);
+				try {
+					console.log(JSON.stringify(results));
+				} catch(e) {
+					console.log('---这里有一个异常---');
+				}
 				var len = results.rows.length;
 				for(var i = 0; i < len; i++) {
-					console.log("-------- 我是分割线 -------");
-					console.log("数据 " + i);
+					console.log('------ 数据 ' + i + ' ------');
 					console.log(JSON.stringify(results.rows.item(i)));
 				}
 			},
 			function(ctx, error) {
 				//语句操作失败
-				console.log('DBManage：' + tableName + '操作失败:' + error.message);
+				console.log('DBManage：' + tableName + ' 操作失败:' + JSON.stringify(error));
 			});
 	});
 }
