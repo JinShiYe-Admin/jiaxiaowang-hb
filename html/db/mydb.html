@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/db/mydb.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">mydb</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper" style="margin-top: 45px;">
+				<div class="mui-scroll">
+					<h4>1.获取或者创建一个数据库，如果该数据库不存在那么就创建一个</h4>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" id="openDB">获取或者创建一个数据库</button>
+
+					<h4>2.查询所有的表<h4>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" id="getAllTable">查询所有的表</button>
+
+					<h4>3.新建一张表<h4>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" id="creatTable">新建一张表</button>
+
+					<h4>4.删除一张表<h4>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" id="dropTable">删除一张表</button>
+
+					<h4>5.插入数据</h4>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined " id="insterDataToTable">插入数据</button>
+
+					<h4>6.查询表单中所有的数据</h4>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" id="getAllData">查询表单中所有的数据</button>
+
+					<h4>7.查询某一个数据(NAME =郑成枝)</h4>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" id="getAData">查询某一项数据</button>
+
+					<h4>8.查询某些字段的数据(NICKNAME ID)</h4>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" id="getData">查询某一项数据</button>
+
+					<h4>9.修改数据（将ID=2 的NAME改为a）</h4>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" id="updateData">修改数据</button>
+
+					<h4>10.删除数据（将ID=2 的数据删除）</h4>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" id="deleteData">删除数据</button>
+
+					<h4>11.删除表中所有的数据</h4>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" id="deleteAllData">删除表中所有的数据</button>
+
+				</div>
+			</div>
+		</div>
+		<script>
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				indicators: true, //是否显示滚动条
+			});
+			mui.plusReady(function() {
+				var tableName = 'Test';
+				var data = [];
+				document.getElementById('openDB').addEventListener('tap', function() {
+					openDB(); //获取或者创建一个数据库
+				});
+
+				document.getElementById('getAllTable').addEventListener('tap', function() {
+					var getAllTableSQL = 'SELECT * FROM SQLITE_MASTER';
+					getAllTable(getAllTableSQL); //查询所有的表
+				})
+
+				document.getElementById('creatTable').addEventListener('tap', function() {
+					var creatTableSQL = 'CREATE TABLE IF  NOT EXISTS ' + tableName + ' (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME text,NICKNAME text,SUBJECT text,TYPE text)';
+					DBManage(tableName, creatTableSQL, data); //创建一个表
+				});
+
+				document.getElementById('dropTable').addEventListener('tap', function() {
+					var dropTableSQL = 'DROP TABLE ' + tableName;
+					DBManage(tableName, dropTableSQL, data); //删除一个表
+				});
+
+				document.getElementById('insterDataToTable').addEventListener('tap', function() {
+					var insterTableSQL = 'INSERT INTO ' + tableName + ' (NAME,NICKNAME,SUBJECT,TYPE) VALUES (?,?,?,?)';
+					var mData = ['郑成枝', '住进时光里', '[语文]', '教导主任'];
+					DBManage(tableName, insterTableSQL, mData); //插入数据
+				});
+
+				document.getElementById('getAllData').addEventListener('tap', function() {
+					var getAllDataSQL = 'SELECT * FROM ' + tableName;
+					DBManage(tableName, getAllDataSQL, data); //查询表中所有的数据
+				});
+
+				document.getElementById('getAData').addEventListener('tap', function() {
+					var selectSQL = 'SELECT * FROM ' + tableName + ' WHERE NAME = ?'
+					var mData = ['郑成枝'];
+					DBManage(tableName, selectSQL, mData); //查询某一个数据
+				});
+
+				document.getElementById('getData').addEventListener('tap', function() {
+					var selectSQL = 'SELECT ID, NICKNAME FROM ' + tableName;
+					DBManage(tableName, selectSQL, data); //查询某些字段的数据
+				});
+
+				document.getElementById('updateData').addEventListener('tap', function() {
+					var updateSQL = 'UPDATE ' + tableName + ' SET NAME = ? WHERE ID = ?';
+					var name = 'a';
+					var id = '2';
+					var mData = [name, id];
+					DBManage(tableName, updateSQL, mData); //修改数据
+				});
+
+				document.getElementById('deleteData').addEventListener('tap', function() {
+					var deleteDataSQL = 'DELETE FROM ' + tableName + ' WHERE ID = ?';
+					var mData = [2];
+					DBManage(tableName, deleteDataSQL, mData); //删除数据
+				});
+
+				document.getElementById('deleteAllData').addEventListener('tap', function() {
+					var deleteAllDataSQL = 'DELETE FROM ' + tableName;
+					DBManage(tableName, deleteAllDataSQL, data); //删除表中所有的数据
+				});
+			});
+		</script>
+	</body>
+
+</html>
