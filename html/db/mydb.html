@@ -51,6 +51,12 @@
 					<h4>11.删除表中所有的数据</h4>
 					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" id="deleteAllData">删除表中所有的数据</button>
 
+					<h4>12.表中增加一列</h4>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" id="addColumn">表中增加一列</button>
+
+					<h4>13.查询表的列</h4>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" id="getTableInfo">查询表的列</button>
+
 				</div>
 			</div>
 		</div>
@@ -68,11 +74,11 @@
 
 				document.getElementById('getAllTable').addEventListener('tap', function() {
 					var getAllTableSQL = 'SELECT * FROM SQLITE_MASTER';
-					getAllTable(getAllTableSQL); //查询所有的表
+					DBManage(tableName,getAllTableSQL,data); //查询所有的表
 				})
 
 				document.getElementById('creatTable').addEventListener('tap', function() {
-					var creatTableSQL = 'CREATE TABLE IF  NOT EXISTS ' + tableName + ' (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME text,NICKNAME text,SUBJECT text,TYPE text)';
+					var creatTableSQL = 'CREATE TABLE IF  NOT EXISTS ' + tableName + ' (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT,NICKNAME TEXT,SUBJECT TEXT,TYPE TEXT)';
 					DBManage(tableName, creatTableSQL, data); //创建一个表
 				});
 
@@ -106,7 +112,7 @@
 				document.getElementById('updateData').addEventListener('tap', function() {
 					var updateSQL = 'UPDATE ' + tableName + ' SET NAME = ? WHERE ID = ?';
 					var name = 'a';
-					var id = '2';
+					var id = 2;
 					var mData = [name, id];
 					DBManage(tableName, updateSQL, mData); //修改数据
 				});
@@ -120,6 +126,16 @@
 				document.getElementById('deleteAllData').addEventListener('tap', function() {
 					var deleteAllDataSQL = 'DELETE FROM ' + tableName;
 					DBManage(tableName, deleteAllDataSQL, data); //删除表中所有的数据
+				});
+
+				document.getElementById('addColumn').addEventListener('tap', function() {
+					var addColumnSQL = 'ALTER TABLE ' + tableName + ' ADD ' + ' GENDER TEXT';
+					DBManage(tableName, addColumnSQL, data); //增加一列
+				});
+
+				document.getElementById('getTableInfo').addEventListener('tap', function() {
+					var getTableInfoSQL = 'SELECT sql FROM SQLITE_MASTER WHERE TYPE = \'table\' AND tbl_name = \'' + tableName + '\'';
+					DBManage(tableName, getTableInfoSQL,data); //获取表的信息
 				});
 			});
 		</script>
