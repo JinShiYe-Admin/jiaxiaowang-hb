@@ -1,0 +1,75 @@
+{
+  "tab_application.html": {
+    "resources": [
+      "js/app/application/application.js"
+    ]
+  },
+  "index.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/app/index.js",
+      "tab_home.html"
+    ],
+    "refer": [
+      "tab_application.html",
+      "tab_me.html",
+      "tab_home.html",
+      "tab_class.html"
+    ]
+  },
+  "tab_me.html": {
+    "resources": [
+      "js/app/mine/table_me_click.js",
+      "images/yuantiao.jpg"
+    ]
+  },
+  "html/class/myclasshead.html": {
+    "resources": [
+      "html/class/myclass.html",
+      "js/app/class/myclasshead.js"
+    ],
+    "refer": [
+      "html/class/myclass.html"
+    ]
+  },
+  "html/login/login.html": {
+    "resources": [
+      "js/app.js",
+      "images/logo.png",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/mui.enterfocus.js"
+    ],
+    "refer": [
+      "index.html"
+    ]
+  },
+  "html/class/myclass.html": {
+    "resources": [
+      "js/app/class/myclasssecond.js"
+    ]
+  },
+  "html/class/allclass.html": {
+    "resources": [
+      "images/qq.png",
+      "js/app/class/allclass.js"
+    ]
+  },
+  "tab_home.html": {
+    "resources": [
+      "js/app/tab_home.js",
+      "images/shuijiao.jpg"
+    ]
+  },
+  "tab_class.html": {
+    "resources": [
+      "html/class/myclasshead.html",
+      "js/app/tab_class.js"
+    ],
+    "refer": [
+      "html/class/myclasshead.html",
+      "html/class/allclass.html"
+    ]
+  }
+}
