@@ -1,3 +1,8 @@
+/**
+ * @author an
+ * @param {Object} $ mui
+ * @param {Object} owner muiUploader
+ */
 (function($,owner){
 	owner.utask=null;
 	owner.uploadOptions={
