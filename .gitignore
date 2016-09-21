@@ -1,1 +1,6 @@
-/unpackage/release
+<<<<<<< OURS
+
+=======
+/manifest.json
+/unpackage
+>>>>>>> THEIRS
