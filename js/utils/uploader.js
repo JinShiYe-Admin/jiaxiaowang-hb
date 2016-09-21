@@ -10,7 +10,7 @@
 		retryInterval:30//(number) 上传任务重试间隔时间，单位为秒
 	}
 	/**
-	 * 监听上传任务撞他
+	 * 监听上传任务状态
 	 * @param {Object} upload
 	 * @param {Object} status
 	 */
