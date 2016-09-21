@@ -1,7 +1,7 @@
 /**
  * @author an
  * @param {Object} $ mui
- * @param {Object} owner sownloader
+ * @param {Object} owner muiDownloader
  */
 (function($, owner) {
 	owner.dtask = null;
