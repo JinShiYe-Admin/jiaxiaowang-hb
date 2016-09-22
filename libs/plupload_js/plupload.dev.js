@@ -2379,4 +2379,4 @@ plupload.File = (function() {
 window.plupload = plupload;
 
 }(window, mOxie));
-module.exports = plupload;
+
