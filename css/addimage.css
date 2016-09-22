@@ -1,11 +1,4 @@
-/*!
- * ======================================================
- * addimage Template For MUI (http://dev.dcloud.net.cn/mui)
- * =======================================================
- * @version:1.0.0
- * @author:cuihongbao@dcloud.io
- */
-
+/*添加图片功能时引入此样式表*/
 .addimage body {
 	background-color: #EFEFF4;
 }
@@ -22,15 +15,6 @@
 	width: 100%;
 	background-color: #fff;
 }
-.addimage p {
-	padding: 10px 15px 0;
-}
-/*.addimage button#submit { 
-	width: 90%;
-	height: 46px;
-	left: 50%;
-	-webkit-transform: translate(-50%);
-}*/
 
 input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
 	font-size: 14px;
@@ -112,20 +96,4 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
 	font-size: 14px;
 	color: #8f8f94;
 }
-.mui-icon-star{
-	color: #B5B5B5;
-	font-size: 22px;
-}
-.mui-icon-star-filled{
-	color: #FFB400;
-	font-size: 22px;
-} 
-.mui-popover {
-	height: 180px;
-}
-.stream{
-	display: none;
-}
-.mui-plus-stream .stream{
-	display: block;
-}
+
