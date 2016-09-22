@@ -2,7 +2,8 @@
   "tab_application.html": {
     "resources": [
       "js/app/application/application.js"
-    ]
+    ],
+    "refer": []
   },
   "index.html": {
     "resources": [
@@ -21,7 +22,8 @@
     "resources": [
       "js/app/mine/table_me_click.js",
       "images/yuantiao.jpg"
-    ]
+    ],
+    "refer": []
   },
   "html/class/myclasshead.html": {
     "resources": [
@@ -48,19 +50,22 @@
   "html/class/myclass.html": {
     "resources": [
       "js/app/class/myclasssecond.js"
-    ]
+    ],
+    "refer": []
   },
   "html/class/allclass.html": {
     "resources": [
       "images/qq.png",
       "js/app/class/allclass.js"
-    ]
+    ],
+    "refer": []
   },
   "tab_home.html": {
     "resources": [
       "js/app/tab_home.js",
       "images/shuijiao.jpg"
-    ]
+    ],
+    "refer": []
   },
   "tab_class.html": {
     "resources": [
@@ -70,6 +75,14 @@
     "refer": [
       "html/class/myclasshead.html",
       "html/class/allclass.html"
+    ]
+  },
+  "html/yun/uploader.html": {
+    "resources": [
+      "libs/plupload_js/moxie.js",
+      "js/mui.min.js",
+      "libs/plupload_js/plupload.dev.js",
+      "css/mui.min.css"
     ]
   }
 }
