@@ -12,28 +12,33 @@
 			.area {
 				margin: 20px auto 0px auto;
 			}
+			
 			.mui-input-group:first-child {
 				margin-top: 20px;
 			}
+			
 			.mui-input-group label {
 				width: 22%;
 			}
+			
 			.mui-input-row label~input,
 			.mui-input-row label~select,
 			.mui-input-row label~textarea {
 				width: 78%;
 			}
+			
 			.mui-checkbox input[type=checkbox],
 			.mui-radio input[type=radio] {
 				top: 6px;
 			}
+			
 			.mui-content-padded {
 				margin-top: 25px;
 			}
+			
 			.mui-btn {
 				padding: 10px;
 			}
-			
 		</style>
 	</head>
 
@@ -44,36 +49,33 @@
 		</header>
 		<div class="mui-content">
 			<div style="padding: 18px;">
-			
-	
-			<input id='reg_number' type="text" class="mui-input-clear mui-input"  placeholder="注册码" ><br />
-			<p>请从学校获取</p>
-			
-			
-				
-			<select id="identity" class="mui-btn mui-btn-block">
+
+				<input id='reg_number' type="text" class="mui-input-clear mui-input" placeholder="注册码"><br />
+				<p>请从学校获取</p>
+
+				<select id="identity" class="mui-btn mui-btn-block">
 					<option value="学生/家长">学生/家长</option>
 					<option value="老师">老师</option>
 					<option value="管理人员">管理人员</option>
 				</select>
-			<p>请选择你的身份</p>
-			<input id='nickmame'  type="text" class="mui-input-clear mui-input"  placeholder="登录账号"><br />
-			<p> 5-10字符(中英文，数字，下划线，以中英文开头)</p>	
-			
-			<input id='email' type="email" class="mui-input-clear mui-input"  placeholder="邮箱"><br />
-			<p>用于找回密码</p>
-			
-			<input id='password' type="password" class="mui-input-clear mui-input"  placeholder="登录密码"><br />
-			<p>6到15个字符，区分大小写</p>
-	
-			<input id='password_confirm' type="password" class="mui-input-clear mui-input"  placeholder="确认密码">
-	
-			<div class="mui-content-padded">
-				<button id='reg' class="mui-btn mui-btn-block mui-btn-primary">下一步</button>
-			</div>
-			<div class="mui-content-padded">
-				<p>注册真实可用，注册成功后的用户可用于登录，但是示例程序并未和服务端交互，用户相关数据仅存储于本地。</p>
-			</div>
+				<p>请选择你的身份</p>
+				<input id='nickmame' type="text" class="mui-input-clear mui-input" placeholder="登录账号"><br />
+				<p> 5-10字符(中英文，数字，下划线，以中英文开头)</p>
+
+				<input id='email' type="email" class="mui-input-clear mui-input" placeholder="邮箱"><br />
+				<p>用于找回密码</p>
+
+				<input id='password' type="password" class="mui-input-clear mui-input" placeholder="登录密码"><br />
+				<p>6到15个字符，区分大小写</p>
+
+				<input id='password_confirm' type="password" class="mui-input-clear mui-input" placeholder="确认密码">
+
+				<div class="mui-content-padded">
+					<button id='reg' class="mui-btn mui-btn-block mui-btn-primary">下一步</button>
+				</div>
+				<div class="mui-content-padded">
+					<p>注册真实可用，注册成功后的用户可用于登录，但是示例程序并未和服务端交互，用户相关数据仅存储于本地。</p>
+				</div>
 			</div>
 		</div>
 		<script src="../../js/mui.min.js"></script>
