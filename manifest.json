@@ -814,7 +814,8 @@
 					"libs/plupload_js/moxie.js",
 					"js/mui.min.js",
 					"libs/plupload_js/plupload.dev.js",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"libs/qiniu-js-sdk-1.0.16.1-beta/qiniu.js"
 				],
 				"refer": [],
 				"priority": 0
